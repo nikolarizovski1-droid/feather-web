@@ -1,0 +1,514 @@
+{
+  "Navbar": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "about": "About",
+    "faq": "FAQ",
+    "signIn": "Sign in",
+    "startFreeTrial": "Start Free Trial"
+  },
+  "Footer": {
+    "tagline": "The complete restaurant marketing platform. One dashboard, every guest touchpoint.",
+    "downloadOnThe": "Download on the",
+    "appStore": "App Store",
+    "getItOn": "Get it on",
+    "googlePlay": "Google Play",
+    "downloadOnAppStore": "Download on the App Store",
+    "getItOnGooglePlay": "Get it on Google Play",
+    "copyright": "© {year} Feather. All rights reserved.",
+    "categories": {
+      "product": "Product",
+      "resources": "Resources",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "tvDisplayApp": "TV Display App",
+      "adminDashboard": "Admin Dashboard",
+      "pushNotifications": "Push Notifications",
+      "blog": "Blog",
+      "faq": "FAQ",
+      "documentation": "Documentation",
+      "about": "About",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    }
+  },
+  "Hero": {
+    "eyebrow": "Restaurant Marketing & Operations Platform",
+    "headline1": "One Dashboard.",
+    "headline2": "Every Guest",
+    "headline3": "Touchpoint.",
+    "subheadline": "More than a digital menu — Feather turns every guest scan into automatic push notifications, promotions, event bookings, and live TV content. One dashboard. Zero extra effort.",
+    "startFreeTrial": "Start Free Trial",
+    "seeHowItWorks": "See How It Works",
+    "trustLine": "14-day free trial · Credit card required · No charge until day 15 · Cancel anytime",
+    "scrollDown": "Scroll down"
+  },
+  "StatsBar": {
+    "stat0value": "5,000+",
+    "stat0label": "Venues Powered",
+    "stat1value": "40+",
+    "stat1label": "Countries",
+    "stat2value": "10M+",
+    "stat2label": "Menu Scans",
+    "stat3value": "4.9★",
+    "stat3label": "App Store Rating"
+  },
+  "ComparisonSection": {
+    "eyebrow": "Why Feather",
+    "title": "Not just another QR menu.",
+    "description": "Most tools stop at showing a list. Feather turns every scan into a full marketing event — automatically.",
+    "basicCard": {
+      "badge": "What everyone else gives you",
+      "title": "Basic QR Menu Tool",
+      "items": [
+        "Guest scans and sees a static list",
+        "No promotions or banners",
+        "Guests leave and you lose touch",
+        "No TV or in-venue screen presence",
+        "No staff integration",
+        "Generic web page experience"
+      ]
+    },
+    "featherCard": {
+      "badge": "One scan. Your entire marketing stack.",
+      "title": "Feather — Complete Platform",
+      "items": [
+        "Native App Clip — no download, sub-100ms",
+        "Banner + Top Product upsell on every open",
+        "Push notification fires 1 hr after every scan",
+        "Event promo with 'Book now' & 'Remind me'",
+        "TV Display App fed from the same admin",
+        "One-tap Call Waiter / Call Receipt"
+      ]
+    }
+  },
+  "FeaturesGrid": {
+    "eyebrow": "Everything in one place",
+    "title": "Every tool your restaurant needs.",
+    "description": "One platform. Six powerful touchpoints. All managed from a single admin dashboard.",
+    "features": [
+      {
+        "title": "Instant Native Experience",
+        "description": "iOS App Clip launches instantly — no download required. Android opens directly via the web. For up to 3 seconds, an animated loading scene entertains guests while assets preload, then transitions smoothly into the full menu.",
+        "mockupLabel": "Guest Menu View"
+      },
+      {
+        "title": "Product Banners",
+        "description": "The very first thing guests see — admin-controlled hero banners and featured items that add to cart in a single tap.",
+        "mockupLabel": "Featured Items"
+      },
+      {
+        "title": "Auto Push Notifications",
+        "description": "Every QR scan auto-schedules a promo notification one hour later. Image, video, or 'Order now' — fully controlled from your admin.",
+        "mockupLabel": "Notification Promo"
+      },
+      {
+        "title": "Event Promotions",
+        "description": "Guests receive event notifications with 'Book now' and 'Remind me' to save directly to their calendar. No flyers, no follow-up calls.",
+        "mockupLabel": "Event Promo Screen"
+      },
+      {
+        "title": "TV Display App",
+        "description": "Turn every venue screen into a live promo slideshow — products, events, partner ads — updated in real time from your admin.",
+        "mockupLabel": "TV Display"
+      },
+      {
+        "title": "One-Tap Service",
+        "description": "Call Waiter and Call Receipt go straight to staff with the exact table number. Faster service, fewer interruptions, happier guests.",
+        "mockupLabel": "Service Request"
+      }
+    ]
+  },
+  "PlatformDeepDive": {
+    "admin": {
+      "eyebrow": "Admin Dashboard",
+      "title1": "Everything managed",
+      "title2": "from one place.",
+      "description": "Your admin controls every guest touchpoint — menu, marketing, events, staff, and TV screens — all at once, with no technical knowledge required.",
+      "cta": "Explore Admin Features",
+      "mockupLabel": "Admin Dashboard",
+      "features": [
+        "Regions & table management",
+        "Staff accounts & permissions",
+        "Product categories & pricing",
+        "QR code generator & tracking",
+        "Banners, events & promotions",
+        "TV app content scheduling",
+        "Venue settings & branding",
+        "Real-time sync across all platforms"
+      ]
+    },
+    "apps": {
+      "eyebrow": "Native Apps",
+      "title1": "Your team,",
+      "title2": "always in sync.",
+      "description": "iOS and Android staff apps receive table requests, menu updates, and management alerts in real time — keeping service sharp and your team on the same page.",
+      "downloadOnThe": "Download on the",
+      "appStore": "App Store",
+      "getItOn": "Get it on",
+      "googlePlay": "Google Play",
+      "downloadOnAppStore": "Download on the App Store",
+      "getItOnGooglePlay": "Get it on Google Play",
+      "mockupLabel": "Staff App",
+      "features": [
+        "Real-time Call Waiter / Call Receipt alerts",
+        "Table number identification",
+        "Instant menu update notifications",
+        "Multi-venue management support",
+        "Available on iOS & Android"
+      ]
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "How it works",
+    "title": "Up and running in minutes.",
+    "description": "No developers, no complicated onboarding. Three steps and your restaurant's entire marketing stack is live.",
+    "stepLabel": "Step {number}",
+    "cta": "Get Started Free",
+    "trustLine": "14-day free trial · Credit card required · No charge until day 15 · Cancel anytime",
+    "steps": [
+      {
+        "title": "Set up your menu",
+        "description": "Upload a photo or PDF of your existing paper menu — AI builds the full menu for you, translated and localized across all supported languages. Most restaurants are live in under 10 minutes.",
+        "tags": ["AI-powered import", "Auto-localized", "Photos & modifiers", "~10 min setup"]
+      },
+      {
+        "title": "Activate your marketing",
+        "description": "Configure banners, featured products, event promotions, and push notification content — all from the same admin. No extra tools, no extra logins.",
+        "tags": ["Hero banners", "Push notifications", "Event promos", "TV display"]
+      },
+      {
+        "title": "Every scan works for you",
+        "description": "Guests get a native app experience. Notifications fire automatically. TV screens update live. Staff get real-time service alerts. All hands-free.",
+        "tags": ["Hands-free", "Real-time alerts", "All touchpoints", "Zero staff input"]
+      }
+    ]
+  },
+  "PromotionsROI": {
+    "eyebrow": "Real revenue impact",
+    "title1": "Your notifications earn",
+    "title2": "their keep.",
+    "description": "Every QR scan auto-schedules a push notification. Here's what that looks like at 1,000 scans a month — with zero extra work from you.",
+    "disclaimer": "Based on illustrative estimates. Results vary by venue, promotion quality, and audience.",
+    "promotions": [
+      {
+        "type": "Product Promotion",
+        "title": "Turn scans into sales, automatically.",
+        "steps": [
+          { "label": "QR scans / month", "value": "1,000", "sub": "Each scan schedules a push" },
+          { "label": "Push open rate", "value": "25%", "sub": "250 promo views" },
+          { "label": "Conversion rate", "value": "20%", "sub": "50 extra orders" },
+          { "label": "Avg. promo price", "value": "$5", "sub": "per order" }
+        ]
+      },
+      {
+        "type": "Event Promotion",
+        "title": "Fill more seats without lifting a finger.",
+        "steps": [
+          { "label": "QR scans / month", "value": "1,000", "sub": "Each scan schedules a push" },
+          { "label": "Push open rate", "value": "30%", "sub": "300 promo opens" },
+          { "label": "Booking rate", "value": "10%", "sub": "30 new RSVPs" },
+          { "label": "Avg. spend / attendee", "value": "$25", "sub": "per booking" }
+        ]
+      }
+    ]
+  },
+  "Testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Loved by restaurants worldwide.",
+    "description": "From independent cafés to multi-location venues — restaurants that switched to Feather didn't look back.",
+    "testimonials": [
+      {
+        "quote": "We switched from a basic QR menu and within a week our banner was promoting our new cocktail menu. Sales went up 23% that month alone.",
+        "name": "Marco Bianchi",
+        "venue": "La Terrazza",
+        "city": "Milan, Italy"
+      },
+      {
+        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather.",
+        "name": "Sarah Chen",
+        "venue": "Harbor View",
+        "city": "Sydney, Australia"
+      },
+      {
+        "quote": "Push notifications changed how we think about slow Tuesdays. We sent a promo and had a fully booked evening. Never happened with a regular QR menu.",
+        "name": "Ahmed Al-Rashid",
+        "venue": "Souk Kitchen",
+        "city": "Dubai, UAE"
+      }
+    ]
+  },
+  "PricingTeaser": {
+    "eyebrow": "Pricing",
+    "title": "Simple, transparent pricing.",
+    "description": "Start free. Upgrade when you're ready to unlock the full marketing platform.",
+    "compareAllFeatures": "Compare all plan features",
+    "trialGuarantee": "Paid plans start with a <strong>14-day free trial</strong>. A credit card is required to begin — but <strong>no payment is processed</strong> until day 15. Cancel anytime before then and you won't be charged.",
+    "trialNote": "Credit card required · No charge for 14 days · Cancel anytime",
+    "mostPopular": "Most Popular",
+    "forever": "forever",
+    "perMonth": "per month",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "Free",
+        "description": "Everything you need to go digital and ditch the paper menu.",
+        "cta": "Get Started Free",
+        "features": [
+          "1 venue location",
+          "Up to 50 products",
+          "QR code digital menu",
+          "iOS App Clip & Android instant open",
+          "One-tap Call Waiter / Receipt"
+        ]
+      },
+      {
+        "name": "Growth",
+        "price": "$29",
+        "description": "Turn your menu into a marketing channel that works around the clock.",
+        "cta": "Start 14-Day Free Trial",
+        "features": [
+          "Everything in Starter",
+          "Unlimited products",
+          "Banner & Top Product promotion",
+          "Auto push notifications",
+          "Event promotion + calendar reminders",
+          "Analytics dashboard"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "$79",
+        "description": "The complete platform for multi-location venues and power users.",
+        "cta": "Start 14-Day Free Trial",
+        "features": [
+          "Everything in Growth",
+          "Multiple venue locations",
+          "TV Display App",
+          "Staff iOS & Android apps",
+          "Multi-region management",
+          "Priority support"
+        ]
+      }
+    ]
+  },
+  "CTABand": {
+    "title": "Ready to make every scan count?",
+    "description": "Join thousands of restaurants already using Feather to fill seats, run promotions, and stay in front of their guests — automatically, every time a QR code is scanned.",
+    "startTrial": "Start 14-Day Free Trial",
+    "exploreFeatures": "Explore All Features",
+    "trustLine": "Credit card required · No payment processed during the trial · Cancel anytime"
+  },
+  "FeaturesPageHero": {
+    "eyebrow": "Platform Features",
+    "title1": "Everything your guests see.",
+    "title2": "Everything you control.",
+    "description": "Six powerful touchpoints — all managed from a single admin dashboard. No downloads required, no tech skills needed, no friction for your guests.",
+    "startFreeTrial": "Start Free Trial",
+    "viewPricing": "View Pricing",
+    "featureNames": [
+      "Instant Access",
+      "Product Banners",
+      "Push Notifications",
+      "Event Promotions",
+      "TV Display",
+      "One-Tap Service"
+    ]
+  },
+  "FeaturesSubNav": {
+    "instantAccess": "Instant Access",
+    "banners": "Banners",
+    "notifications": "Notifications",
+    "events": "Events",
+    "tvApp": "TV App",
+    "service": "Service"
+  },
+  "FeatureDeepDive": {
+    "features": [
+      {
+        "eyebrow": "01 · Instant Access",
+        "title": "Instant Native Experience",
+        "description": "Once a guest taps Open from a QR code scan, Feather launches immediately — no App Store download, no sign-up screen, no waiting. iOS uses App Clip and Android uses Instant App technology to deliver a fully native experience in under a second. The menu loads with silky-smooth animations and sub-100ms response times, feeling as fast and familiar as any app they already have on their phone.",
+        "mockupLabel": "Guest Menu View",
+        "bullets": [
+          "iOS App Clip & Android Instant App — zero install required",
+          "Up to 3-second loading scene entertains while assets download",
+          "Sub-100ms response times and smooth, native-feeling animations",
+          "Admin controls menu layout and categories from web or mobile app"
+        ]
+      },
+      {
+        "eyebrow": "02 · Marketing",
+        "title": "Product Banners",
+        "description": "Right below the service buttons, guests see a full-width banner image — the first marketing touchpoint in their browsing session. You set it up from your admin app by selecting a product and uploading an image. When a guest taps the banner, a product is added to their cart, an event page opens for booking, or they're redirected to any linked page. No searching, no extra steps. It's the perfect spotlight for signature cocktails, seasonal specials, or even paid supplier promotions.",
+        "mockupLabel": "Product Banner",
+        "bullets": [
+          "Full-width hero banner — the first thing guests notice",
+          "Tap to add product to cart, open an event, or redirect to any URL",
+          "Perfect for high-margin items, seasonal specials, and partner promos",
+          "Fully managed from your admin app — update anytime, instantly"
+        ]
+      },
+      {
+        "eyebrow": "03 · Re-engagement",
+        "title": "Auto Push Notifications",
+        "description": "Every time a guest scans your QR code, Feather automatically schedules a local push notification to appear one hour later — while the guest is still nearby and thinking about food. Tapping the notification opens a full promo screen with a featured image or video, custom title, description, and an Order now button. If the app is opened another way, it checks whether the promo was already shown and schedules it if not. All content is fully managed through your admin app — no technical work required.",
+        "mockupLabel": "Notification Promo",
+        "bullets": [
+          "Fires automatically on every QR code scan — zero staff effort",
+          "Promo screen with image, video, title, description, and CTA",
+          "Content fully managed from your admin app",
+          "Opens a natural revenue channel for paid supplier promotions"
+        ]
+      },
+      {
+        "eyebrow": "04 · Events",
+        "title": "Event Promotions",
+        "description": "Just like product promotions, event notifications are triggered automatically when a guest scans your QR code — a reminder appears one hour later, keeping your event top-of-mind even after the guest has left. Tapping the notification opens a custom event screen with an image or video, title, and description. Guests then see two clear actions: Book now to call the venue directly, and Remind me to save the event to their calendar with a single tap. Fill more seats without any flyers, follow-up calls, or staff effort.",
+        "mockupLabel": "Event Promo Screen",
+        "bullets": [
+          "Triggered 1 hour after QR scan — just like product promos",
+          "\"Book now\" calls the venue, \"Remind me\" saves to their calendar",
+          "Custom image or video content set from the admin app",
+          "Fill more seats without flyers, posts, or staff time"
+        ]
+      },
+      {
+        "eyebrow": "05 · In-Venue",
+        "title": "TV Display App",
+        "description": "The TV App turns every screen in your venue into a dynamic, always-on promo display. A looping slideshow cycles through products, upcoming events, partner advertisements, and featured items — all managed and scheduled from your admin dashboard. Each slide has a configurable display duration, so you control the pacing. Content updates in real time, meaning a new promo you set at the bar appears on every screen within seconds. It's effortless in-venue marketing that keeps guests informed and engaged throughout their visit.",
+        "mockupLabel": "TV Display",
+        "bullets": [
+          "Products, events, and partner ads in a dynamic slideshow",
+          "Per-slide duration control — set how long each slide is shown",
+          "Real-time updates from admin push to all screens instantly",
+          "Opens a recurring revenue stream for partner & supplier advertising"
+        ]
+      },
+      {
+        "eyebrow": "06 · Table Service",
+        "title": "One-Tap Service Requests",
+        "description": "Just below your business info, guests see two clear action buttons: Call Waiter and Call Receipt. With a single tap, a request goes straight to your staff's app with the table number — no waving, no wondering if someone noticed. The right server knows exactly where to go, every time. This reduces delays, improves table turnover, and ensures every guest feels attended to. Faster service keeps guests happier, and happier guests order more and tip better.",
+        "mockupLabel": "Service Request",
+        "bullets": [
+          "\"Call Waiter\" and \"Call Receipt\" visible on every guest menu",
+          "Alerts go directly to staff app with the exact table number",
+          "Reduces delays and eliminates missed requests",
+          "Faster table turnover — guests order more, tip better"
+        ]
+      }
+    ]
+  },
+  "PricingPageHero": {
+    "eyebrow": "Pricing",
+    "title": "Simple, honest pricing.",
+    "description": "Start free and upgrade when your marketing needs to. No hidden fees, no surprises."
+  },
+  "PricingPlans": {
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "save20": "Save 20%",
+    "billedAnnually": "Billed annually — was {price}/mo",
+    "trialNote": "Credit card required · No charge for 14 days · Cancel anytime",
+    "trialGuarantee": "Paid plans start with a <strong>14-day free trial</strong>. A credit card is required to begin — but <strong>no payment is processed</strong> until day 15. Cancel anytime before then and you won't be charged.",
+    "forever": "forever",
+    "perMonth": "per month",
+    "mostPopular": "Most Popular",
+    "plans": [
+      {
+        "name": "Starter",
+        "monthlyPrice": "Free",
+        "annualPrice": "Free",
+        "description": "Everything you need to go digital and ditch the paper menu.",
+        "cta": "Get Started Free",
+        "features": [
+          "1 venue location",
+          "Up to 50 products",
+          "QR code digital menu",
+          "iOS App Clip & Android instant open",
+          "One-tap Call Waiter / Receipt",
+          "Community support"
+        ]
+      },
+      {
+        "name": "Growth",
+        "monthlyPrice": "$29",
+        "annualPrice": "$23",
+        "description": "Turn your menu into a marketing channel that works around the clock.",
+        "cta": "Start 14-Day Free Trial",
+        "features": [
+          "Everything in Starter",
+          "Unlimited products",
+          "Banner & Top Product promotion",
+          "Auto push notifications",
+          "Event promotion + calendar reminders",
+          "Analytics dashboard",
+          "Email support"
+        ]
+      },
+      {
+        "name": "Pro",
+        "monthlyPrice": "$79",
+        "annualPrice": "$63",
+        "description": "The complete platform for multi-location venues and power users.",
+        "cta": "Start 14-Day Free Trial",
+        "features": [
+          "Everything in Growth",
+          "Multiple venue locations",
+          "TV Display App",
+          "Staff iOS & Android apps",
+          "Multi-region management",
+          "Priority support"
+        ]
+      }
+    ]
+  },
+  "PricingComparisonTable": {
+    "eyebrow": "Full Comparison",
+    "title": "Compare all plan features",
+    "featureHeader": "Feature",
+    "priceNote": "All prices shown are monthly rates. Annual billing saves 20% on paid plans.",
+    "starterFree": "Free",
+    "categories": [
+      {
+        "title": "Digital Menu",
+        "rows": [
+          { "label": "Venue locations", "starter": "1", "growth": "1", "pro": "Unlimited" },
+          { "label": "Products", "starter": "Up to 50", "growth": "Unlimited", "pro": "Unlimited" },
+          { "label": "QR code digital menu", "starter": true, "growth": true, "pro": true },
+          { "label": "iOS App Clip & Android instant open", "starter": true, "growth": true, "pro": true },
+          { "label": "One-tap Call Waiter / Receipt", "starter": true, "growth": true, "pro": true }
+        ]
+      },
+      {
+        "title": "Marketing",
+        "rows": [
+          { "label": "Banner & Top Product promotion", "starter": false, "growth": true, "pro": true },
+          { "label": "Auto push notifications", "starter": false, "growth": true, "pro": true },
+          { "label": "Event promotions + calendar reminders", "starter": false, "growth": true, "pro": true },
+          { "label": "Analytics dashboard", "starter": false, "growth": true, "pro": true }
+        ]
+      },
+      {
+        "title": "Multi-location & Display",
+        "rows": [
+          { "label": "Multiple venue locations", "starter": false, "growth": false, "pro": true },
+          { "label": "TV Display App", "starter": false, "growth": false, "pro": true },
+          { "label": "Staff iOS & Android apps", "starter": false, "growth": false, "pro": true },
+          { "label": "Multi-region management", "starter": false, "growth": false, "pro": true }
+        ]
+      },
+      {
+        "title": "Support",
+        "rows": [
+          { "label": "Support tier", "starter": "Community", "growth": "Email", "pro": "Priority" }
+        ]
+      }
+    ]
+  }
+}
