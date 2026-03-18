@@ -47,7 +47,7 @@
     "trustLine": "14-day free trial · Credit card required · No charge until day 15 · Cancel anytime",
     "scrollDown": "Scroll down",
     "card1Title": "A message to every guest",
-    "card1Desc": "Every QR scan auto-schedules a push notification 1 hour later — your brand stays with guests long after they leave.",
+    "card1Desc": "Every QR scan triggers a push notification on your timing. Set the delay from your admin - whether that's 10 minutes or longer - and re-engage guests at exactly the right moment.",
     "card2Title": "Live in 2 minutes",
     "card2Desc": "Upload your paper menu or PDF — AI builds the full digital menu, translated and categorized, in minutes.",
     "card3Title": "Every scan earns",
@@ -92,7 +92,7 @@
       "items": [
         "Native App Clip — no download, sub-100ms",
         "Banner + Top Product upsell on every open",
-        "Push notification fires 1 hr after every scan",
+        "Push notification timing is fully configurable for every scan",
         "Event promo with 'Book now' & 'Remind me'",
         "TV Display App fed from the same admin",
         "One-tap Call Waiter / Call Receipt"
@@ -116,7 +116,7 @@
       },
       {
         "title": "Auto Push Notifications",
-        "description": "Every QR scan auto-schedules a promo notification one hour later. Image, video, or 'Order now' — fully controlled from your admin.",
+        "description": "Every QR scan schedules a promo notification at the timing your restaurant chooses, whether that's 10 minutes or longer. Launch image or video campaigns with an 'Order now' CTA - fully managed from your admin.",
         "mockupLabel": "Notification Promo"
       },
       {
@@ -338,7 +338,8 @@
     "notifications": "Notifications",
     "events": "Events",
     "tvApp": "TV App",
-    "service": "Service"
+    "service": "Service",
+    "analytics": "Analytics"
   },
   "FeatureDeepDive": {
     "features": [
@@ -369,7 +370,7 @@
       {
         "eyebrow": "03 · Re-engagement",
         "title": "Auto Push Notifications",
-        "description": "Every time a guest scans your QR code, Feather automatically schedules a local push notification to appear one hour later — while the guest is still nearby and thinking about food. Tapping the notification opens a full promo screen with a featured image or video, custom title, description, and an Order now button. If the app is opened another way, it checks whether the promo was already shown and schedules it if not. All content is fully managed through your admin app — no technical work required.",
+        "description": "Every time a guest scans your QR code, Feather schedules a local push notification using the exact delay your restaurant s  ets, whether that's 10 minutes or longer, so your offer reaches guests while intent is still high. Tapping the notification opens a high-converting promo screen with a featured image or video, custom title, description, and an Order now button. If the app is opened another way, Feather checks whether the promo has already been shown and schedules it if needed. Everything is managed from your admin app, with no technical setup required.",
         "mockupLabel": "Notification Promo",
         "bullets": [
           "Fires automatically on every QR code scan — zero staff effort",
@@ -381,10 +382,10 @@
       {
         "eyebrow": "04 · Events",
         "title": "Event Promotions",
-        "description": "Just like product promotions, event notifications are triggered automatically when a guest scans your QR code — a reminder appears one hour later, keeping your event top-of-mind even after the guest has left. Tapping the notification opens a custom event screen with an image or video, title, and description. Guests then see two clear actions: Book now to call the venue directly, and Remind me to save the event to their calendar with a single tap. Fill more seats without any flyers, follow-up calls, or staff effort.",
+        "description": "Just like product promotions, event notifications are triggered automatically when a guest scans your QR code. The reminder is sent at the delay your restaurant configures, whether that's 10 minutes or longer, keeping your event top-of-mind after the visit. Tapping the notification opens a custom event screen with an image or video, title, and description. Guests then get two clear next steps: Book now to call the venue directly, and Remind me to save the event to their calendar in one tap. Drive more bookings without flyers, follow-up calls, or extra staff effort.",
         "mockupLabel": "Event Promo Screen",
         "bullets": [
-          "Triggered 1 hour after QR scan — just like product promos",
+          "Sent at your configured delay after each QR scan — just like product promos",
           "\"Book now\" calls the venue, \"Remind me\" saves to their calendar",
           "Custom image or video content set from the admin app",
           "Fill more seats without flyers, posts, or staff time"
@@ -522,5 +523,154 @@
         ]
       }
     ]
+  },
+  "AboutPageHero": {
+    "eyebrow": "About Feather",
+    "title1": "Built for restaurants",
+    "title2": "that want more than a menu.",
+    "description": "Feather helps restaurants turn every QR scan into a measurable growth channel with automated marketing, better in-venue service, and one dashboard for the entire guest journey.",
+    "startFreeTrial": "Start Free Trial",
+    "exploreFeatures": "Explore Features"
+  },
+  "AboutNarrative": {
+    "eyebrow": "Why we exist",
+    "title": "Restaurants deserve tools that actually drive growth.",
+    "description1": "Most digital menu tools stop at displaying items. Feather was built to do more: re-engage guests after every scan, promote high-margin products, and keep teams aligned in real time.",
+    "description2": "Our goal is simple: remove friction for guests, remove manual work for staff, and make revenue impact visible for every venue.",
+    "principlesTitle": "What we optimize for",
+    "points": [
+      {
+        "title": "Automation over extra workload",
+        "description": "Core growth actions run automatically so teams do not need to chase every campaign manually."
+      },
+      {
+        "title": "Conversion over vanity metrics",
+        "description": "From first scan to completed order, every touchpoint is designed to move guests toward action."
+      },
+      {
+        "title": "One system over tool sprawl",
+        "description": "Menu, promotions, events, service calls, and analytics stay connected in a single operating layer."
+      }
+    ]
+  },
+  "AboutPlatformSnapshot": {
+    "eyebrow": "Platform snapshot",
+    "title": "One platform, every key touchpoint.",
+    "description": "Feather combines guest engagement and operations into one flow so your team can market smarter and serve faster.",
+    "items": [
+      {
+        "title": "Auto Notifications",
+        "description": "Every scan can trigger timed promos that bring guests back with no extra staff effort."
+      },
+      {
+        "title": "Event Promotions",
+        "description": "Promote upcoming events with clear actions like booking calls and calendar reminders."
+      },
+      {
+        "title": "TV Display App",
+        "description": "Turn in-venue screens into live marketing surfaces managed from the same admin."
+      },
+      {
+        "title": "One-Tap Service",
+        "description": "Call Waiter and Call Receipt requests go straight to staff with precise table context."
+      },
+      {
+        "title": "Clear Analytics",
+        "description": "Track scans, engagement, orders, and service patterns to improve decisions every week."
+      }
+    ]
+  },
+  "FaqPageMeta": {
+    "title": "FAQ — Feather Restaurant Marketing Platform",
+    "description": "Find quick answers about setup, pricing, notifications, integrations, and support for Feather.",
+    "ogTitle": "FAQ — Feather Restaurant Marketing Platform",
+    "ogDescription": "Find quick answers about setup, pricing, notifications, integrations, and support for Feather."
+  },
+  "FaqPageHero": {
+    "eyebrow": "FAQ",
+    "title": "Your Feather questions, answered.",
+    "description": "Everything you need to launch confidently and get value from day one."
+  },
+  "FaqList": {
+    "eyebrow": "Common questions",
+    "title": "Everything you need to know",
+    "description": "From onboarding to billing and campaign setup, these are the questions we hear most often from restaurant teams.",
+    "categories": [
+      {
+        "title": "Getting started",
+        "items": [
+          {
+            "question": "How long does setup take?",
+            "answer": "Most venues are live in under 10 minutes. Upload your menu file, review generated categories, and publish."
+          },
+          {
+            "question": "Do I need developers to launch Feather?",
+            "answer": "No. Feather is built for restaurant operators and managers. The onboarding flow is fully self-serve."
+          },
+          {
+            "question": "Can I migrate from my current QR menu tool?",
+            "answer": "Yes. You can import your menu content and replace your table QR codes gradually, so service is never interrupted."
+          }
+        ]
+      },
+      {
+        "title": "Features and campaigns",
+        "items": [
+          {
+            "question": "How do push notifications work?",
+            "answer": "Each QR scan can trigger an automated campaign after a delay you choose. You can send product promos, event reminders, or seasonal offers from the admin dashboard."
+          },
+          {
+            "question": "Can I promote events and collect reminders?",
+            "answer": "Yes. Event campaigns can include clear calls to action such as booking links and calendar reminders."
+          },
+          {
+            "question": "Is TV Display content managed from the same dashboard?",
+            "answer": "Yes. Promotions, products, and event creatives for in-venue screens are managed in the same admin area."
+          }
+        ]
+      },
+      {
+        "title": "Pricing and support",
+        "items": [
+          {
+            "question": "Do you offer a free trial?",
+            "answer": "Yes. You can start with a 14-day free trial. Billing begins only after the trial period."
+          },
+          {
+            "question": "Can I cancel anytime?",
+            "answer": "Yes. You can cancel from your account settings and your plan will not renew for the next cycle."
+          },
+          {
+            "question": "What support is included?",
+            "answer": "Support depends on plan tier. All plans include core documentation and help resources, while higher tiers include faster direct support."
+          }
+        ]
+      }
+    ]
+  },
+  "AnalyticsDashboard": {
+    "eyebrow": "Analytics",
+    "title": "See exactly\nwhat's working.",
+    "description": "Every scan, view, order, and service call is logged and surfaced in a clear admin dashboard — so you can stop guessing and start optimizing. Track engagement across every Feather feature in one place.",
+    "bullets": [
+      "Live KPI metrics: Menu Opens, Product Views, Orders, Service Calls",
+      "Engagement funnel from first scan through to completed order",
+      "Menu opens over time with traffic source breakdown",
+      "Peak hours heatmap to staff and promote at the right moments",
+      "Banner & notification ROI funnels — see exactly what converts",
+      "Product views ranking and most-ordered items at a glance",
+      "Customer return rate to measure loyalty over any period"
+    ],
+    "kpiMenuOpens": "Menu Opens",
+    "kpiProductViews": "Product Views",
+    "kpiOrders": "Orders Made",
+    "kpiServiceCalls": "Service Calls",
+    "funnelTitle": "Engagement Funnel",
+    "funnelSub": "Conversion from total menu opens",
+    "chartTitle": "Menu Opens Over Time",
+    "peakTitle": "Peak Hours",
+    "sourcesTitle": "Traffic Sources",
+    "topProductsTitle": "Top Products"
   }
 }

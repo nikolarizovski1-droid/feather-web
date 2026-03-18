@@ -8,6 +8,7 @@ import FeaturesGrid from "@/components/sections/FeaturesGrid";
 import PlatformDeepDive from "@/components/sections/PlatformDeepDive";
 import HowItWorks from "@/components/sections/HowItWorks";
 import PromotionsROI from "@/components/sections/PromotionsROI";
+import AnalyticsDashboard from "@/components/sections/AnalyticsDashboard";
 import Testimonials from "@/components/sections/Testimonials";
 import PricingTeaser from "@/components/sections/PricingTeaser";
 import CTABand from "@/components/sections/CTABand";
@@ -29,6 +30,7 @@ export default async function Home({
         <StatsBar />
         <ComparisonSection />
         <FeaturesGrid />
+        <AnalyticsDashboard />
         <PlatformDeepDive />
         <HowItWorks />
         <PromotionsROI />

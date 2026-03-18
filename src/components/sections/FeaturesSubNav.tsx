@@ -13,6 +13,7 @@ export default function FeaturesSubNav() {
     { label: t("events"), href: "#events" },
     { label: t("tvApp"), href: "#tv-app" },
     { label: t("service"), href: "#service" },
+    { label: t("analytics"), href: "#analytics" },
   ];
 
   const sectionIds = navItems.map((item) => item.href.slice(1));

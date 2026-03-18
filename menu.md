@@ -44,15 +44,15 @@ This section puts your most important dishes front and centre. You control what 
 
 Product Promotion
 
-When a guest scans the menu QR code, the app automatically schedules a local promotion notification to appear after one hour. This happens every time the QR is scanned, keeping your venue top-of-mind while the guest is still nearby. If the app is opened by other means, it checks if the promo was already shown and if not, it schedules it.   Tapping the notification opens a promo screen with a featured image or video, custom title, description, and “Order now” button. All content is fully managed through the admin app.   This feature drives more orders, creates upsell opportunities, and opens space for paid supplier promotions, without needing any paper ads or manual work.
+When a guest scans the menu QR code, the app automatically schedules a local promotion notification using the delay set by the restaurant, whether that's 10 minutes or longer. This happens on every scan, helping your venue stay top-of-mind while purchase intent is still high. If the app is opened another way, it checks whether the promo was already shown and schedules it if needed.   Tapping the notification opens a promo screen with a featured image or video, custom title, description, and an “Order now” button. All content is managed directly from the admin app.   The result is more repeat orders, stronger upsell performance, and additional space for paid supplier campaigns, without paper ads or manual follow-up.
 
 Event Promotion
 
-Just like with product promotions, if an event notification is set up, scanning the menu QR code triggers a local reminder to appear after one hour. This keeps the event top of mind even if the guest has already left. If the app is opened another way, it checks if the notification was delivered and if not, it schedules it.
+Just like product promotions, if an event notification is enabled, scanning the menu QR code triggers a local reminder at the delay configured by the restaurant, whether that's 10 minutes or longer. This keeps the event top-of-mind even after the guest leaves. If the app is opened another way, it checks whether the notification was delivered and schedules it if needed.
 
- Tapping the notification opens an event screen with a custom image or video, title, and description, managed from the admin app. For event promotion user see two options: “Book now” to call the venue, and “Remind me” to add the event to their calendar with one tap.
+ Tapping the notification opens an event screen with a custom image or video, title, and description, all managed from the admin app. Guests then see two clear actions: “Book now” to call the venue directly, and “Remind me” to add the event to their calendar in one tap.
 
-  This keeps event promotion effortless, lets guests take action quickly, and helps fill more seats without any staff effort.
+  This makes event promotion effortless, helps guests take action faster, and fills more seats without adding staff workload.
 
   TV APP
   Benefits

@@ -6,6 +6,7 @@ import RevealObserver from "@/components/ui/RevealObserver";
 import FeaturesPageHero from "@/components/sections/FeaturesPageHero";
 import FeaturesSubNav from "@/components/sections/FeaturesSubNav";
 import FeatureDeepDive from "@/components/sections/FeatureDeepDive";
+import AnalyticsDashboard from "@/components/sections/AnalyticsDashboard";
 import PlatformDeepDive from "@/components/sections/PlatformDeepDive";
 import CTABand from "@/components/sections/CTABand";
 
@@ -37,6 +38,7 @@ export default async function FeaturesPage({
         <FeaturesPageHero />
         <FeaturesSubNav />
         <FeatureDeepDive />
+        <AnalyticsDashboard />
         <PlatformDeepDive />
         <CTABand />
       </main>
