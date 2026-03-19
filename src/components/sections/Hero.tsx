@@ -86,7 +86,7 @@ export default async function Hero() {
         </div>
 
         {/* ── Panel 1 — Brand + CTA (top-left → pulls to bottom-right) ─ */}
-        <div className="relative flex flex-col justify-start lg:justify-end p-8 sm:p-10 xl:p-14 pt-20 sm:pt-24 lg:pt-20 xl:pt-28 pb-10 lg:pb-14 min-h-[80vh] lg:min-h-0 overflow-hidden border-b border-white/[0.07] lg:border-r">
+        <div className="relative flex flex-col justify-start lg:justify-end p-8 sm:p-10 xl:p-14 pt-20 sm:pt-24 lg:pt-20 xl:pt-28 pb-10 lg:pb-14 min-h-[auto] lg:min-h-0 overflow-hidden border-b border-white/[0.07] lg:border-r">
 
           {/* ambient glow — bottom-right to reinforce pull direction */}
           <div
@@ -161,7 +161,7 @@ export default async function Hero() {
         </div>
 
         {/* ── Panel 2 — Auto Push Notifications (top-right → pulls to bottom-left) ── */}
-        <div className="relative flex flex-col justify-start lg:justify-end p-8 sm:p-10 xl:p-12 pt-10 lg:pt-20 xl:pt-28 pb-10 lg:pb-14 min-h-[80vh] lg:min-h-0 overflow-hidden border-b border-white/[0.07] group">
+        <div className="relative flex flex-col justify-start lg:justify-end p-8 sm:p-10 xl:p-12 pt-10 lg:pt-20 xl:pt-28 pb-10 lg:pb-14 min-h-[auto] lg:min-h-0 overflow-hidden border-b border-white/[0.07] group">
 
           <div
             className="absolute inset-0 pointer-events-none transition-opacity duration-700 opacity-0 group-hover:opacity-100"
@@ -249,7 +249,7 @@ export default async function Hero() {
         </div>
 
         {/* ── Panel 3 — Live in 2 minutes (bottom-left → pulls to top-right) ── */}
-        <div className="relative flex flex-col justify-start p-8 sm:p-10 xl:p-12 pt-10 lg:pt-14 pb-10 lg:pb-20 xl:pb-28 min-h-[80vh] lg:min-h-0 overflow-hidden border-b border-white/[0.07] lg:border-b-0 lg:border-r group">
+        <div className="relative flex flex-col justify-start p-8 sm:p-10 xl:p-12 pt-10 lg:pt-14 pb-10 lg:pb-20 xl:pb-28 min-h-[auto] lg:min-h-0 overflow-hidden border-b border-white/[0.07] lg:border-b-0 lg:border-r group">
 
           {/* ambient glow — top-right to reinforce pull direction */}
           <div
@@ -341,7 +341,7 @@ export default async function Hero() {
         </div>
 
         {/* ── Panel 4 — Revenue Impact (bottom-right → pulls to top-left) ── */}
-        <div className="relative flex flex-col justify-start p-8 sm:p-10 xl:p-12 pt-10 lg:pt-14 pb-10 lg:pb-20 xl:pb-28 min-h-[80vh] lg:min-h-0 overflow-hidden group">
+            <div className="relative flex flex-col justify-start p-8 sm:p-10 xl:p-12 pt-10 lg:pt-14 pb-10 lg:pb-20 xl:pb-28 min-h-[auto] lg:min-h-0 overflow-hidden group">
 
           {/* ambient glow — top-left to reinforce pull direction */}
           <div

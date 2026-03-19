@@ -1,23 +1,13 @@
 import React from "react";
 import { Check, Minus } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import type { Plan, PlansApiResponse } from "@/types/pricing";
+import { getLocalized } from "@/lib/i18n-helpers";
 
-type CellValue = true | false | string;
+const TIER_ORDER = ["basic", "standard", "premium"] as const;
 
-interface FeatureRow {
-  label: string;
-  starter: CellValue;
-  growth: CellValue;
-  pro: CellValue;
-}
-
-interface Category {
-  title: string;
-  rows: FeatureRow[];
-}
-
-function Cell({ value }: { value: CellValue }) {
-  if (value === true) {
+function Cell({ value }: { value: boolean }) {
+  if (value) {
     return (
       <div className="flex justify-center">
         <div className="flex h-5 w-5 items-center justify-center rounded-full bg-brand/10">
@@ -26,22 +16,71 @@ function Cell({ value }: { value: CellValue }) {
       </div>
     );
   }
-  if (value === false) {
-    return (
-      <div className="flex justify-center">
-        <Minus size={16} className="text-ink-06" />
-      </div>
-    );
-  }
   return (
-    <span className="text-sm text-white/70 font-medium">{value}</span>
+    <div className="flex justify-center">
+      <Minus size={16} className="text-ink-06" />
+    </div>
   );
 }
 
-export default async function PricingComparisonTable() {
+function getTierLabel(plan: Plan, locale: string): string {
+  const name = getLocalized(plan.name_translations, locale);
+  return name.split(" - ")[0] || name;
+}
+
+interface ComparisonCategory {
+  title: string;
+  rows: {
+    label: string;
+    cells: boolean[];
+  }[];
+}
+
+function buildComparisonData(
+  monthlyPlans: Plan[],
+  locale: string,
+): ComparisonCategory[] {
+  const featureNameSets = monthlyPlans.map(
+    (p) => new Set(p.features.map((f) => f.name)),
+  );
+
+  return monthlyPlans.map((plan, tierIdx) => ({
+    title: getTierLabel(plan, locale),
+    rows: plan.direct_features.map((df) => ({
+      label: getLocalized(df.title_translations, locale),
+      cells: featureNameSets.map((set) => set.has(df.name)),
+    })),
+  }));
+}
+
+interface PricingComparisonTableProps {
+  plans: PlansApiResponse | null;
+  locale: string;
+}
+
+export default async function PricingComparisonTable({
+  plans,
+  locale,
+}: PricingComparisonTableProps) {
   const t = await getTranslations("PricingComparisonTable");
 
-  const categories = t.raw("categories") as Category[];
+  if (!plans) {
+    return (
+      <section className="py-24 lg:py-32 bg-surface" aria-label="Feature comparison">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-white/60">{t("apiError")}</p>
+        </div>
+      </section>
+    );
+  }
+
+  const monthlyPlans = TIER_ORDER.map((key) =>
+    plans.plans.find((p) => p.plan_key === key && p.duration === "1m"),
+  ).filter((p): p is Plan => p != null);
+
+  if (monthlyPlans.length === 0) return null;
+
+  const categories = buildComparisonData(monthlyPlans, locale);
 
   return (
     <section className="py-24 lg:py-32 bg-surface" aria-label="Feature comparison">
@@ -70,53 +109,53 @@ export default async function PricingComparisonTable() {
           className="overflow-x-auto rounded-2xl border border-white/5"
         >
           <table className="w-full border-collapse text-left">
-            {/* Sticky header */}
             <thead>
               <tr className="border-b border-white/8 bg-ink-07">
                 <th className="py-5 pl-6 pr-4 text-sm font-semibold text-white/40 w-1/2">
                   {t("featureHeader")}
                 </th>
-                <th className="py-5 px-4 text-center text-sm font-semibold text-white/70 w-[16.66%]">
-                  Starter
-                  <span className="block text-xs font-normal text-ink-05 mt-0.5">
-                    {t("starterFree")}
-                  </span>
-                </th>
-                <th className="py-5 px-4 text-center w-[16.66%]">
-                  <span className="inline-flex flex-col items-center">
-                    <span className="text-sm font-bold text-white">Growth</span>
-                    <span className="text-xs font-normal text-ink-05 mt-0.5">
-                      $29<span className="text-[10px]">/mo</span>
-                    </span>
-                  </span>
-                </th>
-                <th className="py-5 pl-4 pr-6 text-center text-sm font-semibold text-white/70 w-[16.66%]">
-                  Pro
-                  <span className="block text-xs font-normal text-ink-05 mt-0.5">
-                    $79<span className="text-[10px]">/mo</span>
-                  </span>
-                </th>
+                {monthlyPlans.map((plan, i) => {
+                  const label = getTierLabel(plan, locale);
+                  const isMiddle = plan.plan_tier === 2;
+                  const isLast = i === monthlyPlans.length - 1;
+                  return (
+                    <th
+                      key={plan.plan_key}
+                      className={`py-5 ${isLast ? "pl-4 pr-6" : "px-4"} text-center w-[16.66%]`}
+                    >
+                      <span className="inline-flex flex-col items-center">
+                        <span
+                          className={`text-sm font-semibold ${isMiddle ? "font-bold text-white" : "text-white/70"}`}
+                        >
+                          {label}
+                        </span>
+                        <span className="text-xs font-normal text-ink-05 mt-0.5">
+                          {plan.price.formatted}
+                          <span className="text-[10px]">/{t("perMonth")}</span>
+                        </span>
+                      </span>
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
 
             <tbody>
               {categories.map((category, catIndex) => (
                 <React.Fragment key={category.title}>
-                  {/* Category header row */}
                   <tr
                     className={`border-b border-white/5 bg-ink-08/60 ${
                       catIndex > 0 ? "border-t border-white/8" : ""
                     }`}
                   >
                     <td
-                      colSpan={4}
+                      colSpan={1 + monthlyPlans.length}
                       className="py-3 pl-6 pr-4 text-xs font-bold uppercase tracking-widest text-brand/80"
                     >
                       {category.title}
                     </td>
                   </tr>
 
-                  {/* Feature rows */}
                   {category.rows.map((row, rowIndex) => (
                     <tr
                       key={row.label}
@@ -129,15 +168,20 @@ export default async function PricingComparisonTable() {
                       <td className="py-4 pl-6 pr-4 text-sm text-white/60 leading-snug">
                         {row.label}
                       </td>
-                      <td className="py-4 px-4 text-center">
-                        <Cell value={row.starter} />
-                      </td>
-                      <td className="py-4 px-4 text-center bg-brand/[0.03]">
-                        <Cell value={row.growth} />
-                      </td>
-                      <td className="py-4 pl-4 pr-6 text-center">
-                        <Cell value={row.pro} />
-                      </td>
+                      {row.cells.map((hasFeature, cellIdx) => {
+                        const isMiddle = monthlyPlans[cellIdx]?.plan_tier === 2;
+                        const isLast = cellIdx === row.cells.length - 1;
+                        return (
+                          <td
+                            key={cellIdx}
+                            className={`py-4 ${isLast ? "pl-4 pr-6" : "px-4"} text-center ${
+                              isMiddle ? "bg-brand/[0.03]" : ""
+                            }`}
+                          >
+                            <Cell value={hasFeature} />
+                          </td>
+                        );
+                      })}
                     </tr>
                   ))}
                 </React.Fragment>

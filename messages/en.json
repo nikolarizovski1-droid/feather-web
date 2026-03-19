@@ -44,7 +44,7 @@
     "subheadline": "More than a digital menu — every scan auto-triggers push notifications, fills your events, and keeps guests coming back. One dashboard. Zero extra effort.",
     "startFreeTrial": "Start Free Trial",
     "seeHowItWorks": "See How It Works",
-    "trustLine": "14-day free trial · Credit card required · No charge until day 15 · Cancel anytime",
+    "trustLine": "30-day free trial · Credit card required · No charge until day 31 · Cancel anytime",
     "scrollDown": "Scroll down",
     "card1Title": "A message to every guest",
     "card1Desc": "Every QR scan triggers a push notification on your timing. Set the delay from your admin - whether that's 10 minutes or longer - and re-engage guests at exactly the right moment.",
@@ -182,7 +182,7 @@
     "description": "No developers, no complicated onboarding. Three steps and your restaurant's entire marketing stack is live.",
     "stepLabel": "Step {number}",
     "cta": "Get Started Free",
-    "trustLine": "14-day free trial · Credit card required · No charge until day 15 · Cancel anytime",
+    "trustLine": "30-day free trial · Credit card required · No charge until day 31 · Cancel anytime",
     "steps": [
       {
         "title": "Set up your menu",
@@ -260,8 +260,8 @@
     "title": "Simple, transparent pricing.",
     "description": "Start free. Upgrade when you're ready to unlock the full marketing platform.",
     "compareAllFeatures": "Compare all plan features",
-    "trialGuarantee": "Paid plans start with a <strong>14-day free trial</strong>. A credit card is required to begin — but <strong>no payment is processed</strong> until day 15. Cancel anytime before then and you won't be charged.",
-    "trialNote": "Credit card required · No charge for 14 days · Cancel anytime",
+    "trialGuarantee": "Paid plans start with a <strong>30-day free trial</strong>. A credit card is required to begin — but <strong>no payment is processed</strong> until day 31. Cancel anytime before then and you won't be charged.",
+    "trialNote": "Credit card required · No charge for 30 days · Cancel anytime",
     "mostPopular": "Most Popular",
     "forever": "forever",
     "perMonth": "per month",
@@ -283,7 +283,7 @@
         "name": "Growth",
         "price": "$29",
         "description": "Turn your menu into a marketing channel that works around the clock.",
-        "cta": "Start 14-Day Free Trial",
+        "cta": "Start 30-Day Free Trial",
         "features": [
           "Everything in Starter",
           "Unlimited products",
@@ -297,7 +297,7 @@
         "name": "Pro",
         "price": "$79",
         "description": "The complete platform for multi-location venues and power users.",
-        "cta": "Start 14-Day Free Trial",
+        "cta": "Start 30-Day Free Trial",
         "features": [
           "Everything in Growth",
           "Multiple venue locations",
@@ -312,7 +312,7 @@
   "CTABand": {
     "title": "Ready to make every scan count?",
     "description": "Join thousands of restaurants already using Feather to fill seats, run promotions, and stay in front of their guests — automatically, every time a QR code is scanned.",
-    "startTrial": "Start 14-Day Free Trial",
+    "startTrial": "Start 30-Day Free Trial",
     "exploreFeatures": "Explore All Features",
     "trustLine": "Credit card required · No payment processed during the trial · Cancel anytime"
   },
@@ -424,105 +424,27 @@
   },
   "PricingPlans": {
     "monthly": "Monthly",
+    "sixMonths": "6 Months",
     "annual": "Annual",
-    "save20": "Save 20%",
+    "savePercent": "Save {percent}%",
+    "billedSemiAnnually": "Billed every 6 months — was {price}/mo",
     "billedAnnually": "Billed annually — was {price}/mo",
-    "trialNote": "Credit card required · No charge for 14 days · Cancel anytime",
-    "trialGuarantee": "Paid plans start with a <strong>14-day free trial</strong>. A credit card is required to begin — but <strong>no payment is processed</strong> until day 15. Cancel anytime before then and you won't be charged.",
-    "forever": "forever",
-    "perMonth": "per month",
+    "trialNote": "Credit card required · No charge for 30 days · Cancel anytime",
+    "trialGuarantee": "Paid plans start with a <strong>30-day free trial</strong>. A credit card is required to begin — but <strong>no payment is processed</strong> until day 31. Cancel anytime before then and you won't be charged.",
+    "perMonth": "month",
+    "perSixMonths": "6 months",
+    "perYear": "year",
     "mostPopular": "Most Popular",
-    "plans": [
-      {
-        "name": "Starter",
-        "monthlyPrice": "Free",
-        "annualPrice": "Free",
-        "description": "Everything you need to go digital and ditch the paper menu.",
-        "cta": "Get Started Free",
-        "features": [
-          "1 venue location",
-          "Up to 50 products",
-          "QR code digital menu",
-          "iOS App Clip & Android instant open",
-          "One-tap Call Waiter / Receipt",
-          "Community support"
-        ]
-      },
-      {
-        "name": "Growth",
-        "monthlyPrice": "$29",
-        "annualPrice": "$23",
-        "description": "Turn your menu into a marketing channel that works around the clock.",
-        "cta": "Start 14-Day Free Trial",
-        "features": [
-          "Everything in Starter",
-          "Unlimited products",
-          "Banner & Top Product promotion",
-          "Auto push notifications",
-          "Event promotion + calendar reminders",
-          "Analytics dashboard",
-          "Email support"
-        ]
-      },
-      {
-        "name": "Pro",
-        "monthlyPrice": "$79",
-        "annualPrice": "$63",
-        "description": "The complete platform for multi-location venues and power users.",
-        "cta": "Start 14-Day Free Trial",
-        "features": [
-          "Everything in Growth",
-          "Multiple venue locations",
-          "TV Display App",
-          "Staff iOS & Android apps",
-          "Multi-region management",
-          "Priority support"
-        ]
-      }
-    ]
+    "cta": "Start 30-Day Free Trial",
+    "apiError": "Unable to load pricing plans. Please try again later."
   },
   "PricingComparisonTable": {
     "eyebrow": "Full Comparison",
     "title": "Compare all plan features",
     "featureHeader": "Feature",
-    "priceNote": "All prices shown are monthly rates. Annual billing saves 20% on paid plans.",
-    "starterFree": "Free",
-    "categories": [
-      {
-        "title": "Digital Menu",
-        "rows": [
-          { "label": "Venue locations", "starter": "1", "growth": "1", "pro": "Unlimited" },
-          { "label": "Products", "starter": "Up to 50", "growth": "Unlimited", "pro": "Unlimited" },
-          { "label": "QR code digital menu", "starter": true, "growth": true, "pro": true },
-          { "label": "iOS App Clip & Android instant open", "starter": true, "growth": true, "pro": true },
-          { "label": "One-tap Call Waiter / Receipt", "starter": true, "growth": true, "pro": true }
-        ]
-      },
-      {
-        "title": "Marketing",
-        "rows": [
-          { "label": "Banner & Top Product promotion", "starter": false, "growth": true, "pro": true },
-          { "label": "Auto push notifications", "starter": false, "growth": true, "pro": true },
-          { "label": "Event promotions + calendar reminders", "starter": false, "growth": true, "pro": true },
-          { "label": "Analytics dashboard", "starter": false, "growth": true, "pro": true }
-        ]
-      },
-      {
-        "title": "Multi-location & Display",
-        "rows": [
-          { "label": "Multiple venue locations", "starter": false, "growth": false, "pro": true },
-          { "label": "TV Display App", "starter": false, "growth": false, "pro": true },
-          { "label": "Staff iOS & Android apps", "starter": false, "growth": false, "pro": true },
-          { "label": "Multi-region management", "starter": false, "growth": false, "pro": true }
-        ]
-      },
-      {
-        "title": "Support",
-        "rows": [
-          { "label": "Support tier", "starter": "Community", "growth": "Email", "pro": "Priority" }
-        ]
-      }
-    ]
+    "perMonth": "mo",
+    "priceNote": "All prices shown are monthly rates.",
+    "apiError": "Unable to load plan comparison. Please try again later."
   },
   "AboutPageHero": {
     "eyebrow": "About Feather",
@@ -635,7 +557,7 @@
         "items": [
           {
             "question": "Do you offer a free trial?",
-            "answer": "Yes. You can start with a 14-day free trial. Billing begins only after the trial period."
+            "answer": "Yes. You can start with a 30-day free trial. Billing begins only after the trial period."
           },
           {
             "question": "Can I cancel anytime?",

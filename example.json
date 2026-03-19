@@ -1,0 +1,2535 @@
+{
+    "country": null,
+    "currency": "EUR",
+    "plans": [
+      {
+        "id": 4,
+        "plan_key": "basic",
+        "plan_tier": 1,
+        "duration": "1m",
+        "name": "Basic - 1 Month",
+        "description": "Basic monthly subscription (Tier 1)",
+        "name_translations": {
+          "bg": "Основен - 1 месец",
+          "en": "Basic - 1 Month",
+          "mk": "Основен - 1 месец",
+          "sr": "Основни - 1 месец",
+          "sv": "Grundplan - 1 månad"
+        },
+        "description_translations": {
+          "bg": "Основна месечна абонамент (Ниво 1)",
+          "en": "Basic monthly subscription (Tier 1)",
+          "mk": "Основна месечна претплата (Ниво 1)",
+          "sr": "Основна месечна претплата (Ниво 1)",
+          "sv": "Grundläggande månadsabonnemang (Nivå 1)"
+        },
+        "price": {
+          "amount": 2900,
+          "currency": "EUR",
+          "formatted": "€29.00"
+        },
+        "stripe_price_id": "price_1SsN59HyDlPSIKq78H1b0k6s",
+        "features": [
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": true
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            }
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            }
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            }
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            }
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            }
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "plan_key": "basic",
+        "plan_tier": 1,
+        "duration": "1y",
+        "name": "Basic - 1 Year",
+        "description": "Basic yearly subscription (Tier 1)",
+        "name_translations": {
+          "bg": "Основен - 1 година",
+          "en": "Basic - 1 Year",
+          "mk": "Основен - 1 година",
+          "sr": "Основни - 1 година",
+          "sv": "Grundplan - 1 år"
+        },
+        "description_translations": {
+          "bg": "Основен годишен абонамент (Ниво 1)",
+          "en": "Basic yearly subscription (Tier 1)",
+          "mk": "Основна годишна претплата (Ниво 1)",
+          "sr": "Основна годишња претплата (Ниво 1)",
+          "sv": "Grundläggande årsabonnemang (Nivå 1)"
+        },
+        "price": {
+          "amount": 29000,
+          "currency": "EUR",
+          "formatted": "€290.00"
+        },
+        "stripe_price_id": "price_1SsN7WHyDlPSIKq7ygjZkask",
+        "features": [
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": true
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            }
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            }
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            }
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            }
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            }
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "plan_key": "basic",
+        "plan_tier": 1,
+        "duration": "6m",
+        "name": "Basic - 6 Months",
+        "description": "Basic 6 months subscription (Tier 1)",
+        "name_translations": {
+          "bg": "Основен - 6 месеца",
+          "en": "Basic - 6 Months",
+          "mk": "Основен - 6 месеци",
+          "sr": "Основни - 6 месеци",
+          "sv": "Grundplan - 6 månader"
+        },
+        "description_translations": {
+          "bg": "Основен абонамент за 6 месеца (Ниво 1)",
+          "en": "Basic 6 months subscription (Tier 1)",
+          "mk": "Основна претплата од 6 месеци (Ниво 1)",
+          "sr": "Основна претплата од 6 месеци (Ниво 1)",
+          "sv": "Grundläggande 6-månaders abonnemang (Nivå 1)"
+        },
+        "price": {
+          "amount": 16000,
+          "currency": "EUR",
+          "formatted": "€160.00"
+        },
+        "stripe_price_id": "price_1SsN6wHyDlPSIKq7cGJSaayt",
+        "features": [
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": true
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            }
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            }
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            }
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            }
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            }
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "plan_key": "standard",
+        "plan_tier": 2,
+        "duration": "1m",
+        "name": "Standard - 1 Month",
+        "description": "Standard monthly subscription (Tier 2) - Includes all Basic features",
+        "name_translations": {
+          "bg": "Стандартен - 1 месец",
+          "en": "Standard - 1 Month",
+          "mk": "Стандарден - 1 месец",
+          "sr": "Стандардни - 1 месец",
+          "sv": "Standardplan - 1 månad"
+        },
+        "description_translations": {
+          "bg": "Стандартен месечен абонамент (Ниво 2) - Включва всички основни функции",
+          "en": "Standard monthly subscription (Tier 2) - Includes all Basic features",
+          "mk": "Стандардна месечна претплата (Ниво 2) - Вклучува сите основни функции",
+          "sr": "Стандардна месечна претплата (Ниво 2) - Укључује све основне функције",
+          "sv": "Standard månadsabonnemang (Nivå 2) - Inkluderar alla grundfunktioner"
+        },
+        "price": {
+          "amount": 6900,
+          "currency": "EUR",
+          "formatted": "€69.00"
+        },
+        "stripe_price_id": "price_1SsN9bHyDlPSIKq7X61UG1oo",
+        "features": [
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": false
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            }
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            }
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            }
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            }
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "plan_key": "standard",
+        "plan_tier": 2,
+        "duration": "1y",
+        "name": "Standard - 1 Year",
+        "description": "Standard yearly subscription (Tier 2) - Includes all Basic features",
+        "name_translations": {
+          "bg": "Стандартен - 1 година",
+          "en": "Standard - 1 Year",
+          "mk": "Стандарден - 1 година",
+          "sr": "Стандардни - 1 година",
+          "sv": "Standardplan - 1 år"
+        },
+        "description_translations": {
+          "bg": "Стандартен годишен абонамент (Ниво 2) - Включва всички основни функции",
+          "en": "Standard yearly subscription (Tier 2) - Includes all Basic features",
+          "mk": "Стандардна годишна претплата (Ниво 2) - Вклучува сите основни функции",
+          "sr": "Стандардна годишња претплата (Ниво 2) - Укључује све основне функције",
+          "sv": "Standard årsabonnemang (Nivå 2) - Inkluderar alla grundfunktioner"
+        },
+        "price": {
+          "amount": 69000,
+          "currency": "EUR",
+          "formatted": "€690.00"
+        },
+        "stripe_price_id": "price_1SsNDoHyDlPSIKq7CZdSGpQT",
+        "features": [
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": false
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            }
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            }
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            }
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "plan_key": "standard",
+        "plan_tier": 2,
+        "duration": "6m",
+        "name": "Standard - 6 Months",
+        "description": "Standard 6 months subscription (Tier 2) - Includes all Basic features",
+        "name_translations": {
+          "bg": "Стандартен - 6 месеца",
+          "en": "Standard - 6 Months",
+          "mk": "Стандарден - 6 месеци",
+          "sr": "Стандардни - 6 месеци",
+          "sv": "Standardplan - 6 månader"
+        },
+        "description_translations": {
+          "bg": "Стандартен абонамент за 6 месеца (Ниво 2) - Включва всички основни функции",
+          "en": "Standard 6 months subscription (Tier 2) - Includes all Basic features",
+          "mk": "Стандардна претплата од 6 месеци (Ниво 2) - Вклучува сите основни функции",
+          "sr": "Стандардна претплата од 6 месеци (Ниво 2) - Укључује све основне функције",
+          "sv": "Standard 6-månaders abonnemang (Nivå 2) - Inkluderar alla grundfunktioner"
+        },
+        "price": {
+          "amount": 38000,
+          "currency": "EUR",
+          "formatted": "€380.00"
+        },
+        "stripe_price_id": "price_1SsNCiHyDlPSIKq7RTYLmFGx",
+        "features": [
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": false
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            }
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            }
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            }
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            }
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "plan_key": "premium",
+        "plan_tier": 3,
+        "duration": "1m",
+        "name": "Premium - 1 Month",
+        "description": "Premium monthly subscription (Tier 3) - Includes all Standard and Basic features",
+        "name_translations": {
+          "bg": "Премиум - 1 месец",
+          "en": "Premium - 1 Month",
+          "mk": "Премиум - 1 месец",
+          "sr": "Премијум - 1 месец",
+          "sv": "Premiumplan - 1 månad"
+        },
+        "description_translations": {
+          "bg": "Премиум месечен абонамент (Ниво 3) - Включва всички стандартни и основни функции",
+          "en": "Premium monthly subscription (Tier 3) - Includes all Standard and Basic features",
+          "mk": "Премиум месечна претплата (Ниво 3) - Вклучува сите стандардни и основни функции",
+          "sr": "Премијум месечна претплата (Ниво 3) - Укључује све стандардне и основне функције",
+          "sv": "Premium månadsabonnemang (Nivå 3) - Inkluderar alla standard- och grundfunktioner"
+        },
+        "price": {
+          "amount": 10900,
+          "currency": "EUR",
+          "formatted": "€109.00"
+        },
+        "stripe_price_id": "price_1SsNErHyDlPSIKq7iGokcccP",
+        "features": [
+          {
+            "name": "Admin Operations",
+            "description": "Admin Operations (Tables, Regions, Staff)",
+            "title_translations": {
+              "bg": "Административни Операции",
+              "en": "Admin Operations",
+              "mk": "Административни Операции",
+              "sr": "Административне Операције",
+              "sv": "Administrativa Operationer"
+            },
+            "description_translations": {
+              "bg": "Административни операции (Маси, Региони, Персонал)",
+              "en": "Admin Operations (Tables, Regions, Staff)",
+              "mk": "Административни операции (Маси, Региони, Персонал)",
+              "sr": "Административне операције (Столови, Региони, Особље)",
+              "sv": "Administrativa operationer (Bord, Regioner, Personal)"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Call Actions",
+            "description": "Ability for the users to call waiters and call for receipt from the table.",
+            "title_translations": {
+              "bg": "Действия за Повикване",
+              "en": "Call Actions",
+              "mk": "Акции за Повикување",
+              "sr": "Акције за Позивање",
+              "sv": "Ringåtgärder"
+            },
+            "description_translations": {
+              "bg": "Възможност за потребителите да повикат сервитьори и да поискат сметка от масата.",
+              "en": "Ability for the users to call waiters and call for receipt from the table.",
+              "mk": "Можност за корисниците да повикаат келнери и да побараат сметка од масата.",
+              "sr": "Могућност за кориснике да позову конобаре и да затраже рачун од стола.",
+              "sv": "Möjlighet för användare att ringa servitörer och begära kvitto från bordet."
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Orders from every table",
+            "description": "Enable orders from every table",
+            "title_translations": {
+              "bg": "Поръчки от всяка маса",
+              "en": "Orders from every table",
+              "mk": "Нарачки од секоја маса",
+              "sr": "Нараџбе са сваког стола",
+              "sv": "Beställningar från varje bord"
+            },
+            "description_translations": {
+              "bg": "Активиране на поръчки от всяка маса",
+              "en": "Enable orders from every table",
+              "mk": "Овозможи нарачки од секоја маса",
+              "sr": "Омогући наруџбе са сваког стола",
+              "sv": "Aktivera beställningar från varje bord"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Pre-Order Promotions",
+            "description": "Enable pre-order promotional features",
+            "title_translations": {
+              "bg": "Промоции за Предварителна Поръчка",
+              "en": "Pre-Order Promotions",
+              "mk": "Промоции за Претходна Нарачка",
+              "sr": "Промоције за Претходну Наруџбу",
+              "sv": "Förbeställningskampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции за предварителна поръчка",
+              "en": "Enable pre-order promotional features",
+              "mk": "Овозможи промотивни функции за претходна нарачка",
+              "sr": "Омогући промотивне функције за претходну наруџбу",
+              "sv": "Aktivera kampanjfunktioner för förbeställning"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": false
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Admin Operations",
+            "description": "Admin Operations (Tables, Regions, Staff)",
+            "title_translations": {
+              "bg": "Административни Операции",
+              "en": "Admin Operations",
+              "mk": "Административни Операции",
+              "sr": "Административне Операције",
+              "sv": "Administrativa Operationer"
+            },
+            "description_translations": {
+              "bg": "Административни операции (Маси, Региони, Персонал)",
+              "en": "Admin Operations (Tables, Regions, Staff)",
+              "mk": "Административни операции (Маси, Региони, Персонал)",
+              "sr": "Административне операције (Столови, Региони, Особље)",
+              "sv": "Administrativa operationer (Bord, Regioner, Personal)"
+            }
+          },
+          {
+            "name": "Call Actions",
+            "description": "Ability for the users to call waiters and call for receipt from the table.",
+            "title_translations": {
+              "bg": "Действия за Повикване",
+              "en": "Call Actions",
+              "mk": "Акции за Повикување",
+              "sr": "Акције за Позивање",
+              "sv": "Ringåtgärder"
+            },
+            "description_translations": {
+              "bg": "Възможност за потребителите да повикат сервитьори и да поискат сметка от масата.",
+              "en": "Ability for the users to call waiters and call for receipt from the table.",
+              "mk": "Можност за корисниците да повикаат келнери и да побараат сметка од масата.",
+              "sr": "Могућност за кориснике да позову конобаре и да затраже рачун од стола.",
+              "sv": "Möjlighet för användare att ringa servitörer och begära kvitto från bordet."
+            }
+          },
+          {
+            "name": "Orders from every table",
+            "description": "Enable orders from every table",
+            "title_translations": {
+              "bg": "Поръчки от всяка маса",
+              "en": "Orders from every table",
+              "mk": "Нарачки од секоја маса",
+              "sr": "Нараџбе са сваког стола",
+              "sv": "Beställningar från varje bord"
+            },
+            "description_translations": {
+              "bg": "Активиране на поръчки от всяка маса",
+              "en": "Enable orders from every table",
+              "mk": "Овозможи нарачки од секоја маса",
+              "sr": "Омогући наруџбе са сваког стола",
+              "sv": "Aktivera beställningar från varje bord"
+            }
+          },
+          {
+            "name": "Pre-Order Promotions",
+            "description": "Enable pre-order promotional features",
+            "title_translations": {
+              "bg": "Промоции за Предварителна Поръчка",
+              "en": "Pre-Order Promotions",
+              "mk": "Промоции за Претходна Нарачка",
+              "sr": "Промоције за Претходну Наруџбу",
+              "sv": "Förbeställningskampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции за предварителна поръчка",
+              "en": "Enable pre-order promotional features",
+              "mk": "Овозможи промотивни функции за претходна нарачка",
+              "sr": "Омогући промотивне функције за претходну наруџбу",
+              "sv": "Aktivera kampanjfunktioner för förbeställning"
+            }
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "plan_key": "premium",
+        "plan_tier": 3,
+        "duration": "1y",
+        "name": "Premium - 1 Year",
+        "description": "Premium yearly subscription (Tier 3) - Includes all Standard and Basic features",
+        "name_translations": {
+          "bg": "Премиум - 1 година",
+          "en": "Premium - 1 Year",
+          "mk": "Премиум - 1 година",
+          "sr": "Премијум - 1 година",
+          "sv": "Premiumplan - 1 år"
+        },
+        "description_translations": {
+          "bg": "Премиум годишен абонамент (Ниво 3) - Включва всички стандартни и основни функции",
+          "en": "Premium yearly subscription (Tier 3) - Includes all Standard and Basic features",
+          "mk": "Премиум годишна претплата (Ниво 3) - Вклучува сите стандардни и основни функции",
+          "sr": "Премијум годишња претплата (Ниво 3) - Укључује све стандардне и основне функције",
+          "sv": "Premium årsabonnemang (Nivå 3) - Inkluderar alla standard- och grundfunktioner"
+        },
+        "price": {
+          "amount": 109000,
+          "currency": "EUR",
+          "formatted": "€1,090.00"
+        },
+        "stripe_price_id": "price_1SsNGyHyDlPSIKq7ZxShq8fH",
+        "features": [
+          {
+            "name": "Admin Operations",
+            "description": "Admin Operations (Tables, Regions, Staff)",
+            "title_translations": {
+              "bg": "Административни Операции",
+              "en": "Admin Operations",
+              "mk": "Административни Операции",
+              "sr": "Административне Операције",
+              "sv": "Administrativa Operationer"
+            },
+            "description_translations": {
+              "bg": "Административни операции (Маси, Региони, Персонал)",
+              "en": "Admin Operations (Tables, Regions, Staff)",
+              "mk": "Административни операции (Маси, Региони, Персонал)",
+              "sr": "Административне операције (Столови, Региони, Особље)",
+              "sv": "Administrativa operationer (Bord, Regioner, Personal)"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Call Actions",
+            "description": "Ability for the users to call waiters and call for receipt from the table.",
+            "title_translations": {
+              "bg": "Действия за Повикване",
+              "en": "Call Actions",
+              "mk": "Акции за Повикување",
+              "sr": "Акције за Позивање",
+              "sv": "Ringåtgärder"
+            },
+            "description_translations": {
+              "bg": "Възможност за потребителите да повикат сервитьори и да поискат сметка от масата.",
+              "en": "Ability for the users to call waiters and call for receipt from the table.",
+              "mk": "Можност за корисниците да повикаат келнери и да побараат сметка од масата.",
+              "sr": "Могућност за кориснике да позову конобаре и да затраже рачун од стола.",
+              "sv": "Möjlighet för användare att ringa servitörer och begära kvitto från bordet."
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Orders from every table",
+            "description": "Enable orders from every table",
+            "title_translations": {
+              "bg": "Поръчки от всяка маса",
+              "en": "Orders from every table",
+              "mk": "Нарачки од секоја маса",
+              "sr": "Нараџбе са сваког стола",
+              "sv": "Beställningar från varje bord"
+            },
+            "description_translations": {
+              "bg": "Активиране на поръчки от всяка маса",
+              "en": "Enable orders from every table",
+              "mk": "Овозможи нарачки од секоја маса",
+              "sr": "Омогући наруџбе са сваког стола",
+              "sv": "Aktivera beställningar från varje bord"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Pre-Order Promotions",
+            "description": "Enable pre-order promotional features",
+            "title_translations": {
+              "bg": "Промоции за Предварителна Поръчка",
+              "en": "Pre-Order Promotions",
+              "mk": "Промоции за Претходна Нарачка",
+              "sr": "Промоције за Претходну Наруџбу",
+              "sv": "Förbeställningskampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции за предварителна поръчка",
+              "en": "Enable pre-order promotional features",
+              "mk": "Овозможи промотивни функции за претходна нарачка",
+              "sr": "Омогући промотивне функције за претходну наруџбу",
+              "sv": "Aktivera kampanjfunktioner för förbeställning"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": false
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Admin Operations",
+            "description": "Admin Operations (Tables, Regions, Staff)",
+            "title_translations": {
+              "bg": "Административни Операции",
+              "en": "Admin Operations",
+              "mk": "Административни Операции",
+              "sr": "Административне Операције",
+              "sv": "Administrativa Operationer"
+            },
+            "description_translations": {
+              "bg": "Административни операции (Маси, Региони, Персонал)",
+              "en": "Admin Operations (Tables, Regions, Staff)",
+              "mk": "Административни операции (Маси, Региони, Персонал)",
+              "sr": "Административне операције (Столови, Региони, Особље)",
+              "sv": "Administrativa operationer (Bord, Regioner, Personal)"
+            }
+          },
+          {
+            "name": "Call Actions",
+            "description": "Ability for the users to call waiters and call for receipt from the table.",
+            "title_translations": {
+              "bg": "Действия за Повикване",
+              "en": "Call Actions",
+              "mk": "Акции за Повикување",
+              "sr": "Акције за Позивање",
+              "sv": "Ringåtgärder"
+            },
+            "description_translations": {
+              "bg": "Възможност за потребителите да повикат сервитьори и да поискат сметка от масата.",
+              "en": "Ability for the users to call waiters and call for receipt from the table.",
+              "mk": "Можност за корисниците да повикаат келнери и да побараат сметка од масата.",
+              "sr": "Могућност за кориснике да позову конобаре и да затраже рачун од стола.",
+              "sv": "Möjlighet för användare att ringa servitörer och begära kvitto från bordet."
+            }
+          },
+          {
+            "name": "Orders from every table",
+            "description": "Enable orders from every table",
+            "title_translations": {
+              "bg": "Поръчки от всяка маса",
+              "en": "Orders from every table",
+              "mk": "Нарачки од секоја маса",
+              "sr": "Нараџбе са сваког стола",
+              "sv": "Beställningar från varje bord"
+            },
+            "description_translations": {
+              "bg": "Активиране на поръчки от всяка маса",
+              "en": "Enable orders from every table",
+              "mk": "Овозможи нарачки од секоја маса",
+              "sr": "Омогући наруџбе са сваког стола",
+              "sv": "Aktivera beställningar från varje bord"
+            }
+          },
+          {
+            "name": "Pre-Order Promotions",
+            "description": "Enable pre-order promotional features",
+            "title_translations": {
+              "bg": "Промоции за Предварителна Поръчка",
+              "en": "Pre-Order Promotions",
+              "mk": "Промоции за Претходна Нарачка",
+              "sr": "Промоције за Претходну Наруџбу",
+              "sv": "Förbeställningskampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции за предварителна поръчка",
+              "en": "Enable pre-order promotional features",
+              "mk": "Овозможи промотивни функции за претходна нарачка",
+              "sr": "Омогући промотивне функције за претходну наруџбу",
+              "sv": "Aktivera kampanjfunktioner för förbeställning"
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "plan_key": "premium",
+        "plan_tier": 3,
+        "duration": "6m",
+        "name": "Premium - 6 Months",
+        "description": "Premium 6 months subscription (Tier 3) - Includes all Standard and Basic features",
+        "name_translations": {
+          "bg": "Премиум - 6 месеца",
+          "en": "Premium - 6 Months",
+          "mk": "Премиум - 6 месеци",
+          "sr": "Премијум - 6 месеци",
+          "sv": "Premiumplan - 6 månader"
+        },
+        "description_translations": {
+          "bg": "Премиум абонамент за 6 месеца (Ниво 3) - Включва всички стандартни и основни функции",
+          "en": "Premium 6 months subscription (Tier 3) - Includes all Standard and Basic features",
+          "mk": "Премиум претплата од 6 месеци (Ниво 3) - Вклучува сите стандардни и основни функции",
+          "sr": "Премијум претплата од 6 месеци (Ниво 3) - Укључује све стандардне и основне функције",
+          "sv": "Premium 6-månaders abonnemang (Nivå 3) - Inkluderar alla standard- och grundfunktioner"
+        },
+        "price": {
+          "amount": 60000,
+          "currency": "EUR",
+          "formatted": "€600.00"
+        },
+        "stripe_price_id": "price_1SsNG2HyDlPSIKq7VVieR4v8",
+        "features": [
+          {
+            "name": "Admin Operations",
+            "description": "Admin Operations (Tables, Regions, Staff)",
+            "title_translations": {
+              "bg": "Административни Операции",
+              "en": "Admin Operations",
+              "mk": "Административни Операции",
+              "sr": "Административне Операције",
+              "sv": "Administrativa Operationer"
+            },
+            "description_translations": {
+              "bg": "Административни операции (Маси, Региони, Персонал)",
+              "en": "Admin Operations (Tables, Regions, Staff)",
+              "mk": "Административни операции (Маси, Региони, Персонал)",
+              "sr": "Административне операције (Столови, Региони, Особље)",
+              "sv": "Administrativa operationer (Bord, Regioner, Personal)"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Call Actions",
+            "description": "Ability for the users to call waiters and call for receipt from the table.",
+            "title_translations": {
+              "bg": "Действия за Повикване",
+              "en": "Call Actions",
+              "mk": "Акции за Повикување",
+              "sr": "Акције за Позивање",
+              "sv": "Ringåtgärder"
+            },
+            "description_translations": {
+              "bg": "Възможност за потребителите да повикат сервитьори и да поискат сметка от масата.",
+              "en": "Ability for the users to call waiters and call for receipt from the table.",
+              "mk": "Можност за корисниците да повикаат келнери и да побараат сметка од масата.",
+              "sr": "Могућност за кориснике да позову конобаре и да затраже рачун од стола.",
+              "sv": "Möjlighet för användare att ringa servitörer och begära kvitto från bordet."
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Orders from every table",
+            "description": "Enable orders from every table",
+            "title_translations": {
+              "bg": "Поръчки от всяка маса",
+              "en": "Orders from every table",
+              "mk": "Нарачки од секоја маса",
+              "sr": "Нараџбе са сваког стола",
+              "sv": "Beställningar från varje bord"
+            },
+            "description_translations": {
+              "bg": "Активиране на поръчки от всяка маса",
+              "en": "Enable orders from every table",
+              "mk": "Овозможи нарачки од секоја маса",
+              "sr": "Омогући наруџбе са сваког стола",
+              "sv": "Aktivera beställningar från varje bord"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Pre-Order Promotions",
+            "description": "Enable pre-order promotional features",
+            "title_translations": {
+              "bg": "Промоции за Предварителна Поръчка",
+              "en": "Pre-Order Promotions",
+              "mk": "Промоции за Претходна Нарачка",
+              "sr": "Промоције за Претходну Наруџбу",
+              "sv": "Förbeställningskampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции за предварителна поръчка",
+              "en": "Enable pre-order promotional features",
+              "mk": "Овозможи промотивни функции за претходна нарачка",
+              "sr": "Омогући промотивне функције за претходну наруџбу",
+              "sv": "Aktivera kampanjfunktioner för förbeställning"
+            },
+            "is_direct": true
+          },
+          {
+            "name": "Your menu on all languages",
+            "description": "Your menu on all languages",
+            "title_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "description_translations": {
+              "bg": "Вашето меню на всички езици",
+              "en": "Your menu on all languages",
+              "mk": "Вашето мени на сите јазици",
+              "sr": "Ваш мени на свим језицима",
+              "sv": "Din meny på alla språk"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Banner",
+            "description": "Enable banner display functionality",
+            "title_translations": {
+              "bg": "Банер",
+              "en": "Banner",
+              "mk": "Банер",
+              "sr": "Банер",
+              "sv": "Banderoll"
+            },
+            "description_translations": {
+              "bg": "Активиране на функционалност за показване на банери",
+              "en": "Enable banner display functionality",
+              "mk": "Овозможи функционалност за прикажување на банери",
+              "sr": "Омогући функционалност за приказ банера",
+              "sv": "Aktivera funktionalitet för banderollvisning"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Notifications",
+            "description": "Enable push notifications system",
+            "title_translations": {
+              "bg": "Известия",
+              "en": "Notifications",
+              "mk": "Известувања",
+              "sr": "Обавештења",
+              "sv": "Notifikationer"
+            },
+            "description_translations": {
+              "bg": "Активиране на система за push известия",
+              "en": "Enable push notifications system",
+              "mk": "Овозможи систем за push известувања",
+              "sr": "Омогући систем за push обавештења",
+              "sv": "Aktivera push-notifikationssystem"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "TV App",
+            "description": "Enable TV app specific features",
+            "title_translations": {
+              "bg": "ТВ Приложение",
+              "en": "TV App",
+              "mk": "ТВ Апликација",
+              "sr": "ТВ Апликација",
+              "sv": "TV-app"
+            },
+            "description_translations": {
+              "bg": "Активиране на специфични функции за ТВ приложение",
+              "en": "Enable TV app specific features",
+              "mk": "Овозможи специфични функции за ТВ апликација",
+              "sr": "Омогући специфичне функције за ТВ апликацију",
+              "sv": "Aktivera TV-appspecifika funktioner"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Events",
+            "description": "Enable event management features",
+            "title_translations": {
+              "bg": "Събития",
+              "en": "Events",
+              "mk": "Настани",
+              "sr": "Догађаји",
+              "sv": "Evenemang"
+            },
+            "description_translations": {
+              "bg": "Активиране на функции за управление на събития",
+              "en": "Enable event management features",
+              "mk": "Овозможи функции за управување со настани",
+              "sr": "Омогући функције за управљање догађајима",
+              "sv": "Aktivera funktioner för evenemangshantering"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Promotions",
+            "description": "Enable promotional features and campaigns",
+            "title_translations": {
+              "bg": "Промоции",
+              "en": "Promotions",
+              "mk": "Промоции",
+              "sr": "Промоције",
+              "sv": "Kampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции и кампании",
+              "en": "Enable promotional features and campaigns",
+              "mk": "Овозможи промотивни функции и кампањи",
+              "sr": "Омогући промотивне функције и кампање",
+              "sv": "Aktivera kampanjfunktioner och marknadsföring"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Products and Categories real time update",
+            "description": "Products and Categories real time update",
+            "title_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "description_translations": {
+              "bg": "Актуализация на продукти и категории в реално време",
+              "en": "Products and Categories real time update",
+              "mk": "Ажурирање на производи и категории во реално време",
+              "sr": "Ажурирање производа и категорија у реалном времену",
+              "sv": "Produkter och kategorier uppdatering i realtid"
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Instant Menu",
+            "description": "Possibility to create menu only from images in 5 mins.",
+            "title_translations": {
+              "bg": "Моментално Меню",
+              "en": "Instant Menu",
+              "mk": "Инстант Мени",
+              "sr": "Инстант Мени",
+              "sv": "Omedelbar Meny"
+            },
+            "description_translations": {
+              "bg": "Възможност за създаване на меню само от изображения за 5 минути.",
+              "en": "Possibility to create menu only from images in 5 mins.",
+              "mk": "Можност за креирање мени само од слики за 5 минути.",
+              "sr": "Могућност креирања менија само од слика за 5 минута.",
+              "sv": "Möjlighet att skapa meny endast från bilder på 5 minuter."
+            },
+            "is_direct": false
+          },
+          {
+            "name": "Menu Personalization",
+            "description": "Personalize your menu with your logo and cover image.",
+            "title_translations": {
+              "bg": "Персонализация на Меню",
+              "en": "Menu Personalization",
+              "mk": "Персонализација на Мени",
+              "sr": "Персонализација Менија",
+              "sv": "Meny Personalisering"
+            },
+            "description_translations": {
+              "bg": "Персонализирайте вашето меню с ваш лого и корица изображение.",
+              "en": "Personalize your menu with your logo and cover image.",
+              "mk": "Персонализирајте го вашето мени со ваш лого и слика за корица.",
+              "sr": "Персонализујте ваш мени са вашим логоом и сликом за насловну страну.",
+              "sv": "Personalisera din meny med din logotyp och omslagsbild."
+            },
+            "is_direct": false
+          }
+        ],
+        "direct_features": [
+          {
+            "name": "Admin Operations",
+            "description": "Admin Operations (Tables, Regions, Staff)",
+            "title_translations": {
+              "bg": "Административни Операции",
+              "en": "Admin Operations",
+              "mk": "Административни Операции",
+              "sr": "Административне Операције",
+              "sv": "Administrativa Operationer"
+            },
+            "description_translations": {
+              "bg": "Административни операции (Маси, Региони, Персонал)",
+              "en": "Admin Operations (Tables, Regions, Staff)",
+              "mk": "Административни операции (Маси, Региони, Персонал)",
+              "sr": "Административне операције (Столови, Региони, Особље)",
+              "sv": "Administrativa operationer (Bord, Regioner, Personal)"
+            }
+          },
+          {
+            "name": "Call Actions",
+            "description": "Ability for the users to call waiters and call for receipt from the table.",
+            "title_translations": {
+              "bg": "Действия за Повикване",
+              "en": "Call Actions",
+              "mk": "Акции за Повикување",
+              "sr": "Акције за Позивање",
+              "sv": "Ringåtgärder"
+            },
+            "description_translations": {
+              "bg": "Възможност за потребителите да повикат сервитьори и да поискат сметка от масата.",
+              "en": "Ability for the users to call waiters and call for receipt from the table.",
+              "mk": "Можност за корисниците да повикаат келнери и да побараат сметка од масата.",
+              "sr": "Могућност за кориснике да позову конобаре и да затраже рачун од стола.",
+              "sv": "Möjlighet för användare att ringa servitörer och begära kvitto från bordet."
+            }
+          },
+          {
+            "name": "Orders from every table",
+            "description": "Enable orders from every table",
+            "title_translations": {
+              "bg": "Поръчки от всяка маса",
+              "en": "Orders from every table",
+              "mk": "Нарачки од секоја маса",
+              "sr": "Нараџбе са сваког стола",
+              "sv": "Beställningar från varje bord"
+            },
+            "description_translations": {
+              "bg": "Активиране на поръчки от всяка маса",
+              "en": "Enable orders from every table",
+              "mk": "Овозможи нарачки од секоја маса",
+              "sr": "Омогући наруџбе са сваког стола",
+              "sv": "Aktivera beställningar från varje bord"
+            }
+          },
+          {
+            "name": "Pre-Order Promotions",
+            "description": "Enable pre-order promotional features",
+            "title_translations": {
+              "bg": "Промоции за Предварителна Поръчка",
+              "en": "Pre-Order Promotions",
+              "mk": "Промоции за Претходна Нарачка",
+              "sr": "Промоције за Претходну Наруџбу",
+              "sv": "Förbeställningskampanjer"
+            },
+            "description_translations": {
+              "bg": "Активиране на промоционални функции за предварителна поръчка",
+              "en": "Enable pre-order promotional features",
+              "mk": "Овозможи промотивни функции за претходна нарачка",
+              "sr": "Омогући промотивне функције за претходну наруџбу",
+              "sv": "Aktivera kampanjfunktioner för förbeställning"
+            }
+          }
+        ]
+      }
+    ]
+  }
