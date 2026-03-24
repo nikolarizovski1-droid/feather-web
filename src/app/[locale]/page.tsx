@@ -4,15 +4,12 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import StatsBar from "@/components/sections/StatsBar";
 import ComparisonSection from "@/components/sections/ComparisonSection";
-import FeaturesGrid from "@/components/sections/FeaturesGrid";
-import PlatformDeepDive from "@/components/sections/PlatformDeepDive";
 import HowItWorks from "@/components/sections/HowItWorks";
-import PromotionsROI from "@/components/sections/PromotionsROI";
-import AnalyticsDashboard from "@/components/sections/AnalyticsDashboard";
+import WhoIsItFor from "@/components/sections/WhoIsItFor";
 import Testimonials from "@/components/sections/Testimonials";
-import PricingTeaser from "@/components/sections/PricingTeaser";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
+import MobileCTABar from "@/components/ui/MobileCTABar";
 
 export default async function Home({
   params,
@@ -29,17 +26,14 @@ export default async function Home({
         <Hero />
         <StatsBar />
         <ComparisonSection />
-        <FeaturesGrid />
-        <AnalyticsDashboard />
-        <PlatformDeepDive />
         <HowItWorks />
-        <PromotionsROI />
+        <WhoIsItFor />
         <Testimonials />
-        <PricingTeaser />
         <CTABand />
       </main>
       <Footer />
       <RevealObserver />
+      <MobileCTABar />
     </>
   );
 }

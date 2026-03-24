@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PricingPageHero from "@/components/sections/PricingPageHero";
 import PricingPlans from "@/components/sections/PricingPlans";
+import PromotionsROI from "@/components/sections/PromotionsROI";
 import PricingComparisonTable from "@/components/sections/PricingComparisonTable";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
@@ -45,6 +46,7 @@ export default async function PricingPage({
       <main>
         <PricingPageHero />
         <PricingPlans plans={plansData} locale={locale} />
+        <PromotionsROI />
         <PricingComparisonTable plans={plansData} locale={locale} />
         <CTABand />
       </main>

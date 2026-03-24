@@ -21,6 +21,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t("features"), href: "/features" },
+    { label: t("howItWorks"), href: "/how-it-works" },
     { label: t("pricing"), href: "/pricing" },
     { label: t("about"), href: "/about" },
     { label: t("faq"), href: "/faq" },
@@ -91,12 +92,12 @@ export default function Navbar() {
               ))}
             </div>
 
-            <Link
+            {/* <Link
               href="/login"
               className="text-sm font-medium text-ink-05 hover:text-white transition-colors duration-200"
             >
               {t("signIn")}
-            </Link>
+            </Link> */}
             <Button href="/signup" size="sm">
               {t("startFreeTrial")}
             </Button>
@@ -148,13 +149,13 @@ export default function Navbar() {
                   </button>
                 ))}
               </div>
-              <Link
+              {/* <Link
                 href="/login"
                 className="text-sm font-medium text-ink-05 hover:text-white py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {t("signIn")}
-              </Link>
+              </Link> */}
               <Button href="/signup" className="w-full">
                 {t("startFreeTrial")}
               </Button>

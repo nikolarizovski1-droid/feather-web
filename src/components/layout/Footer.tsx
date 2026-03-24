@@ -50,10 +50,15 @@ export default async function Footer() {
   const footerLinks = {
     [t("categories.product")]: [
       { label: t("links.features"), href: "/features" },
+      { label: t("links.howItWorks"), href: "/how-it-works" },
       { label: t("links.pricing"), href: "/pricing" },
       { label: t("links.tvDisplayApp"), href: "/features#tv-app" },
-      { label: t("links.adminDashboard"), href: "/features#admin" },
       { label: t("links.pushNotifications"), href: "/features#notifications" },
+    ],
+    [t("categories.useCases")]: [
+      { label: t("useCases.fastCasual"), href: "/for/fast-casual" },
+      { label: t("useCases.fineDining"), href: "/for/fine-dining" },
+      { label: t("useCases.multiLocation"), href: "/for/multi-location" },
     ],
     [t("categories.resources")]: [
       { label: t("links.blog"), href: "/blog" },
@@ -74,7 +79,7 @@ export default async function Footer() {
     <footer className="bg-ink-08 border-t border-white/5" aria-label="Footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-14 grid grid-cols-2 md:grid-cols-6 gap-8">
+        <div className="py-14 grid grid-cols-2 md:grid-cols-7 gap-8">
           {/* Brand column */}
           <div className="col-span-2 flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-0.5">

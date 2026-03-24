@@ -1,6 +1,7 @@
 {
   "Navbar": {
     "features": "Features",
+    "howItWorks": "How it works",
     "pricing": "Pricing",
     "about": "About",
     "faq": "FAQ",
@@ -18,12 +19,14 @@
     "copyright": "© {year} Feather. All rights reserved.",
     "categories": {
       "product": "Product",
+      "useCases": "Use cases",
       "resources": "Resources",
       "company": "Company",
       "legal": "Legal"
     },
     "links": {
       "features": "Features",
+      "howItWorks": "How it works",
       "pricing": "Pricing",
       "tvDisplayApp": "TV Display App",
       "adminDashboard": "Admin Dashboard",
@@ -35,30 +38,22 @@
       "contact": "Contact",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service"
+    },
+    "useCases": {
+      "fastCasual": "Fast-casual restaurants",
+      "fineDining": "Fine dining",
+      "multiLocation": "Multi-location venues"
     }
   },
   "Hero": {
-    "eyebrow": "Restaurant Marketing & Operations Platform",
-    "headline1": "Turn every QR scan",
-    "headline2": "into revenue.",
-    "subheadline": "More than a digital menu — every scan auto-triggers push notifications, fills your events, and keeps guests coming back. One dashboard. Zero extra effort.",
+    "eyebrow": "Restaurant Marketing Platform",
+    "headline1": "Your QR code.",
+    "headline2": "Your marketing engine.",
+    "subheadline": "Every guest who scans your menu gets a push notification, sees your promotions, and hears about your next event — automatically, with zero effort from your team.",
     "startFreeTrial": "Start Free Trial",
     "seeHowItWorks": "See How It Works",
-    "trustLine": "30-day free trial · Credit card required · No charge until day 31 · Cancel anytime",
-    "scrollDown": "Scroll down",
-    "card1Title": "A message to every guest",
-    "card1Desc": "Every QR scan triggers a push notification on your timing. Set the delay from your admin - whether that's 10 minutes or longer - and re-engage guests at exactly the right moment.",
-    "card2Title": "Live in 2 minutes",
-    "card2Desc": "Upload your paper menu or PDF — AI builds the full digital menu, translated and categorized, in minutes.",
-    "card3Title": "Every scan earns",
-    "card3Desc": "At 1,000 scans/month, automated notifications alone drive ~50 extra orders. Zero extra effort from your team.",
-    "card4Title": "Everything included",
-    "card4Feature1": "Digital menu — iOS App Clip & Android",
-    "card4Feature2": "Auto push notifications",
-    "card4Feature3": "Event promos + calendar reminders",
-    "card4Feature4": "TV Display App",
-    "card4Feature5": "Call Waiter & Call Receipt",
-    "card4Feature6": "One admin dashboard"
+    "trustLine": "30-day free trial · No charge until day 31 · Cancel anytime",
+    "scrollDown": "Scroll down"
   },
   "StatsBar": {
     "stat0value": "5,000+",
@@ -349,7 +344,7 @@
         "description": "Once a guest taps Open from a QR code scan, Feather launches immediately — no App Store download, no sign-up screen, no waiting. iOS uses App Clip and Android uses Instant App technology to deliver a fully native experience in under a second. The menu loads with silky-smooth animations and sub-100ms response times, feeling as fast and familiar as any app they already have on their phone.",
         "mockupLabel": "Guest Menu View",
         "bullets": [
-          "iOS App Clip & Android Instant App — zero install required",
+          "iOS App Clip — no install; Android — optimized mobile web",
           "Up to 3-second loading scene entertains while assets download",
           "Sub-100ms response times and smooth, native-feeling animations",
           "Admin controls menu layout and categories from web or mobile app"
@@ -570,6 +565,90 @@
         ]
       }
     ]
+  },
+  "WhoIsItFor": {
+    "eyebrow": "Find your fit",
+    "title": "Every restaurant is different.",
+    "description": "Pick the plan that matches where you are now — you can always scale up.",
+    "seePricing": "Compare all plans",
+    "learnMore": "See how it works for you",
+    "cards": [
+      {
+        "tag": "Digital menu",
+        "headline": "Going digital for the first time",
+        "description": "You want to ditch the paper menu, get guests online fast, and run everything without a tech team.",
+        "benefits": [
+          "AI builds your menu from a photo or PDF",
+          "iOS App Clip + Android — no app download",
+          "One-tap Call Waiter & receipt request"
+        ],
+        "plan": "Basic plan",
+        "cta": "See pricing"
+      },
+      {
+        "tag": "Most popular",
+        "headline": "Growing revenue on autopilot",
+        "description": "Your menu is live. Now you want every scan to bring guests back, fill your events, and surface your best items — automatically.",
+        "benefits": [
+          "Auto push notifications after every scan",
+          "Event promos with one-tap calendar reminders",
+          "Product banners, analytics, unlimited items"
+        ],
+        "plan": "Standard plan",
+        "cta": "See pricing"
+      },
+      {
+        "tag": "Multi-location",
+        "headline": "Running more than one venue",
+        "description": "One place to manage every location, every screen, and every team member — with the data to back every decision.",
+        "benefits": [
+          "Multi-venue dashboard — one login for all",
+          "TV Display App for every in-venue screen",
+          "Staff apps + real-time alerts + priority support"
+        ],
+        "plan": "Premium plan",
+        "cta": "See pricing"
+      }
+    ]
+  },
+  "MobileCTABar": {
+    "text": "30-day trial — no payment until day 31.",
+    "cta": "Start Free Trial"
+  },
+  "HowItWorksPage": {
+    "meta": {
+      "title": "How It Works — Feather Restaurant Marketing Platform",
+      "description": "See how Feather turns your QR menu into a full marketing engine in three simple steps. Up and running in under 10 minutes."
+    },
+    "hero": {
+      "eyebrow": "Simple by design",
+      "title": "Up and running in under 10 minutes.",
+      "description": "No developers, no complicated setup. Your digital menu, push notifications, and marketing tools go live in three steps.",
+      "startTrial": "Start 30-Day Free Trial",
+      "seePricing": "See Pricing"
+    },
+    "faq": {
+      "eyebrow": "Before you start",
+      "title": "Common questions",
+      "items": [
+        {
+          "question": "Do I need a developer or any technical knowledge?",
+          "answer": "No. If you can upload a photo, you can set up Feather. The AI handles menu building, translation, and categorisation automatically."
+        },
+        {
+          "question": "I already have a QR menu — can I switch?",
+          "answer": "Yes. Upload your existing menu as a photo or PDF and Feather rebuilds it in minutes. You keep your QR codes and just update where they point."
+        },
+        {
+          "question": "How do push notifications reach my guests?",
+          "answer": "Every QR scan triggers a push notification at a delay you set (e.g. 10 minutes). The guest receives it on their phone with your promo — no app download required for iOS App Clip users."
+        },
+        {
+          "question": "What happens after the 30-day trial?",
+          "answer": "If you don't cancel before day 31, your plan begins and billing starts. You can cancel anytime from your account settings — no questions asked."
+        }
+      ]
+    }
   },
   "AnalyticsDashboard": {
     "eyebrow": "Analytics",
