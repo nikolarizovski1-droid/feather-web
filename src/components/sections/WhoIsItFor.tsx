@@ -131,7 +131,7 @@ export default async function WhoIsItFor() {
 
               {/* CTA */}
               <Link
-                href="/pricing"
+                href={`/pricing?plan=${card.planKey}`}
                 className={`inline-flex items-center justify-center gap-2 w-full h-11 px-6 text-sm font-semibold rounded-full transition-all duration-200 ${
                   card.isHighlighted
                     ? "bg-brand text-white hover:bg-[#e5474b] active:scale-[0.98]"

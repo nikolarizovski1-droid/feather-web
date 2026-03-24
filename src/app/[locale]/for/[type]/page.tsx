@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -9,9 +9,8 @@ import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import Button from "@/components/ui/Button";
 import {
-  getUseCaseData,
+  getUseCaseConfig,
   USE_CASE_TYPES,
-  type UseCaseType,
 } from "@/lib/use-case-data";
 
 interface PageParams {
@@ -30,12 +29,14 @@ export async function generateMetadata({
 }: {
   params: Promise<PageParams>;
 }): Promise<Metadata> {
-  const { type } = await params;
-  const data = getUseCaseData(type);
-  if (!data) return {};
+  const { locale, type } = await params;
+  const config = getUseCaseConfig(type);
+  if (!config) return {};
+  setRequestLocale(locale);
+  const t = await getTranslations("UseCasePage");
   return {
-    title: data.meta.title,
-    description: data.meta.description,
+    title: t(`${config.translationKey}.meta.title`),
+    description: t(`${config.translationKey}.meta.description`),
   };
 }
 
@@ -47,8 +48,14 @@ export default async function UseCasePage({
   const { locale, type } = await params;
   setRequestLocale(locale);
 
-  const data = getUseCaseData(type);
-  if (!data) notFound();
+  const config = getUseCaseConfig(type);
+  if (!config) notFound();
+
+  const t = await getTranslations("UseCasePage");
+  const key = config.translationKey;
+
+  type FeatureMsg = { title: string; description: string };
+  const features = t.raw(`${key}.features`) as FeatureMsg[];
 
   return (
     <>
@@ -60,7 +67,7 @@ export default async function UseCasePage({
           {/* Background */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=85&auto=format&fit=crop"
+              src={config.heroImage}
               alt="Restaurant interior"
               fill
               priority
@@ -85,7 +92,7 @@ export default async function UseCasePage({
             >
               <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand">
-                {data.hero.eyebrow}
+                {t(`${key}.hero.eyebrow`)}
               </span>
             </div>
 
@@ -95,13 +102,13 @@ export default async function UseCasePage({
               data-reveal-delay="80"
               className="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white leading-[1.0] mb-6"
             >
-              {data.hero.headline1}
+              {t(`${key}.hero.headline1`)}
               <br />
               <span
                 className="text-brand"
                 style={{ textShadow: "0 0 60px rgba(255,96,100,0.45)" }}
               >
-                {data.hero.headline2}
+                {t(`${key}.hero.headline2`)}
               </span>
             </h1>
 
@@ -111,7 +118,7 @@ export default async function UseCasePage({
               data-reveal-delay="160"
               className="text-base xl:text-lg text-white/55 leading-relaxed max-w-xl mb-10"
             >
-              {data.hero.subheadline}
+              {t(`${key}.hero.subheadline`)}
             </p>
 
             {/* CTAs */}
@@ -121,14 +128,14 @@ export default async function UseCasePage({
               className="flex flex-col sm:flex-row gap-3"
             >
               <Button
-                href={`/signup?plan=${data.featuredPlan}`}
+                href={`/signup?plan=${config.featuredPlan}`}
                 size="lg"
                 className="animate-float-soft"
               >
-                Start 30-Day Free Trial
+                {t("startTrial")}
               </Button>
               <Button href="/pricing" variant="ghost" size="lg">
-                See Pricing
+                {t("seePricing")}
               </Button>
             </div>
           </div>
@@ -146,13 +153,13 @@ export default async function UseCasePage({
                 data-reveal="up"
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight"
               >
-                {data.featuresTitle}
+                {t(`${key}.featuresTitle`)}
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {data.features.map((feature, index) => {
-                const Icon = feature.icon;
+              {features.map((feature, index) => {
+                const Icon = config.featureIcons[index];
                 return (
                   <div
                     key={feature.title}
@@ -201,19 +208,19 @@ export default async function UseCasePage({
               </div>
 
               <blockquote className="text-lg text-white/80 leading-relaxed">
-                &ldquo;{data.testimonial.quote}&rdquo;
+                &ldquo;{t(`${key}.testimonial.quote`)}&rdquo;
               </blockquote>
 
               <div className="flex items-center gap-3 pt-2 border-t border-white/5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand text-sm font-bold">
-                  {data.testimonial.initials}
+                  {config.testimonialInitials}
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-white">
-                    {data.testimonial.name}
+                    {t(`${key}.testimonial.name`)}
                   </div>
                   <div className="text-xs text-ink-05">
-                    {data.testimonial.venue} · {data.testimonial.city}
+                    {t(`${key}.testimonial.venue`)} · {t(`${key}.testimonial.city`)}
                   </div>
                 </div>
               </div>

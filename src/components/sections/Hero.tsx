@@ -88,27 +88,6 @@ export default async function Hero() {
                 <p className="text-[11px] text-white/28">{t("trustLine")}</p>
               </div>
 
-              {/* inline stat strip */}
-              <div
-                data-reveal="up"
-                data-reveal-delay="320"
-                className="flex items-center gap-5 flex-wrap"
-              >
-                {[
-                  { value: "5,000+", label: "venues" },
-                  { value: "40+", label: "countries" },
-                  { value: "4.9★", label: "App Store" },
-                ].map((stat) => (
-                  <div key={stat.label} className="flex items-baseline gap-1.5">
-                    <span className="text-sm font-bold text-white/70">
-                      {stat.value}
-                    </span>
-                    <span className="text-[10px] text-white/28 uppercase tracking-wide">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
 
             </div>
 
@@ -155,10 +134,10 @@ export default async function Hero() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[11px] font-bold text-white/90 mb-0.5">
-                        Your Restaurant
+                        {t("mockupRestaurantName")}
                       </p>
                       <p className="text-[10px] text-white/50 leading-snug">
-                        Tonight&apos;s special — order now and save 15% 🔥
+                        {t("mockupPromoText")}
                       </p>
                     </div>
                     <span className="text-[9px] text-white/25 shrink-0 mt-0.5">
@@ -173,7 +152,7 @@ export default async function Hero() {
                   <div className="flex items-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
                     <p className="text-[9px] uppercase tracking-[0.18em] text-white/30 font-semibold">
-                      Triggered automatically after scan
+                      {t("mockupTriggerLabel")}
                     </p>
                   </div>
                 </div>
@@ -187,11 +166,11 @@ export default async function Hero() {
                   }}
                 >
                   <p className="text-[9px] uppercase tracking-[0.15em] text-white/28 font-semibold mb-0.5">
-                    This month
+                    {t("mockupPeriod")}
                   </p>
                   <p className="text-lg font-black text-white leading-none">
-                    +50{" "}
-                    <span className="text-brand text-sm font-bold">orders</span>
+                    {t("mockupOrderCount")}{" "}
+                    <span className="text-brand text-sm font-bold">{t("mockupOrderLabel")}</span>
                   </p>
                 </div>
 

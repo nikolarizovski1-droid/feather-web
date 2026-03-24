@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "Bash(ls -la /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/)",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(git clone:*)",
+      "Bash(cp -r /tmp/marketingskills/skills /Users/nikola/Documents/Projects/feather-web2/skills)",
+      "Bash(cp /tmp/marketingskills/AGENTS.md /Users/nikola/Documents/Projects/feather-web2/AGENTS.md)",
+      "Bash(npx next:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(python3:*)"
+    ]
+  }
+}
