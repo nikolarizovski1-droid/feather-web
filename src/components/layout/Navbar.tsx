@@ -98,6 +98,14 @@ export default function Navbar() {
             >
               {t("signIn")}
             </Link> */}
+            <a
+              href="https://feather.echo-develop.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-ink-05 hover:text-white transition-colors duration-200"
+            >
+              {t("forMalls")}
+            </a>
             <Button href="/signup" size="sm">
               {t("startFreeTrial")}
             </Button>
@@ -156,6 +164,15 @@ export default function Navbar() {
               >
                 {t("signIn")}
               </Link> */}
+              <a
+                href="https://feather.echo-develop.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-ink-05 hover:text-white py-2.5 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {t("forMalls")}
+              </a>
               <Button href="/signup" className="w-full">
                 {t("startFreeTrial")}
               </Button>
