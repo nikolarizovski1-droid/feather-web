@@ -37,7 +37,7 @@ export default async function AboutPage({
       <main>
         <AboutPageHero />
         <AboutNarrative />
-        <StatsBar />
+        {/* <StatsBar /> */}
         <AboutPlatformSnapshot />
         <Testimonials />
         <CTABand />

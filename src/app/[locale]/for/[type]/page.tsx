@@ -142,7 +142,7 @@ export default async function UseCasePage({
         </section>
 
         {/* ── Stats ─────────────────────────────────────────────────── */}
-        <StatsBar />
+        {/* <StatsBar /> */}
 
         {/* ── Feature Highlights ────────────────────────────────────── */}
         <section className="py-24 lg:py-32 bg-ink-08" aria-label="Key features">

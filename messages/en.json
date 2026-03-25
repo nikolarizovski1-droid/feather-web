@@ -63,14 +63,14 @@
     "mockupOrderLabel": "orders"
   },
   "StatsBar": {
-    "stat0value": "5,000+",
-    "stat0label": "Venues Powered",
-    "stat1value": "40+",
-    "stat1label": "Countries",
-    "stat2value": "10M+",
-    "stat2label": "Menu Scans",
-    "stat3value": "4.9★",
-    "stat3label": "App Store Rating"
+    "stat0value": "<1 min",
+    "stat0label": "Menu Load Time",
+    "stat1value": "0",
+    "stat1label": "App Downloads Needed",
+    "stat2value": "10 min",
+    "stat2label": "Setup Time",
+    "stat3value": "24/7",
+    "stat3label": "Automated Marketing"
   },
   "ComparisonSection": {
     "eyebrow": "Why Feather",

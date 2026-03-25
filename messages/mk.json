@@ -63,14 +63,14 @@
     "mockupOrderLabel": "нарачки"
   },
   "StatsBar": {
-    "stat0value": "5.000+",
-    "stat0label": "Активни локали",
-    "stat1value": "40+",
-    "stat1label": "Земји",
-    "stat2value": "10M+",
-    "stat2label": "Скенирања на мени",
-    "stat3value": "4.9★",
-    "stat3label": "Оцена на App Store"
+    "stat0value": "<1 мин",
+    "stat0label": "Брзина на менито",
+    "stat1value": "0",
+    "stat1label": "Потребни преземања",
+    "stat2value": "10 мин",
+    "stat2label": "Време за поставка",
+    "stat3value": "24/7",
+    "stat3label": "Автоматски маркетинг"
   },
   "ComparisonSection": {
     "eyebrow": "Зошто Feather",

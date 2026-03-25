@@ -24,7 +24,7 @@ export default async function Home({
       <Navbar />
       <main>
         <Hero />
-        <StatsBar />
+        {/* <StatsBar /> */}
         <ComparisonSection />
         <HowItWorks />
         <WhoIsItFor />

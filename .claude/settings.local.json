@@ -10,7 +10,13 @@
       "Bash(cp /tmp/marketingskills/AGENTS.md /Users/nikola/Documents/Projects/feather-web2/AGENTS.md)",
       "Bash(npx next:*)",
       "Bash(python3 -c \":*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(curl -s \"https://www.google.com/search?q=QR+menu+restaurant+marketing+platform+competitors+2025+2026\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://www.google.com/search?q=mr+yum+pricing+features+2025\" -H \"User-Agent: Mozilla/5.0\")",
+      "Bash(curl -s \"https://www.google.com/search?q=sunday+app+restaurant+QR+code+pricing+features\" -H \"User-Agent: Mozilla/5.0\")",
+      "WebSearch",
+      "WebFetch(domain:www.restolabs.com)",
+      "WebFetch(domain:forcked.com)"
     ]
   }
 }
