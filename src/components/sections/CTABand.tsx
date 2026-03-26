@@ -1,4 +1,5 @@
 import Button from "@/components/ui/Button";
+import TrackedCTALink from "@/components/ui/TrackedCTALink";
 import { getTranslations } from "next-intl/server";
 
 export default async function CTABand() {
@@ -35,9 +36,13 @@ export default async function CTABand() {
           data-reveal-delay="160"
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button href="/signup" variant="dark" size="lg">
+          <TrackedCTALink
+            href="/signup"
+            location="cta_band"
+            className="inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 whitespace-nowrap cursor-pointer bg-ink-08 text-white hover:bg-ink-07 active:scale-[0.98] h-12 px-8 text-base"
+          >
             {t("startTrial")}
-          </Button>
+          </TrackedCTALink>
           <Button
             href="/features"
             variant="ghost"

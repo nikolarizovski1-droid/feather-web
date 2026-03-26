@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { buildAlternates } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RevealObserver from "@/components/ui/RevealObserver";
 import CTABand from "@/components/sections/CTABand";
 import FaqPageHero from "@/components/sections/FaqPageHero";
 import FaqList from "@/components/sections/FaqList";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 type FaqItem = {
   question: string;
@@ -34,6 +36,7 @@ export async function generateMetadata({
       type: "website",
       siteName: "Feather",
     },
+    alternates: buildAlternates(locale, "/faq"),
   };
 }
 
@@ -65,6 +68,7 @@ export default async function FaqPage({
 
   return (
     <>
+      <BreadcrumbJsonLd locale={locale} items={[{ name: "FAQ", path: "/faq" }]} />
       <Navbar />
       <main>
         <FaqPageHero />

@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Check, ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
+import { events } from "@/lib/analytics";
 import type {
   Plan,
   PlanDuration,
@@ -35,6 +36,10 @@ interface PricingPlansProps {
 export default function PricingPlans({ plans, locale }: PricingPlansProps) {
   const t = useTranslations("PricingPlans");
   const [duration, setDuration] = useState<PlanDuration>("1m");
+
+  useEffect(() => {
+    events.pricingView();
+  }, []);
 
   const grouped = useMemo<PlansByTier | null>(() => {
     if (!plans) return null;
@@ -93,7 +98,10 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                 <button
                   key={d}
                   type="button"
-                  onClick={() => setDuration(d)}
+                  onClick={() => {
+                    setDuration(d);
+                    events.planToggle(d);
+                  }}
                   className={`relative flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 cursor-pointer ${
                     duration === d
                       ? "bg-card text-white shadow-sm"

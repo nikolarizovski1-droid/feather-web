@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { events } from "@/lib/analytics";
 
 export default function MobileCTABar() {
   const t = useTranslations("MobileCTABar");
@@ -33,6 +34,7 @@ export default function MobileCTABar() {
         <p className="text-xs text-white/45 leading-snug flex-1">{t("text")}</p>
         <Link
           href="/signup"
+          onClick={() => events.ctaClick("mobile_sticky_bar", "start_trial")}
           className="shrink-0 inline-flex items-center justify-center h-10 px-5 text-sm font-semibold rounded-full bg-brand text-white hover:bg-[#e5474b] transition-colors duration-200"
         >
           {t("cta")}

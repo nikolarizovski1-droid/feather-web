@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { setRequestLocale } from "next-intl/server";
+import { buildAlternates } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PricingPageHero from "@/components/sections/PricingPageHero";
@@ -10,12 +11,28 @@ import PricingComparisonTable from "@/components/sections/PricingComparisonTable
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import { fetchPricingPlans } from "@/lib/api";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
-export const metadata: Metadata = {
-  title: "Pricing — Feather Restaurant Marketing Platform",
-  description:
-    "Start free with Feather's digital menu. Upgrade to Growth or Pro to unlock push notifications, event promotions, analytics, and more.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Pricing — Feather Restaurant Marketing Platform",
+    description:
+      "Start free with Feather's digital menu. Upgrade to Growth or Pro to unlock push notifications, event promotions, analytics, and more.",
+    openGraph: {
+      title: "Pricing — Feather Restaurant Marketing Platform",
+      description:
+        "Start free with Feather's digital menu. Upgrade to Growth or Pro for push notifications, event promotions, analytics, and more.",
+      type: "website",
+      siteName: "Feather",
+    },
+    alternates: buildAlternates(locale, "/pricing"),
+  };
+}
 
 function getCountryCode(headersList: Headers): string | undefined {
   const vercel = headersList.get("x-vercel-ip-country");
@@ -42,6 +59,7 @@ export default async function PricingPage({
 
   return (
     <>
+      <BreadcrumbJsonLd locale={locale} items={[{ name: "Pricing", path: "/pricing" }]} />
       <Navbar />
       <main>
         <PricingPageHero />

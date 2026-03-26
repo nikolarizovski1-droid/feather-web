@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import TrackedDetails from "@/components/ui/TrackedDetails";
 
 type FaqItem = {
   question: string;
@@ -56,8 +57,9 @@ export default async function FaqList() {
               </h3>
               <div className="space-y-3">
                 {category.items.map((item) => (
-                  <details
+                  <TrackedDetails
                     key={item.question}
+                    question={item.question}
                     className="group rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-white/20"
                   >
                     <summary className="cursor-pointer list-none text-base sm:text-lg font-semibold text-white flex items-start justify-between gap-4">
@@ -72,7 +74,7 @@ export default async function FaqList() {
                     <p className="mt-4 text-ink-05 leading-relaxed pr-8">
                       {item.answer}
                     </p>
-                  </details>
+                  </TrackedDetails>
                 ))}
               </div>
             </div>

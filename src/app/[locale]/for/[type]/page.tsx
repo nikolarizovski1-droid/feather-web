@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import { buildAlternates } from "@/lib/seo";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +9,8 @@ import StatsBar from "@/components/sections/StatsBar";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import Button from "@/components/ui/Button";
+import TrackPageView from "@/components/ui/TrackPageView";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import {
   getUseCaseConfig,
   USE_CASE_TYPES,
@@ -34,9 +37,18 @@ export async function generateMetadata({
   if (!config) return {};
   setRequestLocale(locale);
   const t = await getTranslations("UseCasePage");
+  const title = t(`${config.translationKey}.meta.title`);
+  const description = t(`${config.translationKey}.meta.description`);
   return {
-    title: t(`${config.translationKey}.meta.title`),
-    description: t(`${config.translationKey}.meta.description`),
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      siteName: "Feather",
+    },
+    alternates: buildAlternates(locale, `/for/${type}`),
   };
 }
 
@@ -59,6 +71,14 @@ export default async function UseCasePage({
 
   return (
     <>
+      <TrackPageView event="use_case_click" params={{ use_case: type }} />
+      <BreadcrumbJsonLd
+        locale={locale}
+        items={[
+          { name: "For", path: undefined },
+          { name: type.split("-").map(w => w[0].toUpperCase() + w.slice(1)).join(" "), path: `/for/${type}` },
+        ]}
+      />
       <Navbar />
       <main>
 

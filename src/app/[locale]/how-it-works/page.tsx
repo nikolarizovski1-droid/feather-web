@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+import { buildAlternates } from "@/lib/seo";
 import { ChevronDown } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +9,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import Button from "@/components/ui/Button";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
 export async function generateMetadata({
   params,
@@ -19,6 +21,13 @@ export async function generateMetadata({
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    openGraph: {
+      title: t("meta.title"),
+      description: t("meta.description"),
+      type: "website",
+      siteName: "Feather",
+    },
+    alternates: buildAlternates(locale, "/how-it-works"),
   };
 }
 
@@ -34,8 +43,41 @@ export default async function HowItWorksPage({
   type FaqItem = { question: string; answer: string };
   const faqItems = t.raw("faq.items") as FaqItem[];
 
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to get started with Feather",
+    description:
+      "Set up your restaurant's digital menu and marketing platform in three simple steps.",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Set up your menu",
+        text: "Upload your menu items, photos, and prices. Feather generates a beautiful digital menu and QR code instantly.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Activate marketing",
+        text: "Enable push notifications, promotions, and events to automatically engage guests who scan your menu.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Every scan works",
+        text: "Each QR scan builds your guest list and drives repeat visits through automated re-engagement campaigns.",
+      },
+    ],
+  };
+
   return (
     <>
+      <BreadcrumbJsonLd locale={locale} items={[{ name: "How It Works", path: "/how-it-works" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
       <Navbar />
       <main>
 

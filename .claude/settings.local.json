@@ -16,7 +16,14 @@
       "Bash(curl -s \"https://www.google.com/search?q=sunday+app+restaurant+QR+code+pricing+features\" -H \"User-Agent: Mozilla/5.0\")",
       "WebSearch",
       "WebFetch(domain:www.restolabs.com)",
-      "WebFetch(domain:forcked.com)"
+      "WebFetch(domain:forcked.com)",
+      "Bash(ls /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/layout.tsx /Users/nikola/Documents/Projects/feather-web2/src/app/layout.tsx)",
+      "Bash(npm run:*)",
+      "Bash(grep -r canonical /Users/nikola/Documents/Projects/feather-web2/src --include=*.tsx --include=*.ts)",
+      "Bash(grep -A5 \"Image\" /Users/nikola/Documents/Projects/feather-web2/src/components/sections/*.tsx)",
+      "Bash(/tmp/check_metadata.txt:*)",
+      "Read(//tmp/**)",
+      "Bash(grep -r \"head\\\\|next/head\\\\|og:\" /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/layout.tsx)"
     ]
   }
 }
