@@ -14,7 +14,7 @@ export default async function AboutPlatformSnapshot() {
 
   return (
     <section
-      className="py-24 lg:py-32 bg-ink-08"
+      className="py-24 lg:py-32 bg-ink-07"
       aria-labelledby="about-platform-snapshot-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,7 +29,7 @@ export default async function AboutPlatformSnapshot() {
             id="about-platform-snapshot-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title")}
           </h2>
@@ -50,12 +50,12 @@ export default async function AboutPlatformSnapshot() {
                 key={item.title}
                 data-reveal="scale"
                 data-reveal-delay={80 + index * 70}
-                className="rounded-2xl bg-card border border-white/5 p-6"
+                className="rounded-2xl bg-card border border-black/5 p-6 shadow-sm"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 mb-4">
                   <Icon size={18} className="text-brand" />
                 </div>
-                <h3 className="text-base font-semibold text-white mb-2">
+                <h3 className="text-base font-semibold text-ink-08 mb-2">
                   {item.title}
                 </h3>
                 <p className="text-sm text-ink-05 leading-relaxed">

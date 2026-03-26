@@ -6,7 +6,7 @@ export default async function AboutPageHero() {
 
   return (
     <section
-      className="pt-36 pb-24 lg:pt-44 lg:pb-32 bg-ink-08"
+      className="pt-36 pb-24 lg:pt-44 lg:pb-32 bg-surface"
       aria-labelledby="about-page-heading"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -21,7 +21,7 @@ export default async function AboutPageHero() {
           id="about-page-heading"
           data-reveal="up"
           data-reveal-delay="80"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink-08 tracking-tight leading-[1.1] mb-6"
         >
           {t("title1")} <span className="text-ink-05">{t("title2")}</span>
         </h1>
@@ -42,7 +42,7 @@ export default async function AboutPageHero() {
           <Button href="/signup" size="lg">
             {t("startFreeTrial")}
           </Button>
-          <Button href="/features" variant="ghost" size="lg">
+          <Button href="/features" variant="ghost-light" size="lg">
             {t("exploreFeatures")}
           </Button>
         </div>

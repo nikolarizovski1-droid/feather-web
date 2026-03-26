@@ -28,7 +28,7 @@ export default async function AboutNarrative() {
               id="about-narrative-heading"
               data-reveal="up"
               data-reveal-delay="80"
-              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-6"
             >
               {t("title")}
             </h2>
@@ -48,10 +48,10 @@ export default async function AboutNarrative() {
             </p>
           </div>
 
-          <div className="rounded-2xl bg-card border border-white/5 p-7 lg:p-8">
+          <div className="rounded-2xl bg-card border border-black/5 p-7 lg:p-8 shadow-sm">
             <p
               data-reveal="up"
-              className="text-xs font-semibold uppercase tracking-widest text-white/45 mb-5"
+              className="text-xs font-semibold uppercase tracking-widest text-ink-05 mb-5"
             >
               {t("principlesTitle")}
             </p>
@@ -67,7 +67,7 @@ export default async function AboutNarrative() {
                     <Check size={11} className="text-brand" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">{point.title}</p>
+                    <p className="text-sm font-semibold text-ink-08">{point.title}</p>
                     <p className="text-sm text-ink-05 leading-relaxed mt-1">
                       {point.description}
                     </p>

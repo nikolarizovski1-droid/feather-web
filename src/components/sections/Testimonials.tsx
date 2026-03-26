@@ -49,7 +49,7 @@ export default async function Testimonials() {
             id="testimonials-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title")}
           </h2>
@@ -69,21 +69,21 @@ export default async function Testimonials() {
               key={testimonial.name}
               data-reveal="scale"
               data-reveal-delay={100 + index * 100}
-              className="flex flex-col gap-5 rounded-2xl bg-card border border-white/5 p-7 hover:border-white/10 transition-colors duration-300"
+              className="flex flex-col gap-5 rounded-2xl bg-card border border-black/5 p-7 hover:border-black/10 transition-colors duration-300 shadow-sm"
             >
               <StarRating count={testimonial.stars} />
 
-              <blockquote className="text-sm text-white/75 leading-relaxed flex-1">
+              <blockquote className="text-sm text-ink-05 leading-relaxed flex-1">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center gap-3 pt-2 border-t border-white/5">
+              <div className="flex items-center gap-3 pt-2 border-t border-black/5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand text-sm font-bold">
                   {testimonial.initials}
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-ink-08">
                     {testimonial.name}
                   </div>
                   <div className="text-xs text-ink-05">

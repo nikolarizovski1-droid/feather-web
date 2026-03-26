@@ -5,7 +5,7 @@ export default async function FaqPageHero() {
 
   return (
     <section
-      className="pt-36 pb-16 lg:pt-44 lg:pb-20 bg-ink-08"
+      className="pt-36 pb-16 lg:pt-44 lg:pb-20 bg-surface"
       aria-labelledby="faq-page-heading"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
@@ -20,7 +20,7 @@ export default async function FaqPageHero() {
           id="faq-page-heading"
           data-reveal="up"
           data-reveal-delay="80"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink-08 tracking-tight leading-[1.1] mb-6"
         >
           {t("title")}
         </h1>

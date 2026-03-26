@@ -20,7 +20,7 @@ export default async function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-24 lg:py-32 bg-ink-08"
+      className="py-24 lg:py-32 bg-surface"
       aria-labelledby="how-it-works-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,7 +36,7 @@ export default async function HowItWorks() {
             id="how-it-works-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title")}
           </h2>
@@ -50,7 +50,7 @@ export default async function HowItWorks() {
         </div>
 
         {/* Steps grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/5 rounded-3xl overflow-hidden border border-white/5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-black/5 rounded-3xl overflow-hidden border border-black/5">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
@@ -59,13 +59,13 @@ export default async function HowItWorks() {
                 data-reveal="up"
                 data-reveal-delay={100 + index * 100}
                 className={`relative flex flex-col gap-6 p-8 lg:p-10 ${
-                  step.highlight ? "bg-surface" : "bg-ink-08"
+                  step.highlight ? "bg-card" : "bg-surface"
                 }`}
               >
                 {/* Step number — large ghost watermark */}
                 <span
                   aria-hidden
-                  className="absolute top-6 right-7 text-[72px] font-black leading-none tabular-nums select-none text-white/[0.04]"
+                  className="absolute top-6 right-7 text-[72px] font-black leading-none tabular-nums select-none text-black/[0.04]"
                 >
                   {step.number}
                 </span>
@@ -75,7 +75,7 @@ export default async function HowItWorks() {
                   className={`flex h-11 w-11 items-center justify-center rounded-xl border ${
                     step.highlight
                       ? "bg-brand/10 border-brand/25"
-                      : "bg-ink-07 border-white/6"
+                      : "bg-ink-07 border-black/6"
                   }`}
                 >
                   <Icon
@@ -95,7 +95,7 @@ export default async function HowItWorks() {
 
                 {/* Title + description */}
                 <div className="flex flex-col gap-3">
-                  <h3 className="text-xl font-bold text-white leading-snug">
+                  <h3 className="text-xl font-bold text-ink-08 leading-snug">
                     {step.title}
                   </h3>
                   <p className="text-sm text-ink-05 leading-relaxed">
@@ -111,7 +111,7 @@ export default async function HowItWorks() {
                       className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium border ${
                         step.highlight
                           ? "bg-brand/8 border-brand/15 text-brand/80"
-                          : "bg-ink-07 border-white/6 text-ink-05"
+                          : "bg-ink-07 border-black/6 text-ink-05"
                       }`}
                     >
                       {tag}

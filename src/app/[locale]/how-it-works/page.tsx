@@ -82,7 +82,7 @@ export default async function HowItWorksPage({
       <main>
 
         {/* ── Page Hero ─────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-ink-08 pt-28 pb-20 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-surface pt-28 pb-20 lg:pt-36 lg:pb-28">
           {/* Subtle brand glow */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
@@ -102,14 +102,14 @@ export default async function HowItWorksPage({
             <h1
               data-reveal="up"
               data-reveal-delay="80"
-              className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.05] mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-ink-08 leading-[1.05] mb-6"
             >
               {t("hero.title")}
             </h1>
             <p
               data-reveal="up"
               data-reveal-delay="160"
-              className="text-lg text-white/55 leading-relaxed mb-10 max-w-xl mx-auto"
+              className="text-lg text-ink-05 leading-relaxed mb-10 max-w-xl mx-auto"
             >
               {t("hero.description")}
             </p>
@@ -121,14 +121,14 @@ export default async function HowItWorksPage({
               <Button href="/signup" size="lg">
                 {t("hero.startTrial")}
               </Button>
-              <Button href="/pricing" variant="ghost" size="lg">
+              <Button href="/pricing" variant="ghost-light" size="lg">
                 {t("hero.seePricing")}
               </Button>
             </div>
           </div>
 
           {/* Scroll cue into the steps */}
-          <div className="mt-12 flex justify-center text-white/20">
+          <div className="mt-12 flex justify-center text-ink-05/40">
             <ChevronDown size={22} className="animate-bounce" />
           </div>
         </section>
@@ -137,7 +137,7 @@ export default async function HowItWorksPage({
         <HowItWorks />
 
         {/* ── FAQ ────────────────────────────────────────────────────── */}
-        <section className="py-24 lg:py-32 bg-ink-08" aria-labelledby="hiw-faq-heading">
+        <section className="py-24 lg:py-32 bg-ink-07" aria-labelledby="hiw-faq-heading">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
 
             <div className="text-center mb-14">
@@ -151,7 +151,7 @@ export default async function HowItWorksPage({
                 id="hiw-faq-heading"
                 data-reveal="up"
                 data-reveal-delay="80"
-                className="text-3xl sm:text-4xl font-bold text-white tracking-tight"
+                className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight"
               >
                 {t("faq.title")}
               </h2>
@@ -160,11 +160,11 @@ export default async function HowItWorksPage({
             <div
               data-reveal="up"
               data-reveal-delay="160"
-              className="divide-y divide-white/[0.07]"
+              className="divide-y divide-black/[0.07]"
             >
               {faqItems.map((item) => (
                 <div key={item.question} className="py-6">
-                  <h3 className="text-base font-semibold text-white mb-2 leading-snug">
+                  <h3 className="text-base font-semibold text-ink-08 mb-2 leading-snug">
                     {item.question}
                   </h3>
                   <p className="text-sm text-ink-05 leading-relaxed">

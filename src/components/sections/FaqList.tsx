@@ -17,7 +17,7 @@ export default async function FaqList() {
 
   return (
     <section
-      className="bg-ink-08 pb-20 lg:pb-24"
+      className="bg-surface pb-20 lg:pb-24"
       aria-labelledby="faq-list-heading"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@ export default async function FaqList() {
             id="faq-list-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4"
+            className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight mb-4"
           >
             {t("title")}
           </h2>
@@ -52,7 +52,7 @@ export default async function FaqList() {
               data-reveal="up"
               data-reveal-delay={String(60 + categoryIndex * 40)}
             >
-              <h3 className="text-xl font-semibold text-white mb-4">
+              <h3 className="text-xl font-semibold text-ink-08 mb-4">
                 {category.title}
               </h3>
               <div className="space-y-3">
@@ -60,13 +60,13 @@ export default async function FaqList() {
                   <TrackedDetails
                     key={item.question}
                     question={item.question}
-                    className="group rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-white/20"
+                    className="group rounded-xl border border-black/10 bg-card p-5 transition-colors hover:border-black/20 shadow-sm"
                   >
-                    <summary className="cursor-pointer list-none text-base sm:text-lg font-semibold text-white flex items-start justify-between gap-4">
+                    <summary className="cursor-pointer list-none text-base sm:text-lg font-semibold text-ink-08 flex items-start justify-between gap-4">
                       <span>{item.question}</span>
                       <span
                         aria-hidden="true"
-                        className="text-ink-05 group-open:text-white transition-colors"
+                        className="text-ink-05 group-open:text-ink-08 transition-colors"
                       >
                         +
                       </span>

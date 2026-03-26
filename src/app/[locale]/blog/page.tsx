@@ -63,14 +63,14 @@ export default async function BlogPage({
             <h1
               data-reveal="up"
               data-reveal-delay="80"
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-5"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink-08 tracking-tight leading-[1.1] mb-5"
             >
               {t("hero.title")}
             </h1>
             <p
               data-reveal="up"
               data-reveal-delay="160"
-              className="text-base lg:text-lg text-white/55 leading-relaxed max-w-2xl mx-auto"
+              className="text-base lg:text-lg text-ink-05 leading-relaxed max-w-2xl mx-auto"
             >
               {t("hero.subtitle")}
             </p>

@@ -31,10 +31,10 @@ export default async function BlogPostCard({
       href={`/blog/${slug}`}
       data-reveal="scale"
       data-reveal-delay={100 + index * 80}
-      className="group flex flex-col gap-4 rounded-2xl bg-card border border-white/5 p-7 hover:border-brand/20 transition-colors"
+      className="group flex flex-col gap-4 rounded-2xl bg-card border border-black/5 p-7 hover:border-brand/20 transition-colors shadow-sm"
     >
       <time className="text-xs text-ink-05">{formattedDate}</time>
-      <h2 className="text-lg font-bold text-white leading-snug group-hover:text-brand transition-colors">
+      <h2 className="text-lg font-bold text-ink-08 leading-snug group-hover:text-brand transition-colors">
         {title}
       </h2>
       <p className="text-sm text-ink-05 leading-relaxed line-clamp-3">

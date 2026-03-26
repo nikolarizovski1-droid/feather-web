@@ -27,7 +27,8 @@
       "Bash(find /Users/nikola/Documents/Projects/feather-web2/src/app/[locale] -type d)",
       "Bash(pnpm add:*)",
       "Bash(npm --version)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(grep -r \"bg-\\\\|text-\" /Users/nikola/Documents/Projects/feather-web2/src/components/layout/*.tsx)"
     ]
   }
 }

@@ -17,9 +17,9 @@ interface PromotionCard {
 function FunnelCard({ promo }: { promo: PromotionCard }) {
   const Icon = promo.icon;
   return (
-    <div className="h-full flex flex-col rounded-2xl bg-card border border-white/5 overflow-hidden">
+    <div className="h-full flex flex-col rounded-2xl bg-card border border-black/5 overflow-hidden shadow-sm">
       {/* Card header */}
-      <div className="px-7 pt-7 pb-6 border-b border-white/5">
+      <div className="px-7 pt-7 pb-6 border-b border-black/5">
         <div className="flex items-center gap-3 mb-4">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand/10">
             <Icon size={18} className="text-brand" />
@@ -28,7 +28,7 @@ function FunnelCard({ promo }: { promo: PromotionCard }) {
             {promo.type}
           </span>
         </div>
-        <p className="text-lg font-semibold text-white leading-snug">
+        <p className="text-lg font-semibold text-ink-08 leading-snug">
           {promo.title}
         </p>
       </div>
@@ -40,7 +40,7 @@ function FunnelCard({ promo }: { promo: PromotionCard }) {
             <div className="flex items-center justify-between gap-4 py-3">
               <span className="text-sm text-ink-05 leading-snug">{step.label}</span>
               <div className="text-right">
-                <span className="text-base font-bold text-white tabular-nums">
+                <span className="text-base font-bold text-ink-08 tabular-nums">
                   {step.value}
                 </span>
                 {step.sub && (
@@ -96,7 +96,7 @@ export default async function PromotionsROI() {
             id="promotions-roi-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title1")}
             <br />

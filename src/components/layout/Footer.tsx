@@ -81,7 +81,7 @@ export default async function Footer() {
   };
 
   return (
-    <footer className="bg-ink-08 border-t border-white/5" aria-label="Footer">
+    <footer className="bg-ink-08 border-t border-white/5 text-white" aria-label="Footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
         <div className="py-14 grid grid-cols-2 md:grid-cols-7 gap-8">
@@ -100,7 +100,7 @@ export default async function Footer() {
             <div className="flex flex-col gap-2 mt-2">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-ink-07 px-3 py-2 hover:border-white/20 transition-colors w-fit"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:border-white/20 transition-colors w-fit"
                 aria-label={t("downloadOnAppStore")}
               >
                 <svg
@@ -120,7 +120,7 @@ export default async function Footer() {
               </a>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-ink-07 px-3 py-2 hover:border-white/20 transition-colors w-fit"
+                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:border-white/20 transition-colors w-fit"
                 aria-label={t("getItOnGooglePlay")}
               >
                 <svg

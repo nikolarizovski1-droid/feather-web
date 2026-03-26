@@ -3,25 +3,21 @@
 @theme {
   --color-brand: #FF6064;
   --color-accent: #FEC94C;
-  --color-surface: #2C2B2B;
-  --color-card: #2B2B2B;
-  --color-ink-05: #7A7A7A;
-  --color-ink-06: #5A5A5A;
-  --color-ink-07: #3D3D3D;
-  --color-ink-08: #252525;
+  --color-surface: #FAF8F5;
+  --color-card: #FFFFFF;
+  --color-ink-05: #6B7280;
+  --color-ink-06: #9CA3AF;
+  --color-ink-07: #F3F0ED;
+  --color-ink-08: #1C1917;
 }
 
 @theme inline {
   --font-sans: var(--font-jakarta);
 }
 
-:root {
-  color-scheme: dark;
-}
-
 body {
-  background-color: #2C2B2B;
-  color: #ffffff;
+  background-color: #FAF8F5;
+  color: #1C1917;
 }
 
 * {

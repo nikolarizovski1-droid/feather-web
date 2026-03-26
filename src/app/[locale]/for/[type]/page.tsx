@@ -165,13 +165,13 @@ export default async function UseCasePage({
         {/* <StatsBar /> */}
 
         {/* ── Feature Highlights ────────────────────────────────────── */}
-        <section className="py-24 lg:py-32 bg-ink-08" aria-label="Key features">
+        <section className="py-24 lg:py-32 bg-surface" aria-label="Key features">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
             <div className="mx-auto max-w-2xl text-center mb-16">
               <h2
                 data-reveal="up"
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight"
               >
                 {t(`${key}.featuresTitle`)}
               </h2>
@@ -185,13 +185,13 @@ export default async function UseCasePage({
                     key={feature.title}
                     data-reveal="scale"
                     data-reveal-delay={100 + index * 100}
-                    className="flex flex-col gap-5 rounded-2xl bg-card border border-white/5 p-7"
+                    className="flex flex-col gap-5 rounded-2xl bg-card border border-black/5 p-7 shadow-sm"
                   >
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 border border-brand/20">
                       <Icon size={20} className="text-brand" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white mb-2 leading-snug">
+                      <h3 className="text-lg font-bold text-ink-08 mb-2 leading-snug">
                         {feature.title}
                       </h3>
                       <p className="text-sm text-ink-05 leading-relaxed">
@@ -210,7 +210,7 @@ export default async function UseCasePage({
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <article
               data-reveal="scale"
-              className="flex flex-col gap-6 rounded-2xl bg-card border border-white/5 p-8 lg:p-10"
+              className="flex flex-col gap-6 rounded-2xl bg-card border border-black/5 p-8 lg:p-10 shadow-sm"
             >
               {/* Stars */}
               <div className="flex gap-0.5" aria-label="5 out of 5 stars">
@@ -227,16 +227,16 @@ export default async function UseCasePage({
                 ))}
               </div>
 
-              <blockquote className="text-lg text-white/80 leading-relaxed">
+              <blockquote className="text-lg text-ink-05 leading-relaxed">
                 &ldquo;{t(`${key}.testimonial.quote`)}&rdquo;
               </blockquote>
 
-              <div className="flex items-center gap-3 pt-2 border-t border-white/5">
+              <div className="flex items-center gap-3 pt-2 border-t border-black/5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand text-sm font-bold">
                   {config.testimonialInitials}
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-ink-08">
                     {t(`${key}.testimonial.name`)}
                   </div>
                   <div className="text-xs text-ink-05">

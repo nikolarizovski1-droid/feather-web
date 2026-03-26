@@ -68,23 +68,23 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
 
   if (!grouped) {
     return (
-      <section className="pb-24 lg:pb-32 bg-ink-08" aria-label="Pricing plans">
+      <section className="pb-24 lg:pb-32 bg-surface" aria-label="Pricing plans">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-white/60">{t("apiError")}</p>
+          <p className="text-center text-ink-05">{t("apiError")}</p>
         </div>
       </section>
     );
   }
 
   return (
-    <section className="pb-24 lg:pb-32 bg-ink-08" aria-label="Pricing plans">
+    <section className="pb-24 lg:pb-32 bg-surface" aria-label="Pricing plans">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Billing toggle */}
         <div
           data-reveal="up"
           className="flex items-center justify-center mb-14"
         >
-          <div className="relative inline-flex items-center rounded-full bg-ink-07 p-1 gap-1">
+          <div className="relative inline-flex items-center rounded-full bg-ink-07 p-1 gap-1 shadow-sm">
             {DURATIONS.map((d) => {
               const label =
                 d === "1m"
@@ -104,8 +104,8 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                   }}
                   className={`relative flex items-center gap-2 px-5 py-2 text-sm font-semibold rounded-full transition-all duration-200 cursor-pointer ${
                     duration === d
-                      ? "bg-card text-white shadow-sm"
-                      : "text-ink-05 hover:text-white/70"
+                      ? "bg-card text-ink-08 shadow-sm"
+                      : "text-ink-05 hover:text-ink-08"
                   }`}
                 >
                   {label}
@@ -156,8 +156,8 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                 data-reveal-delay={100 + index * 100}
                 className={`relative rounded-2xl p-7 flex flex-col gap-6 ${
                   isHighlighted
-                    ? "bg-ink-07 border-2 border-brand/50 shadow-[0_0_50px_rgba(255,96,100,0.1)]"
-                    : "bg-card border border-white/5"
+                    ? "bg-card border-2 border-brand/50 shadow-lg"
+                    : "bg-card border border-black/5 shadow-sm"
                 }`}
               >
                 {/* Badge */}
@@ -175,7 +175,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                     {tierLabel}
                   </h3>
                   <div className="flex items-end gap-1.5 mb-1">
-                    <span className="text-4xl font-bold text-white">
+                    <span className="text-4xl font-bold text-ink-08">
                       {activePlan.price.formatted}
                     </span>
                     <span className="text-sm text-ink-05 mb-1.5">
@@ -199,7 +199,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                         <div className="mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-brand/10">
                           <Check size={10} className="text-brand" />
                         </div>
-                        <span className="text-sm text-white/70 leading-snug">
+                        <span className="text-sm text-ink-05 leading-snug">
                           {featureLabel}
                         </span>
                       </li>
@@ -210,13 +210,13 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                 {/* CTA */}
                 <Button
                   href={`/signup?plan=${tierKey}&billing=${duration}`}
-                  variant={isHighlighted ? "primary" : "ghost"}
+                  variant={isHighlighted ? "primary" : "ghost-light"}
                   className="w-full"
                 >
                   {t("cta")}
                 </Button>
 
-                <p className="text-[11px] text-white/40 text-center -mt-3 leading-snug">
+                <p className="text-[11px] text-ink-05/60 text-center -mt-3 leading-snug">
                   {t("trialNote")}
                 </p>
               </div>
@@ -228,13 +228,13 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
         <div
           data-reveal="up"
           data-reveal-delay="400"
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-white/5 bg-ink-07/40 px-6 py-4 max-w-2xl mx-auto"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-black/5 bg-ink-07 px-6 py-4 max-w-2xl mx-auto"
         >
           <ShieldCheck size={20} className="shrink-0 text-brand" />
-          <p className="text-sm text-white/60 text-center sm:text-left">
+          <p className="text-sm text-ink-05 text-center sm:text-left">
             {t.rich("trialGuarantee", {
               strong: (chunks) => (
-                <strong className="text-white font-semibold">{chunks}</strong>
+                <strong className="text-ink-08 font-semibold">{chunks}</strong>
               ),
             })}
           </p>

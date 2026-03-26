@@ -9,7 +9,7 @@ export default async function ComparisonSection() {
 
   return (
     <section
-      className="py-24 lg:py-32 bg-surface"
+      className="py-24 lg:py-32 bg-ink-07"
       aria-labelledby="comparison-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,7 +25,7 @@ export default async function ComparisonSection() {
             id="comparison-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title")}
           </h2>
@@ -44,20 +44,20 @@ export default async function ComparisonSection() {
           <div
             data-reveal="scale"
             data-reveal-delay="80"
-            className="rounded-2xl bg-ink-07 border border-white/5 p-8"
+            className="rounded-2xl bg-card border border-black/5 p-8 shadow-sm"
           >
             <div className="mb-6">
-              <span className="inline-block rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-ink-05 uppercase tracking-wider mb-4">
+              <span className="inline-block rounded-full bg-black/5 px-3 py-1 text-xs font-semibold text-ink-05 uppercase tracking-wider mb-4">
                 {t("basicCard.badge")}
               </span>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-ink-08">
                 {t("basicCard.title")}
               </h3>
             </div>
             <ul className="space-y-4">
               {basicItems.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white/5">
+                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black/5">
                     <X size={12} className="text-ink-05" />
                   </div>
                   <span className="text-sm text-ink-05 leading-snug">
@@ -72,7 +72,7 @@ export default async function ComparisonSection() {
           <div
             data-reveal="scale"
             data-reveal-delay="180"
-            className="rounded-2xl bg-ink-07 border border-brand/40 p-8 shadow-[0_0_60px_rgba(255,96,100,0.12)] relative overflow-hidden"
+            className="rounded-2xl bg-card border-2 border-brand/40 p-8 shadow-lg relative overflow-hidden"
           >
             {/* Subtle corner accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand/5 rounded-bl-full" />
@@ -80,7 +80,7 @@ export default async function ComparisonSection() {
               <span className="inline-block rounded-full bg-brand/15 px-3 py-1 text-xs font-semibold text-brand uppercase tracking-wider mb-4">
                 {t("featherCard.badge")}
               </span>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-ink-08">
                 {t("featherCard.title")}
               </h3>
             </div>
@@ -90,7 +90,7 @@ export default async function ComparisonSection() {
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/15">
                     <Check size={12} className="text-brand" />
                   </div>
-                  <span className="text-sm text-white/80 leading-snug">
+                  <span className="text-sm text-ink-08/80 leading-snug">
                     {item}
                   </span>
                 </li>

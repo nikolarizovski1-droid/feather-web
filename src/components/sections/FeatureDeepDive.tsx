@@ -48,7 +48,7 @@ function BulletList({ bullets }: { bullets: string[] }) {
           <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10">
             <Check size={11} className="text-brand" />
           </div>
-          <span className="text-sm text-white/70 leading-relaxed">{bullet}</span>
+          <span className="text-sm text-ink-05 leading-relaxed">{bullet}</span>
         </li>
       ))}
     </ul>
@@ -64,7 +64,7 @@ function FeatureSectionCard({
 }) {
   const isEven = index % 2 === 0;
   const Icon = feature.icon;
-  const bg = isEven ? "bg-ink-08" : "bg-surface";
+  const bg = isEven ? "bg-surface" : "bg-ink-07";
 
   return (
     <section
@@ -96,7 +96,7 @@ function FeatureSectionCard({
               id={`feature-${feature.id}-heading`}
               data-reveal="up"
               data-reveal-delay="80"
-              className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-5"
+              className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-ink-08 tracking-tight leading-tight mb-5"
             >
               {feature.title}
             </h2>

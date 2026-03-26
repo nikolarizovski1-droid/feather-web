@@ -26,7 +26,7 @@ export default async function WhoIsItFor() {
 
   return (
     <section
-      className="py-24 lg:py-32 bg-ink-08"
+      className="py-24 lg:py-32 bg-ink-07"
       aria-labelledby="who-is-it-for-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ export default async function WhoIsItFor() {
             id="who-is-it-for-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title")}
           </h2>
@@ -65,14 +65,14 @@ export default async function WhoIsItFor() {
               data-reveal-delay={100 + index * 100}
               className={`relative flex flex-col gap-6 rounded-2xl p-7 ${
                 card.isHighlighted
-                  ? "bg-ink-07 border-2 border-brand/50 shadow-[0_0_50px_rgba(255,96,100,0.10)]"
-                  : "bg-card border border-white/5"
+                  ? "bg-card border-2 border-brand/50 shadow-lg"
+                  : "bg-card border border-black/5 shadow-sm"
               }`}
             >
               {/* Ghost number watermark */}
               <span
                 aria-hidden
-                className="absolute top-4 right-5 text-[72px] font-black leading-none tabular-nums select-none text-white/[0.04] pointer-events-none"
+                className="absolute top-4 right-5 text-[72px] font-black leading-none tabular-nums select-none text-black/[0.04] pointer-events-none"
               >
                 {card.number}
               </span>
@@ -88,14 +88,14 @@ export default async function WhoIsItFor() {
 
               {/* Tag (non-highlighted cards) */}
               {!card.isHighlighted && (
-                <span className="inline-flex self-start items-center rounded-full border border-white/10 bg-ink-07 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-ink-05">
+                <span className="inline-flex self-start items-center rounded-full border border-black/10 bg-ink-07 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.15em] text-ink-05">
                   {card.tag}
                 </span>
               )}
 
               {/* Headline + description */}
               <div className={card.isHighlighted ? "mt-3" : ""}>
-                <h3 className="text-xl font-bold text-white leading-snug mb-2">
+                <h3 className="text-xl font-bold text-ink-08 leading-snug mb-2">
                   {card.headline}
                 </h3>
                 <p className="text-sm text-ink-05 leading-relaxed">
@@ -104,7 +104,7 @@ export default async function WhoIsItFor() {
               </div>
 
               {/* Divider */}
-              <div className="h-px bg-white/[0.06]" />
+              <div className="h-px bg-black/[0.06]" />
 
               {/* Benefits */}
               <ul className="space-y-2.5 flex-1">
@@ -112,12 +112,12 @@ export default async function WhoIsItFor() {
                   <li key={benefit} className="flex items-start gap-2.5">
                     <div
                       className={`mt-0.5 flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full ${
-                        card.isHighlighted ? "bg-brand/10" : "bg-ink-07"
+                        card.isHighlighted ? "bg-brand/10" : "bg-brand/5"
                       }`}
                     >
                       <Check size={10} className="text-brand" />
                     </div>
-                    <span className="text-sm text-white/65 leading-snug">
+                    <span className="text-sm text-ink-05 leading-snug">
                       {benefit}
                     </span>
                   </li>
@@ -135,7 +135,7 @@ export default async function WhoIsItFor() {
                 className={`inline-flex items-center justify-center gap-2 w-full h-11 px-6 text-sm font-semibold rounded-full transition-all duration-200 ${
                   card.isHighlighted
                     ? "bg-brand text-white hover:bg-[#e5474b] active:scale-[0.98]"
-                    : "bg-transparent text-white border border-white/20 hover:border-white/50 hover:bg-white/5 active:scale-[0.98]"
+                    : "bg-transparent text-ink-08 border border-ink-08/20 hover:border-ink-08/40 hover:bg-black/5 active:scale-[0.98]"
                 }`}
               >
                 {card.cta}
@@ -145,7 +145,7 @@ export default async function WhoIsItFor() {
               {/* Secondary: use-case deep-dive */}
               <Link
                 href={card.useCasePath}
-                className="inline-flex items-center justify-center gap-1.5 text-xs text-ink-05 hover:text-white transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-1.5 text-xs text-ink-05 hover:text-ink-08 transition-colors duration-200"
               >
                 {t("learnMore")}
                 <ArrowRight size={12} />
@@ -162,7 +162,7 @@ export default async function WhoIsItFor() {
         >
           <Link
             href="/pricing"
-            className="inline-flex items-center gap-1.5 text-sm text-ink-05 hover:text-white transition-colors duration-200"
+            className="inline-flex items-center gap-1.5 text-sm text-ink-05 hover:text-ink-08 transition-colors duration-200"
           >
             {t("seePricing")}
             <ArrowRight size={14} />

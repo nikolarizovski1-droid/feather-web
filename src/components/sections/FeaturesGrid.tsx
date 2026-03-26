@@ -68,7 +68,7 @@ export default async function FeaturesGrid() {
 
   return (
     <section
-      className="py-24 lg:py-32 bg-ink-08"
+      className="py-24 lg:py-32 bg-surface"
       aria-labelledby="features-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -84,7 +84,7 @@ export default async function FeaturesGrid() {
             id="features-heading"
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-5"
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
           >
             {t("title")}
           </h2>
@@ -106,7 +106,7 @@ export default async function FeaturesGrid() {
                 key={feature.title}
                 data-reveal="scale"
                 data-reveal-delay={100 + index * 80}
-                className="group rounded-2xl bg-card border border-white/5 p-6 flex flex-col gap-5 hover:border-brand/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
+                className="group rounded-2xl bg-card border border-black/5 p-6 flex flex-col gap-5 hover:border-brand/20 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg"
               >
                 {/* Mockup */}
                 <div className="flex justify-center py-2">
@@ -124,7 +124,7 @@ export default async function FeaturesGrid() {
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand/10 group-hover:bg-brand/15 transition-colors">
                       <Icon size={18} className="text-brand" />
                     </div>
-                    <h3 className="font-semibold text-white text-sm leading-tight">
+                    <h3 className="font-semibold text-ink-08 text-sm leading-tight">
                       {feature.title}
                     </h3>
                   </div>

@@ -11,9 +11,9 @@ export default async function StatsBar() {
   ];
 
   return (
-    <section id="stats" className="bg-ink-08" aria-label="Platform statistics">
+    <section id="stats" className="bg-surface" aria-label="Platform statistics">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-white/5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-black/5">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
@@ -21,7 +21,7 @@ export default async function StatsBar() {
               data-reveal-delay={80 + index * 70}
               className="flex flex-col items-center justify-center py-10 px-6 gap-1.5 text-center"
             >
-              <span className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              <span className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight">
                 {stat.value}
               </span>
               <span className="text-sm text-ink-05 font-medium">{stat.label}</span>

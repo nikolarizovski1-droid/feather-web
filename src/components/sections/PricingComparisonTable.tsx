@@ -68,7 +68,7 @@ export default async function PricingComparisonTable({
     return (
       <section className="py-24 lg:py-32 bg-surface" aria-label="Feature comparison">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-white/60">{t("apiError")}</p>
+          <p className="text-center text-ink-05">{t("apiError")}</p>
         </div>
       </section>
     );
@@ -96,7 +96,7 @@ export default async function PricingComparisonTable({
           <h2
             data-reveal="up"
             data-reveal-delay="80"
-            className="text-3xl sm:text-4xl font-bold text-white tracking-tight"
+            className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight"
           >
             {t("title")}
           </h2>
@@ -106,12 +106,12 @@ export default async function PricingComparisonTable({
         <div
           data-reveal="up"
           data-reveal-delay="160"
-          className="overflow-x-auto rounded-2xl border border-white/5"
+          className="overflow-x-auto rounded-2xl border border-black/5 shadow-sm"
         >
           <table className="w-full border-collapse text-left">
             <thead>
-              <tr className="border-b border-white/8 bg-ink-07">
-                <th className="py-5 pl-6 pr-4 text-sm font-semibold text-white/40 w-1/2">
+              <tr className="border-b border-black/8 bg-ink-07">
+                <th className="py-5 pl-6 pr-4 text-sm font-semibold text-ink-05 w-1/2">
                   {t("featureHeader")}
                 </th>
                 {monthlyPlans.map((plan, i) => {
@@ -125,7 +125,7 @@ export default async function PricingComparisonTable({
                     >
                       <span className="inline-flex flex-col items-center">
                         <span
-                          className={`text-sm font-semibold ${isMiddle ? "font-bold text-white" : "text-white/70"}`}
+                          className={`text-sm font-semibold ${isMiddle ? "font-bold text-ink-08" : "text-ink-08/70"}`}
                         >
                           {label}
                         </span>
@@ -144,8 +144,8 @@ export default async function PricingComparisonTable({
               {categories.map((category, catIndex) => (
                 <React.Fragment key={category.title}>
                   <tr
-                    className={`border-b border-white/5 bg-ink-08/60 ${
-                      catIndex > 0 ? "border-t border-white/8" : ""
+                    className={`border-b border-black/5 bg-ink-07/60 ${
+                      catIndex > 0 ? "border-t border-black/8" : ""
                     }`}
                   >
                     <td
@@ -159,13 +159,13 @@ export default async function PricingComparisonTable({
                   {category.rows.map((row, rowIndex) => (
                     <tr
                       key={row.label}
-                      className={`border-b border-white/5 transition-colors hover:bg-white/[0.02] ${
+                      className={`border-b border-black/5 transition-colors hover:bg-black/[0.02] ${
                         rowIndex === category.rows.length - 1
-                          ? "border-white/0"
+                          ? "border-black/0"
                           : ""
                       }`}
                     >
-                      <td className="py-4 pl-6 pr-4 text-sm text-white/60 leading-snug">
+                      <td className="py-4 pl-6 pr-4 text-sm text-ink-05 leading-snug">
                         {row.label}
                       </td>
                       {row.cells.map((hasFeature, cellIdx) => {

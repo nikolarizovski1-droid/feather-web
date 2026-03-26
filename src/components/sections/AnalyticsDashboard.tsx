@@ -78,13 +78,13 @@ function InlineDashboard({
   ];
 
   return (
-    <div className="w-full rounded-2xl bg-card border border-white/5 p-4 flex flex-col gap-3 text-white select-none">
+    <div className="w-full rounded-2xl bg-[#2B2B2B] border border-white/5 p-4 flex flex-col gap-3 text-white select-none">
       {/* KPI row */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {kpiData.map((kpi, i) => (
           <div
             key={kpiLabels[i]}
-            className="rounded-xl bg-ink-08 border border-white/5 px-3 py-3"
+            className="rounded-xl bg-[#252525] border border-white/5 px-3 py-3"
           >
             <p className="text-[10px] text-white/40 mb-1 leading-none truncate">
               {kpiLabels[i]}
@@ -104,7 +104,7 @@ function InlineDashboard({
       </div>
 
       {/* Funnel */}
-      <div className="rounded-xl bg-ink-08 border border-white/5 px-4 py-3">
+      <div className="rounded-xl bg-[#252525] border border-white/5 px-4 py-3">
         <div className="flex items-baseline justify-between mb-2.5">
           <p className="text-[11px] font-semibold text-white/80">
             {labels.funnelTitle}
@@ -131,7 +131,7 @@ function InlineDashboard({
       </div>
 
       {/* Chart */}
-      <div className="rounded-xl bg-ink-08 border border-white/5 px-4 py-3">
+      <div className="rounded-xl bg-[#252525] border border-white/5 px-4 py-3">
         <p className="text-[11px] font-semibold text-white/80 mb-2.5">
           {labels.chartTitle}
         </p>
@@ -160,7 +160,7 @@ function InlineDashboard({
       {/* Peak hours + two bottom cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {/* Peak hours */}
-        <div className="rounded-xl bg-ink-08 border border-white/5 px-4 py-3">
+        <div className="rounded-xl bg-[#252525] border border-white/5 px-4 py-3">
           <p className="text-[11px] font-semibold text-white/80 mb-2.5">
             {labels.peakTitle}
           </p>
@@ -183,7 +183,7 @@ function InlineDashboard({
         </div>
 
         {/* Traffic sources */}
-        <div className="rounded-xl bg-ink-08 border border-white/5 px-4 py-3">
+        <div className="rounded-xl bg-[#252525] border border-white/5 px-4 py-3">
           <p className="text-[11px] font-semibold text-white/80 mb-2.5">
             {labels.sourcesTitle}
           </p>
@@ -211,7 +211,7 @@ function InlineDashboard({
       </div>
 
       {/* Top products */}
-      <div className="rounded-xl bg-ink-08 border border-white/5 px-4 py-3">
+      <div className="rounded-xl bg-[#252525] border border-white/5 px-4 py-3">
         <p className="text-[11px] font-semibold text-white/80 mb-2.5">
           {labels.topProductsTitle}
         </p>
@@ -259,7 +259,7 @@ export default async function AnalyticsDashboard() {
   return (
     <section
       id="analytics"
-      className="py-24 lg:py-32 bg-ink-08 scroll-mt-28"
+      className="py-24 lg:py-32 bg-ink-07 scroll-mt-28"
       aria-labelledby="analytics-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -282,7 +282,7 @@ export default async function AnalyticsDashboard() {
               id="analytics-heading"
               data-reveal="up"
               data-reveal-delay="80"
-              className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-white tracking-tight leading-tight mb-5 whitespace-pre-line"
+              className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-ink-08 tracking-tight leading-tight mb-5 whitespace-pre-line"
             >
               {t("title")}
             </h2>
@@ -306,7 +306,7 @@ export default async function AnalyticsDashboard() {
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10">
                     <Check size={11} className="text-brand" />
                   </div>
-                  <span className="text-sm text-white/70 leading-relaxed">
+                  <span className="text-sm text-ink-05 leading-relaxed">
                     {bullet}
                   </span>
                 </li>

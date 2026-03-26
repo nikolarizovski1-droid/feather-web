@@ -82,8 +82,8 @@ export default function FeaturesSubNav() {
       <div
         className={`sticky top-16 z-40 hidden md:block transition-all duration-300 ${
           stuck
-            ? "bg-ink-08/90 backdrop-blur-md border-b border-white/5 shadow-sm"
-            : "bg-ink-08"
+            ? "bg-surface/90 backdrop-blur-md border-b border-black/5 shadow-sm"
+            : "bg-surface"
         }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -98,7 +98,7 @@ export default function FeaturesSubNav() {
                   className={`shrink-0 inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
                     isActive
                       ? "bg-brand/15 text-brand"
-                      : "text-ink-05 hover:text-white hover:bg-white/5"
+                      : "text-ink-05 hover:text-ink-08 hover:bg-black/5"
                   }`}
                 >
                   {item.label}

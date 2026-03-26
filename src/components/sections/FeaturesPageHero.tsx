@@ -8,7 +8,7 @@ export default async function FeaturesPageHero() {
 
   return (
     <section
-      className="pt-36 pb-24 lg:pt-44 lg:pb-32 bg-ink-08"
+      className="pt-36 pb-24 lg:pt-44 lg:pb-32 bg-surface"
       aria-labelledby="features-page-heading"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
@@ -23,7 +23,7 @@ export default async function FeaturesPageHero() {
           id="features-page-heading"
           data-reveal="up"
           data-reveal-delay="80"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink-08 tracking-tight leading-[1.1] mb-6"
         >
           {t("title1")}{" "}
           <span className="text-ink-05">{t("title2")}</span>
@@ -45,7 +45,7 @@ export default async function FeaturesPageHero() {
           {featureNames.map((name) => (
             <span
               key={name}
-              className="inline-flex items-center rounded-full bg-white/5 border border-white/8 px-3 py-1 text-xs font-medium text-white/50"
+              className="inline-flex items-center rounded-full bg-black/5 border border-black/8 px-3 py-1 text-xs font-medium text-ink-05"
             >
               {name}
             </span>
@@ -60,7 +60,7 @@ export default async function FeaturesPageHero() {
           <Button href="/signup" size="lg">
             {t("startFreeTrial")}
           </Button>
-          <Button href="/pricing" variant="ghost" size="lg">
+          <Button href="/pricing" variant="ghost-light" size="lg">
             {t("viewPricing")}
           </Button>
         </div>

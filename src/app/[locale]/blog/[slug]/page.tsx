@@ -93,10 +93,10 @@ export default async function BlogPostPage({
             {/* Header */}
             <header className="mb-12" data-reveal="up">
               <time className="text-sm text-ink-05">{formattedDate}</time>
-              <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mt-3 mb-4 leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl font-bold text-ink-08 tracking-tight mt-3 mb-4 leading-[1.1]">
                 {post.meta.title}
               </h1>
-              <p className="text-lg text-white/55 leading-relaxed">
+              <p className="text-lg text-ink-05 leading-relaxed">
                 {post.meta.description}
               </p>
             </header>

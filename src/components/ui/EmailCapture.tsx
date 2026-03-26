@@ -28,9 +28,9 @@ export default function EmailCapture({
   }
 
   return (
-    <div className="rounded-2xl bg-card border border-white/5 p-8 lg:p-10">
+    <div className="rounded-2xl bg-card border border-black/5 p-8 lg:p-10 shadow-sm">
       {heading && (
-        <h3 className="text-xl font-bold text-white mb-2">{heading}</h3>
+        <h3 className="text-xl font-bold text-ink-08 mb-2">{heading}</h3>
       )}
       {description && (
         <p className="text-sm text-ink-05 leading-relaxed mb-6">
@@ -50,7 +50,7 @@ export default function EmailCapture({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@restaurant.com"
-            className="flex-1 min-w-0 rounded-full bg-ink-07 border border-white/10 px-5 py-3 text-sm text-white placeholder:text-ink-05 focus:outline-none focus:border-brand/40 transition-colors"
+            className="flex-1 min-w-0 rounded-full bg-ink-07 border border-black/10 px-5 py-3 text-sm text-ink-08 placeholder:text-ink-05 focus:outline-none focus:border-brand/40 transition-colors"
           />
           <button
             type="submit"
