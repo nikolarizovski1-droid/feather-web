@@ -23,7 +23,11 @@
       "Bash(grep -A5 \"Image\" /Users/nikola/Documents/Projects/feather-web2/src/components/sections/*.tsx)",
       "Bash(/tmp/check_metadata.txt:*)",
       "Read(//tmp/**)",
-      "Bash(grep -r \"head\\\\|next/head\\\\|og:\" /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/layout.tsx)"
+      "Bash(grep -r \"head\\\\|next/head\\\\|og:\" /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/layout.tsx)",
+      "Bash(find /Users/nikola/Documents/Projects/feather-web2/src/app/[locale] -type d)",
+      "Bash(pnpm add:*)",
+      "Bash(npm --version)",
+      "Bash(npm install:*)"
     ]
   }
 }

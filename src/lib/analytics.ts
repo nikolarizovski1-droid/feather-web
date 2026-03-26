@@ -29,4 +29,6 @@ export const events = {
     trackEvent("cta_click", { cta_location: location, cta_label: label }),
   faqExpand: (question: string) => trackEvent("faq_expand", { question }),
   useCaseClick: (type: string) => trackEvent("use_case_click", { use_case: type }),
+  blogPostView: (slug: string) => trackEvent("blog_post_view", { post_slug: slug }),
+  emailCapture: (source: string) => trackEvent("email_capture", { source }),
 } as const;

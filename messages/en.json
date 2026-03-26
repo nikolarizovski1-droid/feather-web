@@ -43,7 +43,12 @@
     "useCases": {
       "fastCasual": "Fast-casual restaurants",
       "fineDining": "Fine dining",
-      "multiLocation": "Multi-location venues"
+      "multiLocation": "Multi-location venues",
+      "foodTrucks": "Food trucks",
+      "bars": "Bars",
+      "hotels": "Hotels",
+      "cafes": "Cafes",
+      "ghostKitchens": "Ghost kitchens"
     }
   },
   "Hero": {
@@ -681,6 +686,20 @@
     "sourcesTitle": "Traffic Sources",
     "topProductsTitle": "Top Products"
   },
+  "BlogPage": {
+    "meta": {
+      "title": "Blog — Feather Restaurant Marketing",
+      "description": "Tips, strategies, and insights for restaurant marketing and digital menu optimization."
+    },
+    "hero": {
+      "eyebrow": "Feather Blog",
+      "title": "Restaurant Marketing Insights",
+      "subtitle": "Strategies, tips, and best practices for growing your restaurant with digital tools."
+    },
+    "breadcrumb": "Blog",
+    "readMore": "Read more",
+    "noPosts": "No posts yet. Check back soon!"
+  },
   "UseCasePage": {
     "startTrial": "Start 30-Day Free Trial",
     "seePricing": "See Pricing",
@@ -781,6 +800,171 @@
         "name": "Marco Bianchi",
         "venue": "La Terrazza",
         "city": "Milan, Italy"
+      }
+    },
+    "foodTrucks": {
+      "meta": {
+        "title": "Feather for Food Trucks — Mobile Menu & Push Notifications",
+        "description": "Feather helps food trucks go digital with instant QR menus and automated push notifications that bring customers back."
+      },
+      "hero": {
+        "eyebrow": "For food trucks",
+        "headline1": "Your truck moves.",
+        "headline2": "Your marketing follows.",
+        "subheadline": "QR menu that loads instantly, push notifications that bring regulars back, and zero setup hassle — built for operators on the go."
+      },
+      "featuresTitle": "Built for mobile operations",
+      "features": [
+        {
+          "title": "Instant QR menu — no app needed",
+          "description": "Guests scan and browse your menu in seconds. Works on any phone without downloads. Update items on the fly from your phone."
+        },
+        {
+          "title": "Auto push notifications",
+          "description": "Every scan triggers a timed push. Promote today's special, announce your next location, or offer a loyalty discount — all automatic."
+        },
+        {
+          "title": "Fast setup, fast updates",
+          "description": "Upload your menu and go live in under 10 minutes. Change prices, swap items, or add daily specials from your phone between stops."
+        }
+      ],
+      "testimonial": {
+        "quote": "We update the menu between stops and the push notifications keep our regulars coming back. Best tool we've added to the truck.",
+        "name": "Jake Rivera",
+        "venue": "Curbside Grill",
+        "city": "Austin, TX"
+      }
+    },
+    "bars": {
+      "meta": {
+        "title": "Feather for Bars — Event Promos & Digital Drink Menu",
+        "description": "Feather helps bars drive event attendance, promote specials, and re-engage guests with automated push notifications."
+      },
+      "hero": {
+        "eyebrow": "For bars",
+        "headline1": "Fill every seat.",
+        "headline2": "Every night.",
+        "subheadline": "Promote happy hours, live events, and signature cocktails automatically. Every guest who scans gets a push notification that brings them back."
+      },
+      "featuresTitle": "Tools that keep the bar busy",
+      "features": [
+        {
+          "title": "Event promos with one-tap RSVP",
+          "description": "Promote live music, trivia nights, and themed events. Guests get notified and can book or save the event to their calendar in one tap."
+        },
+        {
+          "title": "Happy hour & specials automation",
+          "description": "Feature your best cocktails, seasonal specials, and happy hour deals with banners that every guest sees right after scanning."
+        },
+        {
+          "title": "Push notifications after every visit",
+          "description": "Every QR scan schedules a timed notification. Bring guests back for tomorrow's event, this week's new cocktail, or a limited-time deal."
+        }
+      ],
+      "testimonial": {
+        "quote": "Our trivia nights went from half-full to packed after we started using Feather's event promos. Guests save the event to their calendar and actually show up.",
+        "name": "Diana Kim",
+        "venue": "The Brass Tap",
+        "city": "Nashville, TN"
+      }
+    },
+    "hotels": {
+      "meta": {
+        "title": "Feather for Hotels — In-Room Dining & Guest Experience",
+        "description": "Feather helps hotels modernize in-room dining, promote amenities on lobby screens, and engage guests across every touchpoint."
+      },
+      "hero": {
+        "eyebrow": "For hotels",
+        "headline1": "Every room. Every screen.",
+        "headline2": "One platform.",
+        "subheadline": "QR menus for in-room dining, TV displays for lobby promotions, and push notifications that drive spa bookings, restaurant visits, and event attendance."
+      },
+      "featuresTitle": "Guest experience, elevated",
+      "features": [
+        {
+          "title": "In-room QR dining",
+          "description": "Guests scan the QR code in their room and browse your restaurant menu instantly. No phone calls, no paper menus, no friction."
+        },
+        {
+          "title": "Lobby & common area TV displays",
+          "description": "Promote restaurant specials, spa packages, and upcoming events on lobby screens — all managed from one dashboard, updated in real time."
+        },
+        {
+          "title": "Multi-venue management",
+          "description": "Manage restaurant, bar, pool bar, and room service menus from a single dashboard. Push updates to all venues or target one location."
+        }
+      ],
+      "testimonial": {
+        "quote": "Room service orders increased noticeably after we put QR codes in every room. Guests love browsing the menu on their phone instead of calling the front desk.",
+        "name": "Laura Petrov",
+        "venue": "Grand Marina Hotel",
+        "city": "Barcelona, Spain"
+      }
+    },
+    "cafes": {
+      "meta": {
+        "title": "Feather for Cafes — Digital Menu & Customer Re-engagement",
+        "description": "Feather helps cafes go digital, promote seasonal drinks, and bring customers back with automated push notifications."
+      },
+      "hero": {
+        "eyebrow": "For cafes",
+        "headline1": "More than coffee.",
+        "headline2": "A marketing engine.",
+        "subheadline": "Your menu loads instantly from a QR scan. Push notifications promote your seasonal latte. Banners highlight your pastry of the day. All automatic."
+      },
+      "featuresTitle": "Simple tools for busy cafes",
+      "features": [
+        {
+          "title": "Seasonal product banners",
+          "description": "Feature your latest creation front and center. Every guest who scans sees your hero banner — perfect for seasonal drinks, new pastries, or loyalty deals."
+        },
+        {
+          "title": "Push notifications that drive repeat visits",
+          "description": "Every scan schedules a timed notification. Bring regulars back with a new menu item, a rainy-day discount, or a weekend brunch promo."
+        },
+        {
+          "title": "One-tap table service",
+          "description": "Guests request service or their bill with a single tap. Staff get an alert with the table number — faster turns, happier customers."
+        }
+      ],
+      "testimonial": {
+        "quote": "Our seasonal drink promos used to rely on chalkboard signs. Now every guest gets a push notification and our featured drinks consistently sell out.",
+        "name": "Elena Moretti",
+        "venue": "Bloom Coffee",
+        "city": "Melbourne, Australia"
+      }
+    },
+    "ghostKitchens": {
+      "meta": {
+        "title": "Feather for Ghost Kitchens — Direct Orders & Brand Marketing",
+        "description": "Feather helps ghost kitchens build direct customer relationships with QR menus, push notifications, and product promotions."
+      },
+      "hero": {
+        "eyebrow": "For ghost kitchens",
+        "headline1": "Your brand.",
+        "headline2": "Direct to customers.",
+        "subheadline": "Skip the marketplace commission. QR menus let customers browse and order directly, while push notifications keep them coming back — no middleman."
+      },
+      "featuresTitle": "Build your brand, not someone else's",
+      "features": [
+        {
+          "title": "Direct-to-customer QR menu",
+          "description": "Share your QR code on packaging, social media, or at pickup points. Customers get your branded menu — not a marketplace listing."
+        },
+        {
+          "title": "Push notifications for repeat orders",
+          "description": "Every scan triggers a timed notification. Promote new items, limited-time offers, or combo deals to drive direct repeat orders."
+        },
+        {
+          "title": "Analytics and customer insights",
+          "description": "See what customers view, what they order, and when they come back. Use real data to optimize your menu and promotions."
+        }
+      ],
+      "testimonial": {
+        "quote": "We cut our marketplace dependency by promoting our QR menu on every package. Push notifications now drive a significant portion of our repeat orders.",
+        "name": "Tyler Nguyen",
+        "venue": "CloudBite Kitchen",
+        "city": "Los Angeles, CA"
       }
     }
   }

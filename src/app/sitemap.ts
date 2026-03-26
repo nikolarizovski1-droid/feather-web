@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 
 const BASE_URL = "https://feathermenu.com";
 
@@ -13,7 +14,16 @@ const staticPages = [
   "/pricing",
 ];
 
-const useCaseTypes = ["fast-casual", "fine-dining", "multi-location"];
+const useCaseTypes = [
+  "fast-casual",
+  "fine-dining",
+  "multi-location",
+  "food-trucks",
+  "bars",
+  "hotels",
+  "cafes",
+  "ghost-kitchens",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -38,6 +48,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: 0.7,
+      });
+    }
+  }
+
+  // Blog listing page
+  for (const locale of locales) {
+    entries.push({
+      url: `${BASE_URL}/${locale}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+  }
+
+  // Individual blog posts
+  for (const locale of locales) {
+    const posts = getAllPosts(locale);
+    for (const post of posts) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "monthly",
+        priority: 0.6,
       });
     }
   }
