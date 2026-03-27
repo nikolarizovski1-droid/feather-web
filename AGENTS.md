@@ -2,220 +2,48 @@
 
 Guidelines for AI agents working in this repository.
 
-## Repository Overview
+## What This Project Is
 
-This repository contains **Agent Skills** for AI agents following the [Agent Skills specification](https://agentskills.io/specification.md). Skills install to `.agents/skills/` (the cross-agent standard). This repo also serves as a **Claude Code plugin marketplace** via `.claude-plugin/marketplace.json`.
+**Feather** is a restaurant marketing platform & digital menu system. This repo is the **marketing website** (Next.js) — not the product itself. The product is a separate Angular app.
 
-- **Name**: Marketing Skills
-- **GitHub**: [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
-- **Creator**: Corey Haines
-- **License**: MIT
+- **Domain**: feathermenu.com
+- **Tech**: Next.js 16, TypeScript, Tailwind CSS, next-intl (en/mk)
+- **See**: `CLAUDE.md` for full tech details and project structure
 
-## Repository Structure
+## How Work Is Organized
 
-```
-marketingskills/
-├── .claude-plugin/
-│   └── marketplace.json   # Claude Code plugin marketplace manifest
-├── skills/                # Agent Skills
-│   └── skill-name/
-│       └── SKILL.md       # Required skill file
-├── tools/
-│   ├── clis/              # Zero-dependency Node.js CLI tools (51 tools)
-│   ├── composio/          # Composio integration layer (quick start + toolkit mapping)
-│   ├── integrations/      # API integration guides per tool
-│   └── REGISTRY.md        # Tool index with capabilities
-├── CONTRIBUTING.md
-├── LICENSE
-└── README.md
-```
+### Two types of conversations
 
-## Build / Lint / Test Commands
+1. **Marketing strategy chat** — decisions about what to do and why. References `marketing-strategy/` and `.agents/product-marketing-context.md`.
+2. **Coding chat** — implementation. Picks up tasks from `issues-to-fix/` folder.
 
-**Skills** are content-only (no build step). Verify manually:
-- YAML frontmatter is valid
-- `name` field matches directory name exactly
-- `name` is 1-64 chars, lowercase alphanumeric and hyphens only
-- `description` is 1-1024 characters
+### Key files to read first
 
-**CLI tools** (`tools/clis/*.js`) are zero-dependency Node.js scripts (Node 18+). Verify with:
-```bash
-node --check tools/clis/<name>.js   # Syntax check
-node tools/clis/<name>.js           # Show usage (no args = help)
-node tools/clis/<name>.js <cmd> --dry-run  # Preview request without sending
-```
+| File | What it tells you |
+|------|-------------------|
+| `CLAUDE.md` | Tech stack, project structure, conventions |
+| `marketing-strategy/00-overview.md` | The 8-step marketing plan and current progress |
+| `.agents/product-marketing-context.md` | Product positioning, personas, competitors, brand voice |
+| `issues-to-fix/*.md` | Implementation task lists (coding chats start here) |
 
-## Agent Skills Specification
+### Marketing skills
 
-Skills follow the [Agent Skills spec](https://agentskills.io/specification.md).
+33 marketing skills are installed in `skills/`. Each is a prompt template (SKILL.md) for a specific marketing task (copywriting, SEO, ads, email, etc.). The strategy docs reference which skills to use per step.
 
-### Required Frontmatter
+Skills follow the [Agent Skills spec](https://agentskills.io/specification.md) from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills).
 
-```yaml
----
-name: skill-name
-description: What this skill does and when to use it. Include trigger phrases.
----
-```
+## Critical Rules
 
-### Frontmatter Field Constraints
-
-| Field         | Required | Constraints                                                      |
-|---------------|----------|------------------------------------------------------------------|
-| `name`        | Yes      | 1-64 chars, lowercase `a-z`, numbers, hyphens. Must match dir.   |
-| `description` | Yes      | 1-1024 chars. Describe what it does and when to use it.          |
-| `license`     | No       | License name (default: MIT)                                      |
-| `metadata`    | No       | Key-value pairs (author, version, etc.)                          |
-
-### Name Field Rules
-
-- Lowercase letters, numbers, and hyphens only
-- Cannot start or end with hyphen
-- No consecutive hyphens (`--`)
-- Must match parent directory name exactly
-
-**Valid**: `page-cro`, `email-sequence`, `ab-test-setup`
-**Invalid**: `Page-CRO`, `-page`, `page--cro`
-
-### Optional Skill Directories
-
-```
-skills/skill-name/
-├── SKILL.md        # Required - main instructions (<500 lines)
-├── references/     # Optional - detailed docs loaded on demand
-├── scripts/        # Optional - executable code
-└── assets/         # Optional - templates, data files
-```
-
-## Writing Style Guidelines
-
-### Structure
-
-- Keep `SKILL.md` under 500 lines (move details to `references/`)
-- Use H2 (`##`) for main sections, H3 (`###`) for subsections
-- Use bullet points and numbered lists liberally
-- Short paragraphs (2-4 sentences max)
-
-### Tone
-
-- Direct and instructional
-- Second person ("You are a conversion rate optimization expert")
-- Professional but approachable
-
-### Formatting
-
-- Bold (`**text**`) for key terms
-- Code blocks for examples and templates
-- Tables for reference data
-- No excessive emojis
-
-### Clarity Principles
-
-- Clarity over cleverness
-- Specific over vague
-- Active voice over passive
-- One idea per section
-
-### Description Field Best Practices
-
-The `description` is critical for skill discovery. Include:
-1. What the skill does
-2. When to use it (trigger phrases)
-3. Related skills for scope boundaries
-
-```yaml
-description: When the user wants to optimize conversions on any marketing page. Use when the user says "CRO," "conversion rate optimization," "this page isn't converting." For signup flows, see signup-flow-cro.
-```
-
-## Claude Code Plugin
-
-This repo also serves as a plugin marketplace. The manifest at `.claude-plugin/marketplace.json` lists all skills for installation via:
-
-```bash
-/plugin marketplace add coreyhaines31/marketingskills
-/plugin install marketing-skills
-```
-
-See [Claude Code plugins documentation](https://code.claude.com/docs/en/plugins.md) for details.
-
-## Git Workflow
-
-### Branch Naming
-
-- New skills: `feature/skill-name`
-- Improvements: `fix/skill-name-description`
-- Documentation: `docs/description`
-
-### Commit Messages
-
-Follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-- `feat: add skill-name skill`
-- `fix: improve clarity in page-cro`
-- `docs: update README`
-
-### Pull Request Checklist
-
-- [ ] `name` matches directory name exactly
-- [ ] `name` follows naming rules (lowercase, hyphens, no `--`)
-- [ ] `description` is 1-1024 chars with trigger phrases
-- [ ] `SKILL.md` is under 500 lines
-- [ ] No sensitive data or credentials
+- **No fake metrics** — stats like "5K+ venues" or "40+ countries" are aspirational. Never use in content, ads, or outbound.
+- **No fake testimonials** — existing testimonials are illustrative, not real.
+- **Pricing from API only** — never hardcode prices. Use `fetchPricingPlans()`.
+- **Both locales always** — every page needs en + mk with hreflang, canonical, and OpenGraph.
+- **Consent before tracking** — analytics events only fire after cookie consent via `src/lib/analytics.ts`.
 
 ## Tool Integrations
 
-This repository includes a tools registry for agent-compatible marketing tools.
-
-- **Tool discovery**: Read `tools/REGISTRY.md` to see available tools and their capabilities
-- **Integration details**: See `tools/integrations/{tool}.md` for API endpoints, auth, and common operations
-- **MCP-enabled tools**: ga4, stripe, mailchimp, google-ads, resend, zapier, zoominfo, clay, supermetrics, coupler, outreach, crossbeam, composio
-- **Composio** (integration layer): Adds MCP access to OAuth-heavy tools without native MCP servers (HubSpot, Salesforce, Meta Ads, LinkedIn Ads, Google Sheets, Slack, etc.). See `tools/integrations/composio.md`
-
-### Registry Structure
-
-```
-tools/
-├── REGISTRY.md              # Index of all tools with capabilities
-└── integrations/            # Detailed integration guides
-    ├── ga4.md
-    ├── stripe.md
-    ├── rewardful.md
-    └── ...
-```
-
-### When to Use Tools
-
-Skills reference relevant tools for implementation. For example:
-- `referral-program` skill → rewardful, tolt, dub-co, mention-me guides
-- `analytics-tracking` skill → ga4, mixpanel, segment guides
-- `email-sequence` skill → customer-io, mailchimp, resend guides
-- `paid-ads` skill → google-ads, meta-ads, linkedin-ads guides
-
-For tools without native MCP servers (HubSpot, Salesforce, Meta Ads, LinkedIn Ads, Google Sheets, Slack, Notion), Composio provides MCP access via a single server. See `tools/integrations/composio.md` for setup and `tools/composio/marketing-tools.md` for the full toolkit mapping.
-
-## Checking for Updates
-
-When using any skill from this repository:
-
-1. **Once per session**, on first skill use, check for updates:
-   - Fetch `VERSIONS.md` from GitHub: https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/VERSIONS.md
-   - Compare versions against local skill files
-
-2. **Only prompt if meaningful**:
-   - 2 or more skills have updates, OR
-   - Any skill has a major version bump (e.g., 1.x to 2.x)
-
-3. **Non-blocking notification** at end of response:
-   ```
-   ---
-   Skills update available: X marketing skills have updates.
-   Say "update skills" to update automatically, or run `git pull` in your marketingskills folder.
-   ```
-
-4. **If user says "update skills"**:
-   - Run `git pull` in the marketingskills directory
-   - Confirm what was updated
-
-## Skill Categories
-
-See `README.md` for the current list of skills organized by category. When adding new skills, follow the naming patterns of existing skills in that category.
+Marketing tools are documented in `tools/`:
+- `tools/REGISTRY.md` — index of all tools with capabilities
+- `tools/integrations/` — per-tool API guides (ga4, stripe, mailchimp, etc.)
+- MCP-enabled tools: ga4, stripe, mailchimp, google-ads, resend, zapier, and more
+- Composio for OAuth-heavy tools (HubSpot, Meta Ads, etc.) — see `tools/integrations/composio.md`

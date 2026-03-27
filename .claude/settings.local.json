@@ -28,7 +28,9 @@
       "Bash(pnpm add:*)",
       "Bash(npm --version)",
       "Bash(npm install:*)",
-      "Bash(grep -r \"bg-\\\\|text-\" /Users/nikola/Documents/Projects/feather-web2/src/components/layout/*.tsx)"
+      "Bash(grep -r \"bg-\\\\|text-\" /Users/nikola/Documents/Projects/feather-web2/src/components/layout/*.tsx)",
+      "Bash(ls /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
