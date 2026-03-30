@@ -31,4 +31,6 @@ export const events = {
   useCaseClick: (type: string) => trackEvent("use_case_click", { use_case: type }),
   blogPostView: (slug: string) => trackEvent("blog_post_view", { post_slug: slug }),
   emailCapture: (source: string) => trackEvent("email_capture", { source }),
+  trialStart: (plan?: string) => trackEvent("trial_start", { plan }),
+  signupComplete: (plan?: string) => trackEvent("signup_complete", { plan }),
 } as const;

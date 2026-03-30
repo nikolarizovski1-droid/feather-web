@@ -15,6 +15,8 @@ const AVAILABLE_LANGUAGES: Language[] = [
   { id: 3, code: 'sq', name: 'Albanian' },
 ];
 
+const selectStyles = 'w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors';
+
 export default function LanguageSelectionPage() {
   const router = useRouter();
   const { showError } = useNotifications();
@@ -54,19 +56,19 @@ export default function LanguageSelectionPage() {
 
   return (
     <OnboardingShell title="Select Languages" isSubmitting={isSubmitting} loadingMessage="Saving languages..." footer={<OnboardingButton disabled={!isValid} loading={isSubmitting} onClick={onSubmit}>Continue</OnboardingButton>}>
-      <p className="text-[#CFCFCF] mb-6">Select at least one language as default for your shop.</p>
+      <p className="text-ink-05 mb-6">Select at least one language as default for your shop.</p>
       <div className="flex flex-col gap-3 mb-6">
         {AVAILABLE_LANGUAGES.map((lang) => (
-          <label key={lang.id} className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 cursor-pointer hover:bg-white/10">
-            <input type="checkbox" checked={selected.has(lang.id)} onChange={() => toggleLanguage(lang.id)} className="w-5 h-5 rounded accent-[#FF6064]" />
-            <span className="text-white">{lang.name}</span>
+          <label key={lang.id} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-black/5 cursor-pointer hover:border-brand/20 transition-colors">
+            <input type="checkbox" checked={selected.has(lang.id)} onChange={() => toggleLanguage(lang.id)} className="w-5 h-5 rounded accent-brand" />
+            <span className="text-ink-08">{lang.name}</span>
           </label>
         ))}
       </div>
       {selectedLanguages.length > 0 && (
-        <div className="flex flex-col gap-1">
-          <label className="text-sm font-medium text-white">Default Language</label>
-          <select value={defaultLangId} onChange={(e) => setDefaultLangId(Number(e.target.value) || '')} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+        <div className="flex flex-col gap-1.5">
+          <label className="text-sm font-medium text-ink-08">Default Language</label>
+          <select value={defaultLangId} onChange={(e) => setDefaultLangId(Number(e.target.value) || '')} className={selectStyles}>
             <option value="">Select default language</option>
             {selectedLanguages.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
           </select>

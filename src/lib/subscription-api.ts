@@ -64,7 +64,8 @@ export async function createPaymentIntent(
   credentials: AuthCredentials,
   planId: number,
 ): Promise<SubscriptionIntentResponse> {
-  return authFetch<SubscriptionIntentResponse>(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const raw: any = await authFetch(
     '/paymentIntent/create',
     credentials.token,
     {
@@ -76,6 +77,15 @@ export async function createPaymentIntent(
       }),
     },
   );
+
+  // The API may return field names in camelCase or snake_case — normalize
+  return {
+    intent_type: raw.intent_type ?? raw.intentType ?? 'payment_intent',
+    client_secret: raw.client_secret ?? raw.clientSecret ?? raw.payment_intent_client_secret ?? raw.setup_intent_client_secret ?? '',
+    intent_id: raw.intent_id ?? raw.intentId ?? raw.payment_intent_id ?? raw.setup_intent_id ?? '',
+    customer_id: raw.customer_id ?? raw.customerId,
+    ephemeral_key_secret: raw.ephemeral_key_secret ?? raw.ephemeralKeySecret,
+  };
 }
 
 export async function createSubscription(

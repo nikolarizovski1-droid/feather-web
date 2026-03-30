@@ -6,6 +6,7 @@ import { getOnboardingStep, batchCreateCategories, batchCreateProducts, activate
 import { OnboardingStep } from '@/types/onboarding';
 import type { MenuProduct, MenuProductCategory, MenuProductImage } from '@/types/onboarding';
 import { useNotifications } from '@/hooks/useNotifications';
+import { events } from '@/lib/analytics';
 import { useAuth } from '@/hooks/useAuth';
 import OnboardingShell from '@/components/app/OnboardingShell';
 import OnboardingButton from '@/components/app/OnboardingButton';
@@ -130,6 +131,7 @@ export default function MenuItemsOverviewPage() {
       }
 
       await activateShop(shop.id);
+      events.signupComplete();
 
       const creds = localStorage.getItem('onboarding_user_credentials');
       if (creds) {
@@ -153,7 +155,7 @@ export default function MenuItemsOverviewPage() {
     <OnboardingShell title="Menu Overview" isSubmitting={isCreating} loadingMessage="Menu creation in progress..." footer={
       <div>
         {!isButtonEnabled && !isCreating && (
-          <p className="text-[13px] text-white/70 mb-2">
+          <p className="text-[13px] text-ink-05 mb-2">
             {onboardingStatus !== null && onboardingStatus < 18
               ? "We're still setting up your shop. Review your menu below; the button will be available shortly."
               : 'Review your items and confirm when ready.'}
@@ -167,9 +169,9 @@ export default function MenuItemsOverviewPage() {
       {/* Category tabs */}
       {categories.length > 0 && (
         <div className="flex gap-2 overflow-x-auto pb-2 mb-4 -mx-1 px-1">
-          <button onClick={() => setCurrentCat('all')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${currentCat === 'all' ? 'bg-[#FF6064] text-white' : 'bg-white/10 text-[#CFCFCF] hover:text-white'}`}>All</button>
+          <button onClick={() => setCurrentCat('all')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${currentCat === 'all' ? 'bg-brand text-white' : 'bg-black/5 text-ink-05 hover:text-ink-08'}`}>All</button>
           {categories.map((c) => (
-            <button key={c.slug} onClick={() => setCurrentCat(c.slug || '')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${currentCat === c.slug ? 'bg-[#FF6064] text-white' : 'bg-white/10 text-[#CFCFCF] hover:text-white'}`}>{c.name}</button>
+            <button key={c.slug} onClick={() => setCurrentCat(c.slug || '')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${currentCat === c.slug ? 'bg-brand text-white' : 'bg-black/5 text-ink-05 hover:text-ink-08'}`}>{c.name}</button>
           ))}
         </div>
       )}
@@ -180,24 +182,24 @@ export default function MenuItemsOverviewPage() {
           const imgSrc = product.images?.[0]?.src;
           const hasImg = !!imgSrc?.trim() && !failedImgs.has(product.stableIdentifier ?? '');
           return (
-            <div key={product.stableIdentifier} onClick={() => router.push(`./menu-overview/edit/${product.stableIdentifier}`)} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 cursor-pointer hover:bg-white/10">
+            <div key={product.stableIdentifier} onClick={() => router.push(`./menu-overview/edit/${product.stableIdentifier}`)} className="flex items-center gap-3 p-3 rounded-xl bg-card border border-black/5 cursor-pointer hover:border-brand/20 hover:shadow-sm transition-all duration-200">
               {hasImg ? (
                 <img src={imgSrc} alt={product.name} className="w-14 h-14 rounded-lg object-cover shrink-0" onError={() => setFailedImgs((p) => new Set(p).add(product.stableIdentifier ?? ''))} />
               ) : (
-                <div className="w-14 h-14 rounded-lg bg-white/10 flex items-center justify-center shrink-0"><ImageIcon size={20} className="text-[#CFCFCF]" /></div>
+                <div className="w-14 h-14 rounded-lg bg-black/5 flex items-center justify-center shrink-0"><ImageIcon size={20} className="text-ink-06" /></div>
               )}
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-white truncate">{product.name}</p>
-                <p className="text-xs text-[#CFCFCF]">{product.regularPrice != null ? `${currencySymbol}${product.regularPrice.toFixed(2)}` : '—'}</p>
+                <p className="text-sm font-medium text-ink-08 truncate">{product.name}</p>
+                <p className="text-xs text-ink-05">{product.regularPrice != null ? `${currencySymbol}${product.regularPrice.toFixed(2)}` : '—'}</p>
               </div>
               <div className="flex items-center gap-2 shrink-0">
-                <button onClick={(e) => { e.stopPropagation(); deleteProduct(product); }} className="p-2 text-[#CFCFCF] hover:text-red-400"><Trash2 size={16} /></button>
-                <Pencil size={14} className="text-[#CFCFCF]" />
+                <button onClick={(e) => { e.stopPropagation(); deleteProduct(product); }} className="p-2 text-ink-05 hover:text-red-600 transition-colors"><Trash2 size={16} /></button>
+                <Pencil size={14} className="text-ink-06" />
               </div>
             </div>
           );
         })}
-        {filtered.length === 0 && <p className="text-center text-[#CFCFCF] py-8">No products in this category.</p>}
+        {filtered.length === 0 && <p className="text-center text-ink-05 py-8">No products in this category.</p>}
       </div>
     </OnboardingShell>
   );

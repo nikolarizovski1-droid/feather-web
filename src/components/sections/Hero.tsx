@@ -78,7 +78,7 @@ export default async function Hero() {
               {/* CTAs + trust */}
               <div data-reveal="up" data-reveal-delay="240">
                 <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                  <Button href="/signup" size="lg" className="animate-float-soft">
+                  <Button href="/app/onboarding" size="lg" className="animate-float-soft">
                     {t("startFreeTrial")}
                   </Button>
                   <Button href="/how-it-works" variant="ghost" size="lg">

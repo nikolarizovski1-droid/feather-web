@@ -39,7 +39,7 @@ export default async function AboutPageHero() {
           data-reveal-delay="220"
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button href="/signup" size="lg">
+          <Button href="/app/onboarding" size="lg">
             {t("startFreeTrial")}
           </Button>
           <Button href="/features" variant="ghost-light" size="lg">

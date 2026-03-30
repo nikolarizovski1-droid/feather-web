@@ -29,10 +29,10 @@ export default function OnboardingTextField({
   const inputType = isPassword && showPassword ? 'text' : type;
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1.5">
       {label && (
-        <label className="flex items-center gap-0 text-sm font-medium text-white">
-          {required && <span className="text-[#FF6064] mr-0.5">*</span>}
+        <label className="flex items-center gap-0 text-sm font-medium text-ink-08">
+          {required && <span className="text-brand mr-0.5">*</span>}
           <span>{label}</span>
         </label>
       )}
@@ -48,20 +48,20 @@ export default function OnboardingTextField({
             }
             onChange(v);
           }}
-          className="w-full px-4 py-3.5 text-base rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white placeholder:text-white/40 focus:outline-none focus:border-[#A2A2A4]"
+          className="w-full px-4 py-3 text-base rounded-xl border border-black/10 bg-card text-ink-08 placeholder:text-ink-06 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors"
         />
         {isPassword && (
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-[#CFCFCF] hover:text-white"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-05 hover:text-ink-08"
           >
             {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>
         )}
       </div>
       {errorMessage && (
-        <span className="text-xs text-[#FF6064] mt-0.5">{errorMessage}</span>
+        <span className="text-xs text-brand mt-0.5">{errorMessage}</span>
       )}
     </div>
   );

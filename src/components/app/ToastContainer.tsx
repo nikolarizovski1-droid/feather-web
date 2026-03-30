@@ -4,9 +4,9 @@ import { useNotifications } from '@/hooks/useNotifications';
 import { X } from 'lucide-react';
 
 const typeStyles: Record<string, string> = {
-  error: 'bg-red-600',
-  success: 'bg-emerald-600',
-  info: 'bg-blue-600',
+  error: 'bg-red-50 border-red-200 text-red-800',
+  success: 'bg-emerald-50 border-emerald-200 text-emerald-800',
+  info: 'bg-blue-50 border-blue-200 text-blue-800',
 };
 
 const typeLabels: Record<string, string> = {
@@ -25,7 +25,7 @@ export default function ToastContainer() {
       {messages.map((msg) => (
         <div
           key={msg.id}
-          className={`${typeStyles[msg.type]} text-white rounded-lg px-4 py-3 shadow-lg flex items-start gap-3 animate-in slide-in-from-right`}
+          className={`${typeStyles[msg.type]} border rounded-xl px-4 py-3 shadow-lg flex items-start gap-3 animate-in slide-in-from-right`}
         >
           <div className="flex-1">
             {!msg.hideTitle && (

@@ -139,20 +139,20 @@ export default function CreateMenuPage() {
         <OnboardingButton variant="secondary" disabled={isCreatingMenu || isSkipping} loading={isSkipping} onClick={skipMenu}>Skip</OnboardingButton>
       </div>
     }>
-      <p className="text-base font-medium text-white mb-4">Upload images of your menu and we&apos;ll extract the categories and items.</p>
+      <p className="text-base font-medium text-ink-08 mb-4">Upload images of your menu and we&apos;ll extract the categories and items.</p>
 
       {hasPreviousImages && (
-        <button onClick={usePreviousImages} disabled={isBusy} className="w-full mb-4 py-4 rounded-2xl bg-[#FF6064] text-white font-semibold hover:bg-[#e5565a] disabled:opacity-50">Use previous images</button>
+        <button onClick={usePreviousImages} disabled={isBusy} className="w-full mb-4 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] disabled:opacity-50 transition-all duration-200 active:scale-[0.98]">Use previous images</button>
       )}
 
       {/* Upload card */}
-      <div className="bg-[#313131] rounded-2xl p-6 mb-4 flex items-start gap-4">
+      <div className="bg-card border border-black/5 rounded-2xl p-6 mb-4 flex items-start gap-4 shadow-sm">
         <div className="flex-1">
-          <ImageIcon size={32} className="text-[#CFCFCF] mb-2" />
-          <p className="text-sm font-semibold text-white mb-1">Upload image</p>
-          <p className="text-[9px] text-white">For best results, upload <strong>high-resolution</strong> images.</p>
+          <ImageIcon size={32} className="text-ink-05 mb-2" />
+          <p className="text-sm font-semibold text-ink-08 mb-1">Upload image</p>
+          <p className="text-xs text-ink-05">For best results, upload <strong>high-resolution</strong> images.</p>
         </div>
-        <label className={`shrink-0 bg-white text-[#252525] rounded-full px-6 py-3 text-[11px] font-medium cursor-pointer ${isCompressing ? 'opacity-80 pointer-events-none' : ''}`}>
+        <label className={`shrink-0 bg-brand text-white rounded-full px-6 py-3 text-sm font-medium cursor-pointer hover:bg-[#e5474b] transition-colors ${isCompressing ? 'opacity-80 pointer-events-none' : ''}`}>
           Upload image
           <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={onFileSelected} className="hidden" disabled={isCompressing} />
         </label>
@@ -162,9 +162,9 @@ export default function CreateMenuPage() {
       {selectedImages.length > 0 && (
         <div className="grid grid-cols-2 gap-3">
           {selectedImages.map((img, i) => (
-            <div key={i} className="relative rounded-xl overflow-hidden aspect-[4/3]">
+            <div key={i} className="relative rounded-xl overflow-hidden aspect-[4/3] border border-black/5">
               <img src={img.preview} alt={`Menu ${i + 1}`} className="w-full h-full object-cover" />
-              <button onClick={() => setSelectedImages((prev) => prev.filter((_, idx) => idx !== i))} className="absolute top-2 right-2 bg-black/60 rounded-full p-1.5 text-white hover:bg-black/80">
+              <button onClick={() => setSelectedImages((prev) => prev.filter((_, idx) => idx !== i))} className="absolute top-2 right-2 bg-card/80 backdrop-blur-sm rounded-full p-1.5 text-ink-05 hover:text-red-600 transition-colors">
                 <Trash2 size={14} />
               </button>
             </div>

@@ -114,7 +114,7 @@ export default function Navbar() {
             >
               {t("forMalls")}
             </a>
-            <Button href="/signup" size="sm">
+            <Button href="/app/onboarding" size="sm">
               {t("startFreeTrial")}
             </Button>
           </div>
@@ -176,7 +176,7 @@ export default function Navbar() {
               >
                 {t("forMalls")}
               </a>
-              <Button href="/signup" className="w-full">
+              <Button href="/app/onboarding" className="w-full">
                 {t("startFreeTrial")}
               </Button>
             </div>

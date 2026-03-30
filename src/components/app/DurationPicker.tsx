@@ -14,15 +14,15 @@ export default function DurationPicker({
   onDurationChange,
 }: DurationPickerProps) {
   return (
-    <div className="flex bg-[#252525] rounded-lg p-1">
+    <div className="flex bg-black/5 rounded-full p-1">
       {durations.map((duration) => (
         <button
           key={duration}
           onClick={() => onDurationChange(duration)}
-          className={`flex-1 py-2.5 px-4 text-center rounded-md text-sm font-medium transition-all ${
+          className={`flex-1 py-2.5 px-4 text-center rounded-full text-sm font-medium transition-all duration-200 ${
             duration === selectedDuration
-              ? 'bg-[#313131] text-white'
-              : 'text-[#CFCFCF] hover:text-white'
+              ? 'bg-card text-ink-08 shadow-sm'
+              : 'text-ink-05 hover:text-ink-08'
           }`}
         >
           {getDurationDisplayName(duration)}

@@ -11,6 +11,8 @@ import OnboardingShell from '@/components/app/OnboardingShell';
 import OnboardingButton from '@/components/app/OnboardingButton';
 import OnboardingTextField from '@/components/app/OnboardingTextField';
 
+const selectStyles = 'w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors';
+
 export default function CreateVenuePage() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -110,9 +112,9 @@ export default function CreateVenuePage() {
         <OnboardingTextField label="City" placeholder="ex. Skopje" required value={city} onChange={setCity} />
 
         {/* Country */}
-        <div className="flex flex-col gap-1">
-          <label className="flex items-center text-sm font-medium text-white"><span className="text-[#FF6064] mr-0.5">*</span>Country</label>
-          <select value={countryId} onChange={(e) => { setCountryId(Number(e.target.value) || ''); setShopType(ShopType.woocommerce); }} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+        <div className="flex flex-col gap-1.5">
+          <label className="flex items-center text-sm font-medium text-ink-08"><span className="text-brand mr-0.5">*</span>Country</label>
+          <select value={countryId} onChange={(e) => { setCountryId(Number(e.target.value) || ''); setShopType(ShopType.woocommerce); }} className={selectStyles}>
             <option value="">Select country</option>
             {countries.map((c) => <option key={c.id} value={c.id}>{c.countryFlag ? `${c.countryFlag} ` : ''}{c.name}</option>)}
           </select>
@@ -120,9 +122,9 @@ export default function CreateVenuePage() {
 
         {/* Shop type */}
         {hasMultipleShopTypes && (
-          <div className="flex flex-col gap-1">
-            <label className="flex items-center text-sm font-medium text-white"><span className="text-[#FF6064] mr-0.5">*</span>Shop Type</label>
-            <select value={shopType} onChange={(e) => setShopType(Number(e.target.value))} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+          <div className="flex flex-col gap-1.5">
+            <label className="flex items-center text-sm font-medium text-ink-08"><span className="text-brand mr-0.5">*</span>Shop Type</label>
+            <select value={shopType} onChange={(e) => setShopType(Number(e.target.value))} className={selectStyles}>
               {selectedCountry?.supportedShopTypes?.map((t) => <option key={t} value={t}>{t === ShopType.woocommerce ? 'Feather' : 'Hype'}</option>)}
             </select>
           </div>
@@ -135,34 +137,34 @@ export default function CreateVenuePage() {
         <OnboardingTextField label="Address" placeholder="ex. Bul. Partizanski Odredi 1" value={locationAddress} onChange={setLocationAddress} />
 
         {/* Language */}
-        <div className="flex flex-col gap-1">
-          <label className="flex items-center text-sm font-medium text-white"><span className="text-[#FF6064] mr-0.5">*</span>Language</label>
-          <select value={languageId} onChange={(e) => setLanguageId(Number(e.target.value) || '')} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+        <div className="flex flex-col gap-1.5">
+          <label className="flex items-center text-sm font-medium text-ink-08"><span className="text-brand mr-0.5">*</span>Language</label>
+          <select value={languageId} onChange={(e) => setLanguageId(Number(e.target.value) || '')} className={selectStyles}>
             <option value="">Select language</option>
             {languages.map((l) => <option key={l.id} value={l.id}>{l.name}</option>)}
           </select>
         </div>
 
         {/* Currency */}
-        <div className="flex flex-col gap-1">
-          <label className="flex items-center text-sm font-medium text-white"><span className="text-[#FF6064] mr-0.5">*</span>Currency</label>
-          <select value={currencyId} onChange={(e) => setCurrencyId(Number(e.target.value) || '')} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+        <div className="flex flex-col gap-1.5">
+          <label className="flex items-center text-sm font-medium text-ink-08"><span className="text-brand mr-0.5">*</span>Currency</label>
+          <select value={currencyId} onChange={(e) => setCurrencyId(Number(e.target.value) || '')} className={selectStyles}>
             <option value="">Select currency</option>
             {currencies.map((c) => <option key={c.id} value={c.id}>{c.name} ({c.code}){c.symbol ? ` ${c.symbol}` : ''}</option>)}
           </select>
         </div>
 
         {!showSecondCurrency ? (
-          <button type="button" onClick={() => setShowSecondCurrency(true)} className="flex items-center justify-between w-full px-4 py-3 rounded-lg border border-dashed border-white/20 text-[#CFCFCF] hover:text-white text-sm">
+          <button type="button" onClick={() => setShowSecondCurrency(true)} className="flex items-center justify-between w-full px-4 py-3 rounded-xl border border-dashed border-black/10 text-ink-05 hover:text-ink-08 hover:border-black/20 text-sm transition-colors">
             <span>Add Additional Currency</span><span>+</span>
           </button>
         ) : (
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-white">Additional Currency</span>
-              <button type="button" onClick={() => { setShowSecondCurrency(false); setSecondCurrencyId(''); }} className="text-[#CFCFCF] hover:text-white text-sm">Remove</button>
+              <span className="text-sm font-medium text-ink-08">Additional Currency</span>
+              <button type="button" onClick={() => { setShowSecondCurrency(false); setSecondCurrencyId(''); }} className="text-ink-05 hover:text-ink-08 text-sm">Remove</button>
             </div>
-            <select value={secondCurrencyId} onChange={(e) => setSecondCurrencyId(Number(e.target.value) || '')} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+            <select value={secondCurrencyId} onChange={(e) => setSecondCurrencyId(Number(e.target.value) || '')} className={selectStyles}>
               <option value="">Select currency</option>
               {currencies.filter((c) => c.id !== currencyId).map((c) => <option key={c.id} value={c.id}>{c.name} ({c.code})</option>)}
             </select>

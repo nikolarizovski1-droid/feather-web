@@ -33,7 +33,7 @@ export default function MobileCTABar() {
       >
         <p className="text-xs text-white/45 leading-snug flex-1">{t("text")}</p>
         <Link
-          href="/signup"
+          href="/app/onboarding"
           onClick={() => events.ctaClick("mobile_sticky_bar", "start_trial")}
           className="shrink-0 inline-flex items-center justify-center h-10 px-5 text-sm font-semibold rounded-full bg-brand text-white hover:bg-[#e5474b] transition-colors duration-200"
         >

@@ -10,6 +10,8 @@ import OnboardingButton from '@/components/app/OnboardingButton';
 import OnboardingTextField from '@/components/app/OnboardingTextField';
 import { ChevronLeft, Trash2, Image as ImageIcon } from 'lucide-react';
 
+const selectStyles = 'w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors';
+
 export default function EditMenuItemPage({ params }: { params: Promise<{ stableId: string }> }) {
   const { stableId } = use(params);
   const router = useRouter();
@@ -106,57 +108,57 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
     <OnboardingShell title="" footer={
       <div className="flex items-center gap-3">
         <div className="flex-1"><OnboardingButton disabled={!isValid} onClick={save}>Save</OnboardingButton></div>
-        <button onClick={deleteProduct} className="w-12 h-12 rounded-lg bg-[#FF6064] text-white flex items-center justify-center shrink-0 hover:bg-[#e5565a]"><Trash2 size={20} /></button>
+        <button onClick={deleteProduct} className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 hover:bg-red-100 transition-colors"><Trash2 size={20} /></button>
       </div>
     }>
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <button onClick={() => router.push('../')} className="text-white hover:opacity-80"><ChevronLeft size={28} /></button>
-        <h1 className="text-2xl font-bold text-white">Edit Product</h1>
+        <button onClick={() => router.push('../')} className="text-ink-08 hover:opacity-80"><ChevronLeft size={28} /></button>
+        <h1 className="text-2xl font-bold text-ink-08">Edit Product</h1>
       </div>
 
       <div className="flex flex-col gap-5">
         {/* Image */}
         {hasImage ? (
-          <div className="relative w-full h-48 rounded-2xl overflow-hidden bg-white/5">
+          <div className="relative w-full h-48 rounded-2xl overflow-hidden border border-black/5">
             <img src={displaySrc} alt="" className="w-full h-full object-cover" />
-            <button onClick={() => { setNewImagePreview(null); if (product) product.images = []; }} className="absolute bottom-3 right-3 bg-white/50 rounded-full px-4 py-2.5 text-[#252525] text-sm font-medium flex items-center gap-1.5 hover:bg-white/70">
+            <button onClick={() => { setNewImagePreview(null); if (product) product.images = []; }} className="absolute bottom-3 right-3 bg-card/80 backdrop-blur-sm rounded-full px-4 py-2.5 text-ink-08 text-sm font-medium flex items-center gap-1.5 hover:bg-card transition-colors">
               <Trash2 size={14} />Delete
             </button>
           </div>
         ) : (
-          <div onClick={() => !isCompressing && fileInputRef.current?.click()} className={`relative w-full rounded-2xl bg-[#313131] border border-dashed border-white/20 p-6 text-center cursor-pointer hover:bg-[#3a3a3a] ${isCompressing ? 'pointer-events-none' : ''}`}>
+          <div onClick={() => !isCompressing && fileInputRef.current?.click()} className={`relative w-full rounded-2xl bg-card border border-dashed border-black/10 p-6 text-center cursor-pointer hover:border-brand/30 transition-colors ${isCompressing ? 'pointer-events-none' : ''}`}>
             {isCompressing && (
-              <div className="absolute inset-0 bg-black/70 rounded-2xl flex flex-col items-center justify-center gap-3">
-                <div className="animate-spin rounded-full h-8 w-8 border-2 border-white border-t-transparent" />
-                <p className="text-sm font-semibold text-white">Compressing image...</p>
+              <div className="absolute inset-0 bg-card/80 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center gap-3">
+                <div className="animate-spin rounded-full h-8 w-8 border-2 border-brand border-t-transparent" />
+                <p className="text-sm font-semibold text-ink-08">Compressing image...</p>
               </div>
             )}
             <input ref={fileInputRef} type="file" accept="image/*" onChange={onFileChange} className="hidden" />
-            <ImageIcon size={32} className="text-[#CFCFCF] mx-auto mb-2" />
-            <p className="text-base font-bold text-white mb-1">Upload product image</p>
-            <p className="text-sm text-white/80 mb-4">For best results, upload <strong>high-resolution</strong> images.</p>
-            <span className="inline-block bg-white text-[#252525] rounded-full px-6 py-3 text-sm font-medium">Upload image from gallery</span>
+            <ImageIcon size={32} className="text-ink-05 mx-auto mb-2" />
+            <p className="text-base font-bold text-ink-08 mb-1">Upload product image</p>
+            <p className="text-sm text-ink-05 mb-4">For best results, upload <strong>high-resolution</strong> images.</p>
+            <span className="inline-block bg-brand text-white rounded-full px-6 py-3 text-sm font-medium">Upload image from gallery</span>
           </div>
         )}
 
         {/* SKU + Price */}
         <div className="flex gap-4">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-white mb-2">SKU</label>
-            <input value={sku} onChange={(e) => setSku(e.target.value)} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white" />
+            <label className="block text-sm font-medium text-ink-08 mb-2">SKU</label>
+            <input value={sku} onChange={(e) => setSku(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors" />
           </div>
           <div className="flex-1">
-            <label className="block text-sm font-medium text-white mb-2"><span className="text-[#FF6064] mr-0.5">*</span>Price</label>
-            <input value={regularPrice} inputMode="decimal" placeholder={currencySymbol} onChange={(e) => setRegularPrice(e.target.value.replace(',', '.'))} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white" />
+            <label className="block text-sm font-medium text-ink-08 mb-2"><span className="text-brand mr-0.5">*</span>Price</label>
+            <input value={regularPrice} inputMode="decimal" placeholder={currencySymbol} onChange={(e) => setRegularPrice(e.target.value.replace(',', '.'))} className="w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 placeholder:text-ink-06 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors" />
           </div>
         </div>
 
         {/* Category */}
         {categories.length > 0 && (
           <div>
-            <label className="block text-sm font-medium text-white mb-2"><span className="text-[#FF6064] mr-0.5">*</span>Category</label>
-            <select value={categorySlug} onChange={(e) => setCategorySlug(e.target.value)} className="w-full px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white">
+            <label className="block text-sm font-medium text-ink-08 mb-2"><span className="text-brand mr-0.5">*</span>Category</label>
+            <select value={categorySlug} onChange={(e) => setCategorySlug(e.target.value)} className={selectStyles}>
               <option value="">Select category</option>
               {categories.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}
             </select>
@@ -164,12 +166,12 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
         )}
 
         {/* Featured toggle */}
-        <label className="flex items-center justify-between p-4 rounded-lg bg-[#252525]/70 border border-[#7A7A7A] cursor-pointer">
-          <span className="text-sm font-medium text-white">Top Product</span>
+        <label className="flex items-center justify-between p-4 rounded-xl bg-card border border-black/10 cursor-pointer">
+          <span className="text-sm font-medium text-ink-08">Top Product</span>
           <div className="relative">
             <input type="checkbox" checked={featured} onChange={(e) => setFeatured(e.target.checked)} className="sr-only peer" />
-            <div className="w-12 h-7 rounded-full bg-[#555] peer-checked:bg-[#FF6064] transition-colors" />
-            <div className="absolute top-[3px] left-[3px] w-[22px] h-[22px] rounded-full bg-white transition-transform peer-checked:translate-x-5" />
+            <div className="w-12 h-7 rounded-full bg-black/10 peer-checked:bg-brand transition-colors" />
+            <div className="absolute top-[3px] left-[3px] w-[22px] h-[22px] rounded-full bg-white shadow-sm transition-transform peer-checked:translate-x-5" />
           </div>
         </label>
 

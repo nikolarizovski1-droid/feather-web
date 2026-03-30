@@ -80,39 +80,39 @@ export default function PlanCard({
 
   return (
     <div
-      className={`bg-white/5 backdrop-blur-sm border rounded-2xl p-5 flex flex-col gap-4 ${
-        isCurrentPlan ? 'border-[#FF6064]/40' : 'border-white/10'
+      className={`bg-card border rounded-2xl p-5 flex flex-col gap-4 shadow-sm transition-all duration-200 ${
+        isCurrentPlan ? 'border-brand/30 ring-1 ring-brand/10' : 'border-black/5'
       }`}
     >
       {/* Header */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <h3 className="text-xl font-bold text-white">{getPlanTranslatedName(plan)}</h3>
+          <h3 className="text-xl font-bold text-ink-08">{getPlanTranslatedName(plan)}</h3>
           {isCurrentPlan && (
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#FF6064]/20 text-[#FF6064]">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-brand/10 text-brand">
               Current Plan
             </span>
           )}
           {isPendingPlan && (
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700">
               Scheduled Change
             </span>
           )}
         </div>
         {getPlanTranslatedDescription(plan) && (
-          <p className="text-sm text-[#CFCFCF]">{getPlanTranslatedDescription(plan)}</p>
+          <p className="text-sm text-ink-05">{getPlanTranslatedDescription(plan)}</p>
         )}
       </div>
 
       {/* Price */}
       <div className="flex items-baseline gap-1">
-        <span className="text-3xl font-bold text-white">{formatPrice()}</span>
-        <span className="text-base text-[#CFCFCF]">/ {formatDurationText(plan.duration)}</span>
+        <span className="text-3xl font-bold text-ink-08">{formatPrice()}</span>
+        <span className="text-base text-ink-05">/ {formatDurationText(plan.duration)}</span>
       </div>
 
       {/* Savings */}
       {savings && (
-        <div className="flex items-center gap-2 text-sm text-emerald-400 bg-emerald-500/10 rounded-lg px-3 py-2">
+        <div className="flex items-center gap-2 text-sm text-emerald-700 bg-emerald-50 rounded-xl px-3 py-2">
           <Tag size={14} />
           <span>{savings.formatted}</span>
         </div>
@@ -120,7 +120,7 @@ export default function PlanCard({
 
       {/* Trial */}
       {showTrialBadge && (
-        <div className="flex items-center gap-2 text-sm text-blue-400 bg-blue-500/10 rounded-lg px-3 py-2">
+        <div className="flex items-center gap-2 text-sm text-blue-700 bg-blue-50 rounded-xl px-3 py-2">
           <Gift size={14} />
           <span>{trialPeriodDays}-day free trial</span>
         </div>
@@ -129,17 +129,17 @@ export default function PlanCard({
       {/* Features */}
       {features.length > 0 && (
         <div className="flex flex-col gap-3">
-          <h4 className="text-base font-semibold text-white">Features</h4>
+          <h4 className="text-base font-semibold text-ink-08">Features</h4>
           <div className="flex flex-col gap-3">
             {features.map((feature) => (
               <div key={feature.name} className="flex items-start gap-3">
-                <CheckCircle size={16} className="text-[#FF6064] mt-0.5 shrink-0" />
+                <CheckCircle size={16} className="text-brand mt-0.5 shrink-0" />
                 <div className="flex flex-col gap-0.5">
-                  <span className="text-sm font-medium text-white">
+                  <span className="text-sm font-medium text-ink-08">
                     {getFeatureTranslatedTitle(feature as SubscriptionPlanFeature)}
                   </span>
                   {getFeatureTranslatedDescription(feature as SubscriptionPlanFeature) && (
-                    <span className="text-xs text-[#CFCFCF]">
+                    <span className="text-xs text-ink-05">
                       {getFeatureTranslatedDescription(feature as SubscriptionPlanFeature)}
                     </span>
                   )}
@@ -150,18 +150,18 @@ export default function PlanCard({
         </div>
       )}
 
-      <div className="border-t border-white/10" />
+      <div className="border-t border-black/5" />
 
       {/* Action */}
       <button
         onClick={handleClick}
         disabled={isLoading || !canPurchase}
-        className={`w-full py-3 px-4 rounded-lg text-base font-semibold transition-colors ${
+        className={`w-full py-3 px-4 rounded-full text-base font-semibold transition-all duration-200 active:scale-[0.98] ${
           isPendingPlan
-            ? 'border border-amber-500 text-amber-400 hover:bg-amber-500/10'
+            ? 'border border-amber-500 text-amber-700 hover:bg-amber-50'
             : isCurrentPlan
-              ? 'bg-[#5A5A5A] text-white cursor-not-allowed opacity-70'
-              : 'bg-[#FF6064] text-white hover:bg-[#e5565a] disabled:opacity-50'
+              ? 'bg-black/5 text-ink-05 cursor-not-allowed'
+              : 'bg-brand text-white hover:bg-[#e5474b] disabled:opacity-50'
         }`}
       >
         {isLoading && <Loader2 size={16} className="inline mr-2 animate-spin" />}

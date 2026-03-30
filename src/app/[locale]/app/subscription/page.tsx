@@ -313,8 +313,34 @@ export default function SubscriptionPage() {
       const response = await createPaymentIntent(credentials, plan.id);
       const intentType = response.intent_type ?? 'payment_intent';
 
+      // If no payment is required (e.g. free trial), skip payment modal
+      // and create subscription directly
+      if (intentType === 'none' || !response.client_secret) {
+        setIsLoading(false);
+        setIsCompletingSubscription(true);
+        try {
+          await createSubscription(credentials, plan.id, {
+            change_timing: isSubscribed && changeTiming === 'immediate' ? 'immediate' : changeTiming,
+          });
+          setIsCompletingSubscription(false);
+          clearPaymentState();
+          loadStatus();
+          setResultType('success');
+          setResultTitle('Subscription Activated!');
+          setResultMessage('Your subscription has been successfully activated. Welcome to Feather!');
+          setShowResultView(true);
+        } catch (subErr: unknown) {
+          setIsCompletingSubscription(false);
+          setResultType('error');
+          setResultTitle('Subscription Failed');
+          setResultMessage(mapErrorMessage(subErr instanceof Error ? subErr.message : 'An error occurred'));
+          setShowResultView(true);
+        }
+        return;
+      }
+
       setCurrentIntentType(intentType);
-      setClientSecret(response.client_secret ?? '');
+      setClientSecret(response.client_secret);
 
       if (intentType === 'setup_intent') {
         setSetupIntentId(response.intent_id ?? null);
@@ -516,7 +542,7 @@ export default function SubscriptionPage() {
   if (!isInitialized) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-8 w-8 border-2 border-white border-t-transparent" />
+        <div className="animate-spin rounded-full h-8 w-8 border-2 border-brand border-t-transparent" />
       </div>
     );
   }
@@ -525,8 +551,8 @@ export default function SubscriptionPage() {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center max-w-md px-6">
-          <h1 className="text-xl font-semibold mb-2">Authentication Error</h1>
-          <p className="text-gray-400">{authError || 'Please access this page from the Feather app.'}</p>
+          <h1 className="text-xl font-semibold text-ink-08 mb-2">Authentication Error</h1>
+          <p className="text-ink-05">{authError || 'Please access this page from the Feather app.'}</p>
         </div>
       </div>
     );
@@ -535,23 +561,23 @@ export default function SubscriptionPage() {
   // --- Render ---
 
   return (
-    <div className="max-w-lg mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-4 py-8">
       <header className="mb-8">
-        <h1 className="text-2xl font-bold text-white">Subscriptions</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-ink-08">Subscriptions<span className="text-brand">.</span></h1>
       </header>
 
       {/* Loading */}
       {isLoading && plans.length === 0 && (
         <div className="flex items-center justify-center py-20">
-          <div className="animate-spin rounded-full h-8 w-8 border-2 border-white border-t-transparent" />
-          <span className="ml-3 text-[#CFCFCF]">Loading plans...</span>
+          <div className="animate-spin rounded-full h-8 w-8 border-2 border-brand border-t-transparent" />
+          <span className="ml-3 text-ink-05">Loading plans...</span>
         </div>
       )}
 
       {/* Empty */}
       {!isLoading && plans.length === 0 && (
         <div className="text-center py-20">
-          <p className="text-[#CFCFCF]">No subscription plans available</p>
+          <p className="text-ink-05">No subscription plans available</p>
         </div>
       )}
 
@@ -575,7 +601,7 @@ export default function SubscriptionPage() {
           {/* Duration Picker */}
           {sortedDurations.length > 1 && (
             <section>
-              <h2 className="text-xl font-bold text-white mb-4">Available Plans</h2>
+              <h2 className="text-xl font-bold text-ink-08 mb-4">Available Plans</h2>
               <DurationPicker
                 durations={sortedDurations}
                 selectedDuration={selectedDuration}
@@ -586,7 +612,7 @@ export default function SubscriptionPage() {
           )}
 
           {/* Plan Cards */}
-          <section className="flex flex-col gap-4">
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {filteredPlans.map((plan) => (
               <PlanCard
                 key={plan.id}

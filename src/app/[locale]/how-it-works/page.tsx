@@ -118,7 +118,7 @@ export default async function HowItWorksPage({
               data-reveal-delay="240"
               className="flex flex-col sm:flex-row items-center justify-center gap-3"
             >
-              <Button href="/signup" size="lg">
+              <Button href="/app/onboarding" size="lg">
                 {t("hero.startTrial")}
               </Button>
               <Button href="/pricing" variant="ghost-light" size="lg">

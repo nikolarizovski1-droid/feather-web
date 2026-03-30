@@ -3,13 +3,13 @@
 import type { StatusDisplayInfo } from '@/types/subscription';
 
 const classMap: Record<string, string> = {
-  active: 'bg-emerald-500/20 text-emerald-400',
-  trial: 'bg-blue-500/20 text-blue-400',
-  canceling: 'bg-amber-500/20 text-amber-400',
-  'past-due': 'bg-red-500/20 text-red-400',
-  canceled: 'bg-gray-500/20 text-gray-400',
-  unpaid: 'bg-red-500/20 text-red-400',
-  incomplete: 'bg-amber-500/20 text-amber-400',
+  active: 'bg-emerald-50 text-emerald-700',
+  trial: 'bg-blue-50 text-blue-700',
+  canceling: 'bg-amber-50 text-amber-700',
+  'past-due': 'bg-red-50 text-red-700',
+  canceled: 'bg-gray-100 text-gray-600',
+  unpaid: 'bg-red-50 text-red-700',
+  incomplete: 'bg-amber-50 text-amber-700',
 };
 
 export default function StatusBadge({ status }: { status: StatusDisplayInfo }) {

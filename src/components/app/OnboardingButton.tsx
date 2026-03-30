@@ -23,10 +23,10 @@ export default function OnboardingButton({
       type="button"
       disabled={disabled || loading}
       onClick={onClick}
-      className={`w-full py-4 px-6 rounded-2xl text-base font-semibold transition-colors disabled:opacity-50 ${
+      className={`w-full py-3.5 px-6 rounded-full text-base font-semibold transition-all duration-200 active:scale-[0.98] disabled:opacity-50 ${
         variant === 'primary'
-          ? 'bg-[#FF6064] text-white hover:bg-[#e5565a]'
-          : 'bg-[#313131] text-white hover:bg-[#3D3D3D]'
+          ? 'bg-brand text-white hover:bg-[#e5474b]'
+          : 'bg-transparent text-ink-08 border border-black/10 hover:bg-black/5'
       }`}
     >
       {loading && <Loader2 size={16} className="inline mr-2 animate-spin" />}

@@ -53,26 +53,26 @@ export default function ResultView({
   };
 
   return (
-    <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-[1100] p-5">
-      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl max-w-[400px] w-full text-center p-8 animate-in zoom-in-95 duration-300">
+    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-[1100] p-5">
+      <div className="bg-card border border-black/5 rounded-2xl max-w-[400px] w-full text-center p-8 shadow-lg animate-in zoom-in-95 duration-300">
         {/* Icon */}
         <div className="mb-6">
           {type === 'success' ? (
-            <CheckCircle size={64} className="text-emerald-400 mx-auto" />
+            <CheckCircle size={64} className="text-emerald-500 mx-auto" />
           ) : (
-            <XCircle size={64} className="text-[#FF6064] mx-auto" />
+            <XCircle size={64} className="text-brand mx-auto" />
           )}
         </div>
 
         {/* Title */}
-        <h2 className="text-2xl font-bold text-white mb-4">{title}</h2>
+        <h2 className="text-2xl font-bold text-ink-08 mb-4">{title}</h2>
 
         {/* Message */}
-        <p className="text-base font-medium text-white/80 mb-6 leading-relaxed">{message}</p>
+        <p className="text-base font-medium text-ink-05 mb-6 leading-relaxed">{message}</p>
 
         {/* Countdown */}
         {type === 'success' && countdown > 0 && (
-          <p className="text-sm text-[#CFCFCF] mb-4">
+          <p className="text-sm text-ink-06 mb-4">
             Redirecting to app in {countdown} second{countdown !== 1 ? 's' : ''}...
           </p>
         )}
@@ -82,7 +82,7 @@ export default function ResultView({
           {type === 'success' ? (
             <button
               onClick={handleRedirect}
-              className="w-full py-3 px-4 rounded-lg bg-[#FF6064] text-white font-semibold hover:bg-[#e5565a] transition-colors flex items-center justify-center gap-2"
+              className="w-full py-3 px-4 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2"
             >
               <ExternalLink size={16} /> Open App Now
             </button>
@@ -90,13 +90,13 @@ export default function ResultView({
             <>
               <button
                 onClick={handleRetry}
-                className="w-full py-3 px-4 rounded-lg bg-[#FF6064] text-white font-semibold hover:bg-[#e5565a] transition-colors flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 <RotateCcw size={16} /> Try Again
               </button>
               <button
                 onClick={handleRedirect}
-                className="w-full py-3 px-4 rounded-lg bg-[#313131] text-white font-medium hover:bg-[#3D3D3D] transition-colors flex items-center justify-center gap-2"
+                className="w-full py-3 px-4 rounded-full bg-transparent text-ink-08 border border-black/10 font-medium hover:bg-black/5 transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 <ExternalLink size={16} /> Return to App
               </button>

@@ -6,9 +6,12 @@ import { getCountries, createUser, startDomainCreation } from '@/lib/onboarding-
 import { OnboardingStep, ShopType } from '@/types/onboarding';
 import type { Country, CreateUserRequest, UserCredentials } from '@/types/onboarding';
 import { useNotifications } from '@/hooks/useNotifications';
+import { events } from '@/lib/analytics';
 import OnboardingShell from '@/components/app/OnboardingShell';
 import OnboardingButton from '@/components/app/OnboardingButton';
 import OnboardingTextField from '@/components/app/OnboardingTextField';
+
+const selectStyles = 'w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors';
 
 export default function CreateUserPage() {
   const router = useRouter();
@@ -60,6 +63,7 @@ export default function CreateUserPage() {
       };
 
       await createUser(request);
+      events.trialStart();
 
       const credentials: UserCredentials = { email, password };
       localStorage.setItem('onboarding_user_credentials', JSON.stringify(credentials));
@@ -101,14 +105,14 @@ export default function CreateUserPage() {
         <OnboardingTextField label="Last Name" placeholder="ex. Stojkova" required value={lastName} onChange={setLastName} autoCapitalize />
 
         {/* Phone */}
-        <div className="flex flex-col gap-1">
-          <label className="flex items-center text-sm font-medium text-white"><span className="text-[#FF6064] mr-0.5">*</span>Phone Number</label>
+        <div className="flex flex-col gap-1.5">
+          <label className="flex items-center text-sm font-medium text-ink-08"><span className="text-brand mr-0.5">*</span>Phone Number</label>
           <div className="flex gap-2">
-            <select value={countryId} onChange={(e) => setCountryId(Number(e.target.value) || '')} className="w-28 px-3 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white text-sm">
+            <select value={countryId} onChange={(e) => setCountryId(Number(e.target.value) || '')} className="w-28 px-3 py-3 rounded-xl border border-black/10 bg-card text-ink-08 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors">
               <option value="">Prefix</option>
               {countries.filter((c) => c.phonePrefix).map((c) => <option key={c.id} value={c.id}>{c.phonePrefix}</option>)}
             </select>
-            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="ex. 78 123 456" className="flex-1 px-4 py-3.5 rounded-lg border border-[#7A7A7A] bg-[#252525]/70 text-white placeholder:text-white/40" />
+            <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="ex. 78 123 456" className="flex-1 px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 placeholder:text-ink-06 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors" />
           </div>
         </div>
 

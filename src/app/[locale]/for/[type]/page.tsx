@@ -148,7 +148,7 @@ export default async function UseCasePage({
               className="flex flex-col sm:flex-row gap-3"
             >
               <Button
-                href={`/signup?plan=${config.featuredPlan}`}
+                href="/app/onboarding"
                 size="lg"
                 className="animate-float-soft"
               >

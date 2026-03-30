@@ -21,7 +21,7 @@ export default async function PricingTeaser() {
     period: plan.price === t("plans.0.price") && plan.price.toLowerCase().includes("free") || plan.price === "Free" || plan.price === "Бесплатно"
       ? t("forever")
       : t("perMonth"),
-    ctaHref: i === 0 ? "/signup" : i === 1 ? "/signup?plan=growth" : "/signup?plan=pro",
+    ctaHref: "/app/onboarding",
     highlighted: i === 1,
     badge: i === 1 ? t("mostPopular") : undefined,
     showTrialNote: i > 0,

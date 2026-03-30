@@ -61,16 +61,27 @@ export default function SubscriptionWaitingPage() {
   }, [deviceId, accessToken, router]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600">
-      <div className="text-center px-10 max-w-md">
-        <div className="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent mx-auto mb-8" />
-        <p className="text-2xl font-semibold text-white mb-2">Setting up your shop...</p>
-        {currentStep !== null && currentStep < SHOP_READY_STEP && (
-          <p className="text-base text-white/80 mb-5">Step {currentStep} of {SHOP_READY_STEP}</p>
-        )}
-        <p className="text-sm text-white/70 italic">
-          This usually takes a few minutes. Feel free to grab a coffee!
-        </p>
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="bg-card rounded-2xl border border-black/5 shadow-sm p-8 sm:p-12 text-center max-w-md mx-4 relative overflow-hidden">
+        {/* Brand glow */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{ background: 'radial-gradient(circle at 50% 30%, rgba(255,96,100,0.06) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <div className="w-20 h-20 mx-auto mb-8 rounded-2xl bg-brand/10 flex items-center justify-center">
+            <div className="animate-spin rounded-full h-10 w-10 border-3 border-brand border-t-transparent" />
+          </div>
+          <p className="text-2xl font-bold text-ink-08 mb-2">Setting up your shop...</p>
+          {currentStep !== null && currentStep < SHOP_READY_STEP && (
+            <div className="mb-5">
+              <p className="text-base text-ink-05 mb-3">Step {currentStep} of {SHOP_READY_STEP}</p>
+              <div className="w-full h-2 bg-black/5 rounded-full overflow-hidden">
+                <div className="h-full bg-brand rounded-full transition-all duration-500" style={{ width: `${(currentStep / SHOP_READY_STEP) * 100}%` }} />
+              </div>
+            </div>
+          )}
+          <p className="text-sm text-ink-05 italic">
+            This usually takes a few minutes. Feel free to grab a coffee!
+          </p>
+        </div>
       </div>
     </div>
   );

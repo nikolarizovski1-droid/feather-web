@@ -129,7 +129,7 @@ export default async function HowItWorks() {
           data-reveal-delay="240"
           className="mt-14 text-center"
         >
-          <Button href="/signup" size="lg">
+          <Button href="/app/onboarding" size="lg">
             {t("cta")}
           </Button>
           <p className="mt-3 text-sm text-ink-06">

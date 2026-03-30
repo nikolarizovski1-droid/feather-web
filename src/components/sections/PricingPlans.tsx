@@ -209,7 +209,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
 
                 {/* CTA */}
                 <Button
-                  href={`/signup?plan=${tierKey}&billing=${duration}`}
+                  href="/app/onboarding"
                   variant={isHighlighted ? "primary" : "ghost-light"}
                   className="w-full"
                 >

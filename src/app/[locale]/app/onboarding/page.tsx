@@ -1,32 +1,36 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { deviceLogin, getOnboardingStep } from '@/lib/onboarding-api';
 import { OnboardingStep } from '@/types/onboarding';
 import LoadingOverlay from '@/components/app/LoadingOverlay';
 
-function getRouteForStep(step: OnboardingStep, storeType?: string): string {
+function getRouteForStep(basePath: string, step: OnboardingStep, storeType?: string): string {
   const domainSteps = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
   if (domainSteps.includes(step)) {
     const isHype = String(storeType || '').toLowerCase() === 'hype';
-    return isHype ? './onboarding/waiting' : './onboarding/menu';
+    return isHype ? `${basePath}/waiting` : `${basePath}/menu`;
   }
   const map: Record<number, string> = {
-    [OnboardingStep.CreateVenue]: './onboarding/venue',
-    [OnboardingStep.CreateUser]: './onboarding/user',
-    [OnboardingStep.CreateMenu]: './onboarding/menu',
-    [OnboardingStep.EditMenu]: './onboarding/menu-overview',
-    [OnboardingStep.SetLanguages]: './onboarding/languages',
-    [OnboardingStep.Finished]: './subscription',
+    [OnboardingStep.CreateVenue]: `${basePath}/venue`,
+    [OnboardingStep.CreateUser]: `${basePath}/user`,
+    [OnboardingStep.CreateMenu]: `${basePath}/menu`,
+    [OnboardingStep.EditMenu]: `${basePath}/menu-overview`,
+    [OnboardingStep.SetLanguages]: `${basePath}/languages`,
+    [OnboardingStep.Finished]: basePath.replace(/\/onboarding$/, '/subscription'),
   };
-  return map[step] ?? './onboarding/venue';
+  return map[step] ?? `${basePath}/venue`;
 }
 
 export default function OnboardingFlowPage() {
   const router = useRouter();
+  const pathname = usePathname();
   const [loading, setLoading] = useState(true);
   const [loginError, setLoginError] = useState(false);
+
+  // pathname is e.g. "/en/app/onboarding" — use it as the base for child routes
+  const basePath = pathname.replace(/\/$/, '');
 
   useEffect(() => {
     async function init() {
@@ -40,9 +44,9 @@ export default function OnboardingFlowPage() {
         const response = await getOnboardingStep();
         if (response) {
           const storeType = (response.shop as Record<string, unknown>)?.storeType ?? (response.shop as Record<string, unknown>)?.store_type;
-          router.replace(getRouteForStep(response.step as OnboardingStep, storeType as string));
+          router.replace(getRouteForStep(basePath, response.step as OnboardingStep, storeType as string));
         } else {
-          router.replace('./onboarding/venue');
+          router.replace(`${basePath}/venue`);
         }
       } catch (err) {
         console.error('Onboarding init failed:', err);
@@ -52,18 +56,18 @@ export default function OnboardingFlowPage() {
       }
     }
     init();
-  }, [router]);
+  }, [router, basePath]);
 
   if (loading) return <LoadingOverlay message="Loading onboarding..." />;
 
   if (loginError) {
     return (
-      <div className="flex items-center justify-center min-h-screen text-white">
+      <div className="flex items-center justify-center min-h-screen">
         <div className="text-center max-w-md px-6">
-          <p className="text-lg mb-4">Failed to connect. Please check your connection and try again.</p>
+          <p className="text-lg text-ink-08 mb-4">Failed to connect. Please check your connection and try again.</p>
           <button
             onClick={() => { setLoading(true); setLoginError(false); window.location.reload(); }}
-            className="px-6 py-3 rounded-lg bg-[#FF6064] text-white font-semibold"
+            className="px-6 py-3 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] transition-all duration-200 active:scale-[0.98]"
           >
             Retry
           </button>

@@ -67,11 +67,17 @@ export default function ShopCreationWaitingPage() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-950">
-      <div className="text-center px-10 max-w-md">
-        <div className="animate-spin rounded-full h-16 w-16 border-4 border-white border-t-transparent mx-auto mb-8" />
-        <p className="text-2xl font-semibold text-white mb-2">Shop creation in progress</p>
-        <p className="text-white/70">Please wait...</p>
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="bg-card rounded-2xl border border-black/5 shadow-sm p-8 sm:p-12 text-center max-w-md mx-4 relative overflow-hidden">
+        {/* Brand glow */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true" style={{ background: 'radial-gradient(circle at 50% 30%, rgba(255,96,100,0.06) 0%, transparent 70%)' }} />
+        <div className="relative">
+          <div className="w-20 h-20 mx-auto mb-8 rounded-2xl bg-brand/10 flex items-center justify-center">
+            <div className="animate-spin rounded-full h-10 w-10 border-3 border-brand border-t-transparent" />
+          </div>
+          <p className="text-2xl font-bold text-ink-08 mb-2">Shop creation in progress</p>
+          <p className="text-ink-05">Please wait...</p>
+        </div>
       </div>
     </div>
   );
