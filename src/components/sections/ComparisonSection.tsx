@@ -9,6 +9,7 @@ export default async function ComparisonSection() {
 
   return (
     <section
+      id="comparison"
       className="py-24 lg:py-32 bg-ink-07"
       aria-labelledby="comparison-heading"
     >

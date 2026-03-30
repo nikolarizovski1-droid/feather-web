@@ -27,16 +27,9 @@ export default function CreateVenuePage() {
   const [city, setCity] = useState('');
   const [countryId, setCountryId] = useState<number | ''>('');
   const [currencyId, setCurrencyId] = useState<number | ''>('');
-  const [secondCurrencyId, setSecondCurrencyId] = useState<number | ''>('');
-  const [showSecondCurrency, setShowSecondCurrency] = useState(false);
   const [languageId, setLanguageId] = useState<number | ''>('');
-  const [locationName, setLocationName] = useState('');
-  const [locationAddress, setLocationAddress] = useState('');
-  const [lat, setLat] = useState(0);
-  const [lng, setLng] = useState(0);
   const [shopType, setShopType] = useState<ShopType>(ShopType.woocommerce);
   const [authKey, setAuthKey] = useState('');
-  const [logoBase64, setLogoBase64] = useState<string | null>(null);
 
   const selectedCountry = countries.find((c) => c.id === countryId) ?? null;
   const hasMultipleShopTypes = (selectedCountry?.supportedShopTypes?.length ?? 0) > 1;
@@ -71,11 +64,6 @@ export default function CreateVenuePage() {
         shop_type: shopType,
       };
 
-      if (secondCurrencyId) request.secondCurrencyId = secondCurrencyId as number;
-      if (logoBase64) request.catalogue_icon = logoBase64;
-      if (locationName || locationAddress) {
-        request.location = { name: locationName, location_address_name: locationAddress, lat, lng, is_pickup_location: true };
-      }
       if (shopType === ShopType.hype) request.auth_key = authKey;
 
       const sriParam = searchParams.get('sri');
@@ -132,10 +120,6 @@ export default function CreateVenuePage() {
 
         {shopType === ShopType.hype && <OnboardingTextField label="Auth Key" placeholder="Enter Hype auth key" required type="password" value={authKey} onChange={setAuthKey} />}
 
-        {/* Location */}
-        <OnboardingTextField label="Location name" placeholder="ex. City Center" value={locationName} onChange={setLocationName} />
-        <OnboardingTextField label="Address" placeholder="ex. Bul. Partizanski Odredi 1" value={locationAddress} onChange={setLocationAddress} />
-
         {/* Language */}
         <div className="flex flex-col gap-1.5">
           <label className="flex items-center text-sm font-medium text-ink-08"><span className="text-brand mr-0.5">*</span>Language</label>
@@ -154,22 +138,6 @@ export default function CreateVenuePage() {
           </select>
         </div>
 
-        {!showSecondCurrency ? (
-          <button type="button" onClick={() => setShowSecondCurrency(true)} className="flex items-center justify-between w-full px-4 py-3 rounded-xl border border-dashed border-black/10 text-ink-05 hover:text-ink-08 hover:border-black/20 text-sm transition-colors">
-            <span>Add Additional Currency</span><span>+</span>
-          </button>
-        ) : (
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center justify-between">
-              <span className="text-sm font-medium text-ink-08">Additional Currency</span>
-              <button type="button" onClick={() => { setShowSecondCurrency(false); setSecondCurrencyId(''); }} className="text-ink-05 hover:text-ink-08 text-sm">Remove</button>
-            </div>
-            <select value={secondCurrencyId} onChange={(e) => setSecondCurrencyId(Number(e.target.value) || '')} className={selectStyles}>
-              <option value="">Select currency</option>
-              {currencies.filter((c) => c.id !== currencyId).map((c) => <option key={c.id} value={c.id}>{c.name} ({c.code})</option>)}
-            </select>
-          </div>
-        )}
       </div>
     </OnboardingShell>
   );

@@ -97,7 +97,7 @@ export default function CreateMenuPage() {
     if (!shopData) { showError('Shop data not found.'); return; }
     const shop = JSON.parse(shopData);
     setIsCreatingMenu(true);
-    setLoadingMessage('Generating menu\nPlease wait...');
+    setLoadingMessage('Generating your menu...\nThis usually takes 30–60 seconds.');
     try {
       const imgs = selectedImages.map((i) => i.compressed!).filter(Boolean);
       const response = await apiCreateMenu(shop.id, imgs) as unknown as Record<string, unknown>;
@@ -112,6 +112,10 @@ export default function CreateMenuPage() {
   }
 
   async function skipMenu() {
+    const confirmed = window.confirm(
+      "Skip menu creation? You'll start with an empty menu. You can add products later from your admin dashboard."
+    );
+    if (!confirmed) return;
     const shopData = localStorage.getItem('onboarding_shop_data');
     if (!shopData) return;
     setIsSkipping(true);

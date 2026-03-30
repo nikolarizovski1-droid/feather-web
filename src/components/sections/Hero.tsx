@@ -183,7 +183,7 @@ export default async function Hero() {
 
       {/* ── Scroll cue ─────────────────────────────────────────────────── */}
       <a
-        href="#stats"
+        href="#comparison"
         className="relative z-10 flex justify-center pb-6 pt-2 text-white/25 hover:text-white/55 transition-colors"
         aria-label={t("scrollDown")}
       >

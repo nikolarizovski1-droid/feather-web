@@ -63,7 +63,7 @@ export default function CreateUserPage() {
       };
 
       await createUser(request);
-      events.trialStart();
+      events.trialStart(localStorage.getItem('onboarding_plan') ?? undefined);
 
       const credentials: UserCredentials = { email, password };
       localStorage.setItem('onboarding_user_credentials', JSON.stringify(credentials));

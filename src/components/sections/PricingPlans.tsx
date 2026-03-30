@@ -188,6 +188,9 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                   <p className="text-sm text-ink-05 leading-relaxed">
                     {description}
                   </p>
+                  <p className="text-xs text-brand font-medium mt-2">
+                    {t(`bestFor.${tierKey}`)}
+                  </p>
                 </div>
 
                 {/* Features */}
@@ -209,7 +212,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
 
                 {/* CTA */}
                 <Button
-                  href="/app/onboarding"
+                  href={`/app/onboarding?plan=${tierKey}`}
                   variant={isHighlighted ? "primary" : "ghost-light"}
                   className="w-full"
                 >

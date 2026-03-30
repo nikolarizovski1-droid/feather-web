@@ -4,7 +4,6 @@ import { buildAlternates, BASE_URL } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import StatsBar from "@/components/sections/StatsBar";
 import ComparisonSection from "@/components/sections/ComparisonSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import WhoIsItFor from "@/components/sections/WhoIsItFor";
@@ -32,6 +31,7 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  // Keep in sync with actual pricing from API
   const softwareAppJsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -44,34 +44,39 @@ export default async function Home({
     offers: [
       {
         "@type": "Offer",
-        name: "Starter",
-        price: "0",
-        priceCurrency: "USD",
-        description: "Free digital menu with QR code",
-      },
-      {
-        "@type": "Offer",
-        name: "Growth",
+        name: "Basic",
         price: "29",
-        priceCurrency: "USD",
+        priceCurrency: "EUR",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
           billingDuration: "P1M",
         },
         description:
-          "Push notifications, promotions, events, and analytics",
+          "Events, Promotions, Products & Categories, Instant Menu, Menu Personalization",
       },
       {
         "@type": "Offer",
-        name: "Pro",
-        price: "79",
-        priceCurrency: "USD",
+        name: "Standard",
+        price: "69",
+        priceCurrency: "EUR",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
           billingDuration: "P1M",
         },
         description:
-          "Everything in Growth plus TV display app, advanced analytics, and priority support",
+          "All Basic features plus multi-language menus, Banner, Notifications, TV App",
+      },
+      {
+        "@type": "Offer",
+        name: "Premium",
+        price: "109",
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          billingDuration: "P1M",
+        },
+        description:
+          "All Standard features plus Admin Operations, Call Actions, Orders, Pre-Order Promotions",
       },
     ],
   };
@@ -85,7 +90,6 @@ export default async function Home({
       <Navbar />
       <main>
         <Hero />
-        {/* <StatsBar /> */}
         <ComparisonSection />
         <HowItWorks />
         <WhoIsItFor />

@@ -32,7 +32,11 @@
       "Bash(ls /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/)",
       "WebFetch(domain:github.com)",
       "Bash(grep -E '\\\\.\\(ts|js|config\\)$|tailwind')",
-      "Bash(git diff:*)"
+      "Bash(git diff:*)",
+      "Bash(grep -n \"email\\\\|subscribe\\\\|mailchimp\\\\|resend\" /Users/nikola/Documents/Projects/feather-web2/src/components/ui/EmailCapture.tsx /Users/nikola/Documents/Projects/feather-web2/src/lib/analytics.ts /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/app/onboarding/user/page.tsx)",
+      "Bash(curl -s -X POST https://api.resend.com/audiences -H \"Authorization: Bearer re_UUzqLmnV_HXLxUouNF3PGyjMH8KoDZE5M\" -H \"Content-Type: application/json\" -d '{\"\"name\"\": \"\"Feather Marketing\"\"}')",
+      "Bash(curl -s -X POST https://api.resend.com/audiences/22d94df3-f034-42e1-a5bd-eb74ee2e6776/contacts -H \"Authorization: Bearer re_UUzqLmnV_HXLxUouNF3PGyjMH8KoDZE5M\" -H \"Content-Type: application/json\" -d '{\"\"email\"\": \"\"test@example.com\"\", \"\"first_name\"\": \"\"blog-test\"\", \"\"unsubscribed\"\": false}')",
+      "Bash(npx tsc:*)"
     ]
   }
 }

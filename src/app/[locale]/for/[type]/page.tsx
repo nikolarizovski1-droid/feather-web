@@ -5,7 +5,6 @@ import { buildAlternates } from "@/lib/seo";
 import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import StatsBar from "@/components/sections/StatsBar";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import Button from "@/components/ui/Button";
@@ -148,13 +147,13 @@ export default async function UseCasePage({
               className="flex flex-col sm:flex-row gap-3"
             >
               <Button
-                href="/app/onboarding"
+                href={`/app/onboarding?plan=${config.featuredPlan}`}
                 size="lg"
                 className="animate-float-soft"
               >
                 {t("startTrial")}
               </Button>
-              <Button href="/pricing" variant="ghost" size="lg">
+              <Button href={`/pricing`} variant="ghost" size="lg">
                 {t("seePricing")}
               </Button>
             </div>
@@ -162,7 +161,6 @@ export default async function UseCasePage({
         </section>
 
         {/* ── Stats ─────────────────────────────────────────────────── */}
-        {/* <StatsBar /> */}
 
         {/* ── Feature Highlights ────────────────────────────────────── */}
         <section className="py-24 lg:py-32 bg-surface" aria-label="Key features">

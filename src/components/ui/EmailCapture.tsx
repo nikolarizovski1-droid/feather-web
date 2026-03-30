@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { events } from "@/lib/analytics";
 
 interface EmailCaptureProps {
   heading?: string;
@@ -18,13 +18,33 @@ export default function EmailCapture({
 }: EmailCaptureProps) {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
-    trackEvent("email_capture", { source, email });
-    setSubmitted(true);
-    setEmail("");
+    if (!email || loading) return;
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/email-capture", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source }),
+      });
+
+      if (!res.ok) throw new Error("Failed to subscribe");
+
+      events.emailCapture(source);
+      setSubmitted(true);
+      setEmail("");
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -43,21 +63,28 @@ export default function EmailCapture({
           Thanks! We&apos;ll be in touch.
         </p>
       ) : (
-        <form onSubmit={handleSubmit} className="flex gap-3">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@restaurant.com"
-            className="flex-1 min-w-0 rounded-full bg-ink-07 border border-black/10 px-5 py-3 text-sm text-ink-08 placeholder:text-ink-05 focus:outline-none focus:border-brand/40 transition-colors"
-          />
-          <button
-            type="submit"
-            className="shrink-0 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand/90 transition-colors"
-          >
-            {buttonLabel}
-          </button>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+          <div className="flex gap-3">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@restaurant.com"
+              disabled={loading}
+              className="flex-1 min-w-0 rounded-full bg-ink-07 border border-black/10 px-5 py-3 text-sm text-ink-08 placeholder:text-ink-05 focus:outline-none focus:border-brand/40 transition-colors disabled:opacity-50"
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="shrink-0 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white hover:bg-brand/90 transition-colors disabled:opacity-50"
+            >
+              {loading ? "..." : buttonLabel}
+            </button>
+          </div>
+          {error && (
+            <p className="text-sm text-red-500">{error}</p>
+          )}
         </form>
       )}
     </div>

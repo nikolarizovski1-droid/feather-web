@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import Button from "@/components/ui/Button";
+import { events } from "@/lib/analytics";
 
 export default function FeaturesSubNav() {
   const t = useTranslations("FeaturesSubNav");
@@ -105,6 +107,13 @@ export default function FeaturesSubNav() {
                 </a>
               );
             })}
+            <div className="ml-auto shrink-0 pl-4">
+              <span onClick={() => events.ctaClick("features_subnav", "start_trial")}>
+                <Button href="/app/onboarding" size="sm">
+                  {t("cta")}
+                </Button>
+              </span>
+            </div>
           </div>
         </div>
       </div>

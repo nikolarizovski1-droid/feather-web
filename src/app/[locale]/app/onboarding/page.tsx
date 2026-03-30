@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { deviceLogin, getOnboardingStep } from '@/lib/onboarding-api';
 import { OnboardingStep } from '@/types/onboarding';
 import LoadingOverlay from '@/components/app/LoadingOverlay';
@@ -26,6 +26,7 @@ function getRouteForStep(basePath: string, step: OnboardingStep, storeType?: str
 export default function OnboardingFlowPage() {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [loading, setLoading] = useState(true);
   const [loginError, setLoginError] = useState(false);
 
@@ -35,6 +36,11 @@ export default function OnboardingFlowPage() {
   useEffect(() => {
     async function init() {
       try {
+        const plan = searchParams.get('plan');
+        if (plan) {
+          localStorage.setItem('onboarding_plan', plan);
+        }
+
         const storedToken = localStorage.getItem('feather_access_token');
         if (!storedToken) {
           await deviceLogin();

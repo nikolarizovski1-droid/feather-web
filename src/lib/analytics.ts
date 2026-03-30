@@ -33,4 +33,8 @@ export const events = {
   emailCapture: (source: string) => trackEvent("email_capture", { source }),
   trialStart: (plan?: string) => trackEvent("trial_start", { plan }),
   signupComplete: (plan?: string) => trackEvent("signup_complete", { plan }),
+  emailSent: (sequence: string, emailNumber: number, recipient?: string) =>
+    trackEvent("email_sent", { sequence, email_number: emailNumber, recipient }),
+  emailBounced: (sequence: string, emailNumber: number, recipient?: string) =>
+    trackEvent("email_bounced", { sequence, email_number: emailNumber, recipient }),
 } as const;
