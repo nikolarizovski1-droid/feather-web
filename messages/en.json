@@ -584,6 +584,23 @@
       }
     ]
   },
+  "SeeItInAction": {
+    "eyebrow": "LIVE DEMO",
+    "title": "See what your guests experience",
+    "description": "Scan the QR code with your phone. You'll land on a real restaurant — with push notifications, event promotions, and everything your guests would see.",
+    "qrInstruction": "Point your phone camera at the code",
+    "features": [
+      "Push Notifications",
+      "Event Booking",
+      "Call Waiter",
+      "Promotions",
+      "Instant Menu"
+    ],
+    "ctaHeadline": "Want this for your restaurant?",
+    "ctaDescription": "Everything you just experienced — the instant menu, the push notification, the event promotion — ready for your restaurant in 10 minutes.",
+    "ctaButton": "Start Your Free Trial",
+    "ctaTrustLine": "30 days free · No credit card charge to start"
+  },
   "WhoIsItFor": {
     "eyebrow": "Find your fit",
     "title": "Every restaurant is different.",

@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import ComparisonSection from "@/components/sections/ComparisonSection";
 import HowItWorks from "@/components/sections/HowItWorks";
+import SeeItInAction from "@/components/sections/SeeItInAction";
 import WhoIsItFor from "@/components/sections/WhoIsItFor";
 import Testimonials from "@/components/sections/Testimonials";
 import CTABand from "@/components/sections/CTABand";
@@ -92,6 +93,7 @@ export default async function Home({
         <Hero />
         <ComparisonSection />
         <HowItWorks />
+        <SeeItInAction />
         <WhoIsItFor />
         <Testimonials />
         <CTABand />

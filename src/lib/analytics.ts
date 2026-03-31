@@ -37,4 +37,5 @@ export const events = {
     trackEvent("email_sent", { sequence, email_number: emailNumber, recipient }),
   emailBounced: (sequence: string, emailNumber: number, recipient?: string) =>
     trackEvent("email_bounced", { sequence, email_number: emailNumber, recipient }),
+  demoSectionView: () => trackEvent("demo_section_view"),
 } as const;
