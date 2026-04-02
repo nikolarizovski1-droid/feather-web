@@ -40,7 +40,10 @@
       "Bash(sips -s format png --resampleWidth 64 /Users/nikola/Documents/Projects/feather-web2/public/feather-logo.png --out /tmp/feather-favicon-64.png)",
       "Bash(ls src/app/icon* src/app/favicon* public/favicon*)",
       "Bash(ls /Users/nikola/Documents/Projects/feather-web2/src/app/favicon*)",
-      "Bash(ls /Users/nikola/Documents/Projects/feather-web2/public/favicon*)"
+      "Bash(ls /Users/nikola/Documents/Projects/feather-web2/public/favicon*)",
+      "Bash(node -e \"console.log\\(require\\('next-intl/package.json'\\).version\\)\")",
+      "Bash(curl -sI http://localhost:3000/)",
+      "Bash(curl -sI http://localhost:3000/en)"
     ]
   }
 }

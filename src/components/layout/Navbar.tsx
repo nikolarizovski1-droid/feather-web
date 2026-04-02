@@ -17,7 +17,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const currentLocale = routing.locales.find((locale) =>
-    pathname.startsWith(`/${locale}`)
+    pathname.startsWith(`/${locale}`) || pathname === `/${locale}`
   ) ?? routing.defaultLocale;
 
   const navLinks = [
@@ -34,9 +34,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  function switchLocale(locale: string) {
+  function switchLocale(newLocale: string) {
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=lax`;
     const segments = pathname.split("/");
-    segments[1] = locale;
+    segments[1] = newLocale;
     router.push(segments.join("/") || "/");
   }
 
