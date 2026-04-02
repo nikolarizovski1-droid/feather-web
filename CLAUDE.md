@@ -66,10 +66,14 @@ An 8-step automated marketing plan lives in `marketing-strategy/`. Read `00-over
 | Step | Status | Summary |
 |------|--------|---------|
 | 1. Product Marketing Context | DONE | Positioning, personas, competitors in `.agents/product-marketing-context.md` |
-| 2. Analytics Setup | DONE | GA4 + GTM + cookie consent + 5 custom events |
+| 2. Analytics Setup | DONE | GA4 + GTM + cookie consent + 7 custom events |
 | 3. SEO Foundation | DONE | robots.txt, sitemap, hreflang, canonical, schema markup |
-| 4. Content Engine | SETUP DONE | Blog infrastructure built, drafts folder structure ready |
-| 5-8 | Not started | Email, Paid Ads, CRO, Growth Loops |
+| 4. Content Engine | DONE | Blog infrastructure, first post live, social drafts, lead magnet drafted |
+| 5. Email Sequences | DONE | 3 sequences designed, copy in drafts/email/. Resend chosen. |
+| 5.5 Outreach | NEW | Cold email to restaurants via scraping. Firestore leads DB. |
+| 6. Paid Acquisition | NOT STARTED | Strategy written, budget is the final gate |
+| 7. CRO | DONE | 21 issues found, 18 resolved |
+| 8. Growth Loops | DONE | Badge live, demo restaurant designed |
 
 ## Working With This Project
 

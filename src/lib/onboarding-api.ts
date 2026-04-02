@@ -13,7 +13,7 @@ import type {
   AppConfig,
 } from '@/types/onboarding';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? '';
 const V2_BASE = API_BASE.replace('/v3', '/v2');
 
 function getToken(): string {

@@ -12,7 +12,7 @@ import type {
 } from '@/types/subscription';
 import type { PlansApiResponse } from '@/types/pricing';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? '';
 
 // --- Authenticated Fetch Wrapper ---
 

@@ -36,7 +36,11 @@
       "Bash(grep -n \"email\\\\|subscribe\\\\|mailchimp\\\\|resend\" /Users/nikola/Documents/Projects/feather-web2/src/components/ui/EmailCapture.tsx /Users/nikola/Documents/Projects/feather-web2/src/lib/analytics.ts /Users/nikola/Documents/Projects/feather-web2/src/app/[locale]/app/onboarding/user/page.tsx)",
       "Bash(curl -s -X POST https://api.resend.com/audiences -H \"Authorization: Bearer re_UUzqLmnV_HXLxUouNF3PGyjMH8KoDZE5M\" -H \"Content-Type: application/json\" -d '{\"\"name\"\": \"\"Feather Marketing\"\"}')",
       "Bash(curl -s -X POST https://api.resend.com/audiences/22d94df3-f034-42e1-a5bd-eb74ee2e6776/contacts -H \"Authorization: Bearer re_UUzqLmnV_HXLxUouNF3PGyjMH8KoDZE5M\" -H \"Content-Type: application/json\" -d '{\"\"email\"\": \"\"test@example.com\"\", \"\"first_name\"\": \"\"blog-test\"\", \"\"unsubscribed\"\": false}')",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(sips -s format png --resampleWidth 64 /Users/nikola/Documents/Projects/feather-web2/public/feather-logo.png --out /tmp/feather-favicon-64.png)",
+      "Bash(ls src/app/icon* src/app/favicon* public/favicon*)",
+      "Bash(ls /Users/nikola/Documents/Projects/feather-web2/src/app/favicon*)",
+      "Bash(ls /Users/nikola/Documents/Projects/feather-web2/public/favicon*)"
     ]
   }
 }

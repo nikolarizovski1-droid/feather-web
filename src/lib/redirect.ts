@@ -1,6 +1,6 @@
 import type { RedirectResult, RedirectParams } from '@/types/subscription';
 
-const APP_SCHEME = process.env.NEXT_PUBLIC_APP_SCHEME!;
+const APP_SCHEME = process.env.NEXT_PUBLIC_APP_SCHEME ?? '';
 const REDIRECT_DELAY = Number(process.env.NEXT_PUBLIC_REDIRECT_DELAY_SECONDS ?? 5);
 
 export function buildRedirectUrl(result: RedirectResult, params?: RedirectParams): string {

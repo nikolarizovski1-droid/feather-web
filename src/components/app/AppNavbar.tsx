@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
@@ -37,7 +38,14 @@ export default function AppNavbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 shrink-0">
+          <Link href="/" className="flex items-center gap-2 shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Feather"
+              width={28}
+              height={28}
+              className="rounded-md"
+            />
             <span className="text-xl font-bold tracking-tight text-ink-08">
               feather
             </span>

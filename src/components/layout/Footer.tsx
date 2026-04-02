@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 const socialLinks = [
@@ -87,9 +88,16 @@ export default async function Footer() {
         <div className="py-14 grid grid-cols-2 md:grid-cols-7 gap-8">
           {/* Brand column */}
           <div className="col-span-2 flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-0.5">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/logo.png"
+                alt="Feather"
+                width={28}
+                height={28}
+                className="rounded-md"
+              />
               <span className="text-xl font-bold tracking-tight text-white">
-                feather
+                feathermenu
               </span>
               <span className="text-xl font-bold text-brand">.</span>
             </Link>

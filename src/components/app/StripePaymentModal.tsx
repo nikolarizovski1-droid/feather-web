@@ -11,7 +11,7 @@ import {
 import { X, AlertTriangle, Loader2 } from 'lucide-react';
 import type { SubscriptionIntentType } from '@/types/subscription';
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY ?? '');
 
 interface StripePaymentModalProps {
   clientSecret: string;

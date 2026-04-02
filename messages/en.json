@@ -17,7 +17,7 @@
     "googlePlay": "Google Play",
     "downloadOnAppStore": "Download on the App Store",
     "getItOnGooglePlay": "Get it on Google Play",
-    "copyright": "© {year} Feather. All rights reserved.",
+    "copyright": "© {year} Feather menu. All rights reserved.",
     "categories": {
       "product": "Product",
       "useCases": "Use cases",
@@ -249,7 +249,7 @@
         "city": "Milan, Italy"
       },
       {
-        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather.",
+        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather menu.",
         "name": "Sarah Chen",
         "venue": "Harbor View",
         "city": "Sydney, Australia"
@@ -517,9 +517,9 @@
   },
   "FaqPageMeta": {
     "title": "FAQ — Feather Restaurant Marketing Platform",
-    "description": "Find quick answers about setup, pricing, notifications, integrations, and support for Feather.",
+    "description": "Find quick answers about setup, pricing, notifications, integrations, and support for Feather menu.",
     "ogTitle": "FAQ — Feather Restaurant Marketing Platform",
-    "ogDescription": "Find quick answers about setup, pricing, notifications, integrations, and support for Feather."
+    "ogDescription": "Find quick answers about setup, pricing, notifications, integrations, and support for Feather menu."
   },
   "FaqPageHero": {
     "eyebrow": "FAQ",
@@ -668,7 +668,7 @@
       "items": [
         {
           "question": "Do I need a developer or any technical knowledge?",
-          "answer": "No. If you can upload a photo, you can set up Feather. The AI handles menu building, translation, and categorisation automatically."
+          "answer": "No. If you can upload a photo, you can set up Feather menu. The AI handles menu building, translation, and categorisation automatically."
         },
         {
           "question": "I already have a QR menu — can I switch?",
@@ -786,7 +786,7 @@
         }
       ],
       "testimonial": {
-        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather.",
+        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather menu.",
         "name": "Sarah Chen",
         "venue": "Harbor View",
         "city": "Sydney, Australia"
