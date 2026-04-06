@@ -43,7 +43,7 @@ next-env.d.ts
 /skills
 /marketing-strategy
 /.agents
-/.claude
+.claude/
 /issues-to-fix
 /content
 /coding-tasks
