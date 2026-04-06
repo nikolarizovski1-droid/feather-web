@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const BASE_URL = "https://feathermenu.com";
+export const BASE_URL = "https://www.feathermenu.com";
 
 /**
  * Build alternates object with canonical + hreflang for a given page path.

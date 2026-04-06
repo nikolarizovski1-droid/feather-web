@@ -4,5 +4,6 @@ Allow: /
 
 Disallow: /api/
 Disallow: /admin/
+Disallow: /*/app/
 
-Sitemap: https://feathermenu.com/sitemap.xml
+Sitemap: https://www.feathermenu.com/sitemap.xml

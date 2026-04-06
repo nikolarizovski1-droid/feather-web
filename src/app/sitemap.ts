@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 
-const BASE_URL = "https://feathermenu.com";
+const BASE_URL = "https://www.feathermenu.com";
 
 const locales = ["en", "mk"] as const;
 
@@ -18,11 +18,6 @@ const useCaseTypes = [
   "fast-casual",
   "fine-dining",
   "multi-location",
-  "food-trucks",
-  "bars",
-  "hotels",
-  "cafes",
-  "ghost-kitchens",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

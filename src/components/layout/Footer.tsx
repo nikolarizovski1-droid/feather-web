@@ -60,11 +60,6 @@ export default async function Footer() {
       { label: t("useCases.fastCasual"), href: "/for/fast-casual" },
       { label: t("useCases.fineDining"), href: "/for/fine-dining" },
       { label: t("useCases.multiLocation"), href: "/for/multi-location" },
-      { label: t("useCases.foodTrucks"), href: "/for/food-trucks" },
-      { label: t("useCases.bars"), href: "/for/bars" },
-      { label: t("useCases.hotels"), href: "/for/hotels" },
-      { label: t("useCases.cafes"), href: "/for/cafes" },
-      { label: t("useCases.ghostKitchens"), href: "/for/ghost-kitchens" },
     ],
     [t("categories.resources")]: [
       { label: t("links.blog"), href: "/blog" },
