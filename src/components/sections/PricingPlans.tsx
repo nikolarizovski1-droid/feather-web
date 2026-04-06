@@ -77,7 +77,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
   }
 
   return (
-    <section className="pb-24 lg:pb-32 bg-surface" aria-label="Pricing plans">
+    <section className="pb-14 lg:pb-16 bg-surface" aria-label="Pricing plans">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Billing toggle */}
         <div
@@ -110,7 +110,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                 >
                   {label}
                   {savePct > 0 && (
-                    <span className="inline-block rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-bold text-accent leading-none">
+                    <span className="inline-block rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold text-emerald-700 leading-none">
                       {t("savePercent", { percent: savePct })}
                     </span>
                   )}

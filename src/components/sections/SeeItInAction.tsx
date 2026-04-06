@@ -61,7 +61,7 @@ export default async function SeeItInAction() {
           <div
             data-reveal="up"
             data-reveal-delay="300"
-            className="flex flex-col items-center lg:items-start gap-6"
+            className="flex flex-col items-center gap-6"
           >
             <div className="relative w-60 h-60 rounded-2xl border border-black/5 bg-white p-4 shadow-sm">
               <Image
@@ -76,7 +76,7 @@ export default async function SeeItInAction() {
                 QR Code
               </div>
             </div>
-            <p className="text-sm text-ink-05 text-center lg:text-left">
+            <p className="text-sm text-ink-05 text-center">
               {t("qrInstruction")}
             </p>
           </div>

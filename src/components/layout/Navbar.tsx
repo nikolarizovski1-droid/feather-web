@@ -74,19 +74,24 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isDarkContext
-                    ? "text-white/60 hover:text-white"
-                    : "text-ink-05 hover:text-ink-08"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = strippedPath.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? isDarkContext ? "text-white" : "text-ink-08"
+                      : isDarkContext
+                        ? "text-white/60 hover:text-white"
+                        : "text-ink-05 hover:text-ink-08"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Desktop CTA + locale switcher */}
@@ -146,16 +151,21 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden border-t border-black/5 bg-card/95 backdrop-blur-md">
           <div className="px-4 py-5 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-ink-05 hover:text-ink-08 py-2.5 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = strippedPath.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm font-medium py-2.5 transition-colors ${
+                    isActive ? "text-brand" : "text-ink-05 hover:text-ink-08"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <div className="pt-3 mt-2 border-t border-black/5 flex flex-col gap-3">
               {/* Mobile language switcher */}
               <div className="flex items-center gap-2">
