@@ -1,5 +1,5 @@
 import { Check, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import MotionFade from "@/components/motion/MotionFade";
 import FeatureCard3D from "@/components/motion/FeatureCard3D";

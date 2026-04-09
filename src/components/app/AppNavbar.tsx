@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import { routing } from '@/i18n/routing';
 
 export default function AppNavbar() {
@@ -11,9 +11,7 @@ export default function AppNavbar() {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
 
-  const currentLocale =
-    routing.locales.find((locale) => pathname.startsWith(`/${locale}`) || pathname === `/${locale}`) ??
-    routing.defaultLocale;
+  const currentLocale = useLocale();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -23,9 +21,7 @@ export default function AppNavbar() {
 
   function switchLocale(newLocale: string) {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=lax`;
-    const segments = pathname.split('/');
-    segments[1] = newLocale;
-    router.push(segments.join('/') || '/');
+    router.replace(pathname, { locale: newLocale as 'en' | 'mk' });
   }
 
   return (

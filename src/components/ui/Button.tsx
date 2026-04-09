@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 type ButtonVariant = "primary" | "ghost" | "ghost-light" | "dark";
 type ButtonSize = "sm" | "md" | "lg";

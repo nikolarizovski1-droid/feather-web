@@ -1,6 +1,6 @@
 import { Check, ShieldCheck } from "lucide-react";
 import Button from "@/components/ui/Button";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 
 export default async function PricingTeaser() {

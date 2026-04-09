@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
-import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
 const mobileMenuVariants = {
@@ -44,9 +44,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const currentLocale = routing.locales.find((locale) =>
-    pathname.startsWith(`/${locale}`) || pathname === `/${locale}`
-  ) ?? routing.defaultLocale;
+  const currentLocale = useLocale();
 
   const navLinks = [
     { label: t("features"), href: "/features" },
@@ -64,12 +62,10 @@ export default function Navbar() {
 
   function switchLocale(newLocale: string) {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=lax`;
-    const segments = pathname.split("/");
-    segments[1] = newLocale;
-    router.push(segments.join("/") || "/");
+    router.replace(pathname, { locale: newLocale as "en" | "mk" });
   }
 
-  const strippedPath = pathname.replace(/^\/(en|mk|sq)/, "") || "/";
+  const strippedPath = pathname;
   const isHomepage = strippedPath === "/" || strippedPath === "";
   const isDarkContext = isHomepage && !scrolled;
 
