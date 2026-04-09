@@ -1,5 +1,10 @@
 import { BarChart2, Check } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import MotionFade from "@/components/motion/MotionFade";
+import {
+  StaggeredList,
+  StaggeredListItem,
+} from "@/components/motion/ComparisonAnimations";
 
 // ---------------------------------------------------------------------------
 // Inline dashboard preview – purely cosmetic, illustrative data
@@ -266,67 +271,55 @@ export default async function AnalyticsDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text */}
           <div>
-            <div
-              data-reveal="up"
-              className="inline-flex items-center gap-2.5 mb-5"
-            >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-brand/10">
-                <BarChart2 size={16} className="text-brand" />
+            <MotionFade direction="left">
+              <div className="inline-flex items-center gap-2.5 mb-5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-brand/10">
+                  <BarChart2 size={16} className="text-brand" />
+                </div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+                  {t("eyebrow")}
+                </p>
               </div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand">
-                {t("eyebrow")}
+            </MotionFade>
+
+            <MotionFade direction="left" delay={0.08}>
+              <h2
+                id="analytics-heading"
+                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-ink-08 tracking-tight leading-tight mb-5 whitespace-pre-line"
+              >
+                {t("title")}
+              </h2>
+            </MotionFade>
+
+            <MotionFade direction="left" delay={0.16}>
+              <p className="text-ink-05 text-lg leading-relaxed mb-8">
+                {t("description")}
               </p>
-            </div>
+            </MotionFade>
 
-            <h2
-              id="analytics-heading"
-              data-reveal="up"
-              data-reveal-delay="80"
-              className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-ink-08 tracking-tight leading-tight mb-5 whitespace-pre-line"
-            >
-              {t("title")}
-            </h2>
-
-            <p
-              data-reveal="up"
-              data-reveal-delay="160"
-              className="text-ink-05 text-lg leading-relaxed mb-8"
-            >
-              {t("description")}
-            </p>
-
-            <ul className="space-y-3">
-              {bullets.map((bullet, index) => (
-                <li
-                  key={bullet}
-                  data-reveal="up"
-                  data-reveal-delay={300 + index * 50}
-                  className="flex items-start gap-3"
-                >
+            <StaggeredList className="space-y-3">
+              {bullets.map((bullet) => (
+                <StaggeredListItem key={bullet} className="flex items-start gap-3">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10">
                     <Check size={11} className="text-brand" />
                   </div>
                   <span className="text-sm text-ink-05 leading-relaxed">
                     {bullet}
                   </span>
-                </li>
+                </StaggeredListItem>
               ))}
-            </ul>
+            </StaggeredList>
           </div>
 
-          {/* Dashboard preview */}
-          <div
-            data-reveal="scale"
-            data-reveal-delay="120"
-            className="flex justify-center"
-          >
+          {/* Dashboard preview with 3D tilt */}
+          <MotionFade direction="right" delay={0.12} className="flex justify-center">
             <div className="relative w-full max-w-sm lg:max-w-md">
               <div className="absolute inset-0 rounded-3xl bg-brand/5 blur-3xl scale-95" />
               <div className="relative">
                 <InlineDashboard labels={dashboardLabels} />
               </div>
             </div>
-          </div>
+          </MotionFade>
         </div>
       </div>
     </section>

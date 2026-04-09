@@ -2,6 +2,11 @@ import Image from "next/image";
 import { Check } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { getTranslations } from "next-intl/server";
+import MotionFade from "@/components/motion/MotionFade";
+import {
+  StaggeredList,
+  StaggeredListItem,
+} from "@/components/motion/ComparisonAnimations";
 
 function MockupPlaceholder({
   type,
@@ -56,59 +61,47 @@ export default async function PlatformDeepDive() {
         {/* Part A — Admin Dashboard */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1">
-            <p
-              data-reveal="up"
-              className="text-sm font-semibold uppercase tracking-widest text-brand mb-4"
-            >
-              {t("admin.eyebrow")}
-            </p>
-            <h2
-              id="platform-heading"
-              data-reveal="up"
-              data-reveal-delay="80"
-              className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight mb-5 leading-tight"
-            >
-              {t("admin.title1")}
-              <br />
-              {t("admin.title2")}
-            </h2>
-            <p
-              data-reveal="up"
-              data-reveal-delay="160"
-              className="text-ink-05 text-lg leading-relaxed mb-8"
-            >
-              {t("admin.description")}
-            </p>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {adminFeatures.map((feature, index) => (
-                <li
-                  key={feature}
-                  data-reveal="up"
-                  data-reveal-delay={200 + index * 40}
-                  className="flex items-start gap-2.5"
-                >
+            <MotionFade direction="left">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-4">
+                {t("admin.eyebrow")}
+              </p>
+            </MotionFade>
+            <MotionFade direction="left" delay={0.08}>
+              <h2
+                id="platform-heading"
+                className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight mb-5 leading-tight"
+              >
+                {t("admin.title1")}
+                <br />
+                {t("admin.title2")}
+              </h2>
+            </MotionFade>
+            <MotionFade direction="left" delay={0.16}>
+              <p className="text-ink-05 text-lg leading-relaxed mb-8">
+                {t("admin.description")}
+              </p>
+            </MotionFade>
+            <StaggeredList className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+              {adminFeatures.map((feature) => (
+                <StaggeredListItem key={feature} className="flex items-start gap-2.5">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10">
                     <Check size={11} className="text-brand" />
                   </div>
                   <span className="text-sm text-ink-05 leading-snug">
                     {feature}
                   </span>
-                </li>
+                </StaggeredListItem>
               ))}
-            </ul>
-            <div data-reveal="up" data-reveal-delay="560">
+            </StaggeredList>
+            <MotionFade direction="left" delay={0.4}>
               <Button href="/features" variant="ghost-light">
                 {t("admin.cta")}
               </Button>
-            </div>
+            </MotionFade>
           </div>
-          <div
-            data-reveal="scale"
-            data-reveal-delay="120"
-            className="order-1 lg:order-2"
-          >
+          <MotionFade direction="right" delay={0.12} className="order-1 lg:order-2">
             <MockupPlaceholder type="dashboard" label={t("admin.mockupLabel")} />
-          </div>
+          </MotionFade>
         </div>
 
         {/* Divider */}
@@ -116,60 +109,42 @@ export default async function PlatformDeepDive() {
 
         {/* Part B — Native Apps */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div
-            data-reveal="scale"
-            data-reveal-delay="120"
-            className="flex justify-center"
-          >
+          <MotionFade direction="left" delay={0.12} className="flex justify-center">
             <MockupPlaceholder type="phone" label={t("apps.mockupLabel")} />
-          </div>
+          </MotionFade>
           <div>
-            <p
-              data-reveal="up"
-              className="text-sm font-semibold uppercase tracking-widest text-brand mb-4"
-            >
-              {t("apps.eyebrow")}
-            </p>
-            <h2
-              data-reveal="up"
-              data-reveal-delay="80"
-              className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight mb-5 leading-tight"
-            >
-              {t("apps.title1")}
-              <br />
-              {t("apps.title2")}
-            </h2>
-            <p
-              data-reveal="up"
-              data-reveal-delay="160"
-              className="text-ink-05 text-lg leading-relaxed mb-8"
-            >
-              {t("apps.description")}
-            </p>
-            <ul className="space-y-3 mb-8">
-              {appFeatures.map((feature, index) => (
-                <li
-                  key={feature}
-                  data-reveal="up"
-                  data-reveal-delay={200 + index * 50}
-                  className="flex items-start gap-2.5"
-                >
+            <MotionFade direction="right">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-4">
+                {t("apps.eyebrow")}
+              </p>
+            </MotionFade>
+            <MotionFade direction="right" delay={0.08}>
+              <h2 className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight mb-5 leading-tight">
+                {t("apps.title1")}
+                <br />
+                {t("apps.title2")}
+              </h2>
+            </MotionFade>
+            <MotionFade direction="right" delay={0.16}>
+              <p className="text-ink-05 text-lg leading-relaxed mb-8">
+                {t("apps.description")}
+              </p>
+            </MotionFade>
+            <StaggeredList className="space-y-3 mb-8">
+              {appFeatures.map((feature) => (
+                <StaggeredListItem key={feature} className="flex items-start gap-2.5">
                   <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10">
                     <Check size={11} className="text-brand" />
                   </div>
                   <span className="text-sm text-ink-05 leading-snug">
                     {feature}
                   </span>
-                </li>
+                </StaggeredListItem>
               ))}
-            </ul>
+            </StaggeredList>
 
             {/* App store badges */}
-            <div
-              data-reveal="up"
-              data-reveal-delay="480"
-              className="flex flex-wrap gap-3"
-            >
+            <MotionFade direction="right" delay={0.4} className="flex flex-wrap gap-3">
               <a
                 href="#"
                 className="flex items-center gap-2 rounded-xl border border-black/10 bg-ink-08 px-4 py-2.5 hover:border-black/25 transition-colors"
@@ -204,7 +179,7 @@ export default async function PlatformDeepDive() {
                   </div>
                 </div>
               </a>
-            </div>
+            </MotionFade>
           </div>
         </div>
 

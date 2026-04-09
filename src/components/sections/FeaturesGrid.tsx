@@ -9,6 +9,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import MotionFade from "@/components/motion/MotionFade";
+import FeatureCard3D from "@/components/motion/FeatureCard3D";
 
 const featureIcons: LucideIcon[] = [Zap, Star, Bell, CalendarDays, Tv2, ConciergeBell];
 const featureMockupSrcs = [
@@ -46,7 +48,7 @@ function FeatureMockup({
         alt={label}
         width={width}
         height={height}
-        className="max-h-full max-w-full h-auto w-auto object-contain"
+        className="max-h-full max-w-full h-auto w-auto object-contain transition-transform duration-500 group-hover:scale-[1.03]"
         sizes="(min-width: 1024px) 360px, (min-width: 640px) 42vw, 92vw"
         priority
       />
@@ -74,27 +76,24 @@ export default async function FeaturesGrid() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <p
-            data-reveal="up"
-            className="text-sm font-semibold uppercase tracking-widest text-brand mb-3"
-          >
-            {t("eyebrow")}
-          </p>
-          <h2
-            id="features-heading"
-            data-reveal="up"
-            data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
-          >
-            {t("title")}
-          </h2>
-          <p
-            data-reveal="up"
-            data-reveal-delay="160"
-            className="text-lg text-ink-05 leading-relaxed"
-          >
-            {t("description")}
-          </p>
+          <MotionFade direction="up">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-3">
+              {t("eyebrow")}
+            </p>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.08}>
+            <h2
+              id="features-heading"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
+            >
+              {t("title")}
+            </h2>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.16}>
+            <p className="text-lg text-ink-05 leading-relaxed">
+              {t("description")}
+            </p>
+          </MotionFade>
         </div>
 
         {/* Feature cards grid */}
@@ -102,11 +101,10 @@ export default async function FeaturesGrid() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <article
+              <FeatureCard3D
                 key={feature.title}
-                data-reveal="scale"
-                data-reveal-delay={100 + index * 80}
-                className="group rounded-2xl bg-card border border-black/5 p-6 flex flex-col gap-5 hover:border-brand/20 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg"
+                index={index}
+                className="group relative rounded-2xl bg-card border border-black/5 p-6 flex flex-col gap-5 hover:border-brand/20 transition-all duration-300 shadow-sm hover:shadow-lg"
               >
                 {/* Mockup */}
                 <div className="flex justify-center py-2">
@@ -132,7 +130,7 @@ export default async function FeaturesGrid() {
                     {feature.description}
                   </p>
                 </div>
-              </article>
+              </FeatureCard3D>
             );
           })}
         </div>

@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { Check, type LucideIcon, Zap, Star, Bell, CalendarDays, Tv2, ConciergeBell } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import MotionFade from "@/components/motion/MotionFade";
+import {
+  StaggeredList,
+  StaggeredListItem,
+} from "@/components/motion/ComparisonAnimations";
 
 const featureIds = [
   "instant-access",
@@ -37,21 +42,16 @@ interface FeatureSection {
 
 function BulletList({ bullets }: { bullets: string[] }) {
   return (
-    <ul className="space-y-3">
-      {bullets.map((bullet, index) => (
-        <li
-          key={bullet}
-          data-reveal="up"
-          data-reveal-delay={300 + index * 50}
-          className="flex items-start gap-3"
-        >
+    <StaggeredList className="space-y-3">
+      {bullets.map((bullet) => (
+        <StaggeredListItem key={bullet} className="flex items-start gap-3">
           <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/10">
             <Check size={11} className="text-brand" />
           </div>
           <span className="text-sm text-ink-05 leading-relaxed">{bullet}</span>
-        </li>
+        </StaggeredListItem>
       ))}
-    </ul>
+    </StaggeredList>
   );
 }
 
@@ -78,44 +78,41 @@ function FeatureSectionCard({
             isEven ? "" : "lg:[direction:rtl]"
           }`}
         >
-          {/* Text */}
+          {/* Text — slides in from the text side */}
           <div className={isEven ? "" : "lg:[direction:ltr]"}>
-            <div
-              data-reveal="up"
-              className="inline-flex items-center gap-2.5 mb-5"
-            >
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-brand/10">
-                <Icon size={16} className="text-brand" />
+            <MotionFade direction={isEven ? "left" : "right"}>
+              <div className="inline-flex items-center gap-2.5 mb-5">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-brand/10">
+                  <Icon size={16} className="text-brand" />
+                </div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+                  {feature.eyebrow}
+                </p>
               </div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-brand">
-                {feature.eyebrow}
+            </MotionFade>
+
+            <MotionFade direction={isEven ? "left" : "right"} delay={0.08}>
+              <h2
+                id={`feature-${feature.id}-heading`}
+                className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-ink-08 tracking-tight leading-tight mb-5"
+              >
+                {feature.title}
+              </h2>
+            </MotionFade>
+
+            <MotionFade direction={isEven ? "left" : "right"} delay={0.16}>
+              <p className="text-ink-05 text-lg leading-relaxed mb-8">
+                {feature.description}
               </p>
-            </div>
-
-            <h2
-              id={`feature-${feature.id}-heading`}
-              data-reveal="up"
-              data-reveal-delay="80"
-              className="text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-ink-08 tracking-tight leading-tight mb-5"
-            >
-              {feature.title}
-            </h2>
-
-            <p
-              data-reveal="up"
-              data-reveal-delay="160"
-              className="text-ink-05 text-lg leading-relaxed mb-8"
-            >
-              {feature.description}
-            </p>
+            </MotionFade>
 
             <BulletList bullets={feature.bullets} />
           </div>
 
-          {/* Mockup */}
-          <div
-            data-reveal="scale"
-            data-reveal-delay="120"
+          {/* Mockup — slides in from the opposite side */}
+          <MotionFade
+            direction={isEven ? "right" : "left"}
+            delay={0.12}
             className={`flex justify-center ${isEven ? "" : "lg:[direction:ltr]"}`}
           >
             <div className="relative w-full max-w-sm lg:max-w-md">
@@ -131,7 +128,7 @@ function FeatureSectionCard({
                 />
               </div>
             </div>
-          </div>
+          </MotionFade>
         </div>
       </div>
     </section>

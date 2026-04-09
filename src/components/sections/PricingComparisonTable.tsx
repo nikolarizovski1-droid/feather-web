@@ -3,6 +3,7 @@ import { Check, Minus } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import type { Plan, PlansApiResponse } from "@/types/pricing";
 import { getLocalized } from "@/lib/i18n-helpers";
+import MotionFade from "@/components/motion/MotionFade";
 
 const TIER_ORDER = ["basic", "standard", "premium"] as const;
 
@@ -87,116 +88,109 @@ export default async function PricingComparisonTable({
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-12 text-center">
-          <p
-            data-reveal="up"
-            className="text-sm font-semibold uppercase tracking-widest text-brand mb-3"
-          >
-            {t("eyebrow")}
-          </p>
-          <h2
-            data-reveal="up"
-            data-reveal-delay="80"
-            className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight"
-          >
-            {t("title")}
-          </h2>
+          <MotionFade direction="up">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-3">
+              {t("eyebrow")}
+            </p>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.08}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-ink-08 tracking-tight">
+              {t("title")}
+            </h2>
+          </MotionFade>
         </div>
 
         {/* Table */}
-        <div
-          data-reveal="up"
-          data-reveal-delay="160"
-          className="overflow-x-auto rounded-2xl border border-black/5 shadow-sm"
-        >
-          <table className="w-full border-collapse text-left">
-            <thead>
-              <tr className="border-b border-black/8 bg-ink-07">
-                <th className="py-5 pl-6 pr-4 text-sm font-semibold text-ink-05 w-1/2">
-                  {t("featureHeader")}
-                </th>
-                {monthlyPlans.map((plan, i) => {
-                  const label = getTierLabel(plan, locale);
-                  const isMiddle = plan.plan_tier === 2;
-                  const isLast = i === monthlyPlans.length - 1;
-                  return (
-                    <th
-                      key={plan.plan_key}
-                      className={`py-5 ${isLast ? "pl-4 pr-6" : "px-4"} text-center w-[16.66%]`}
-                    >
-                      <span className="inline-flex flex-col items-center">
-                        <span
-                          className={`text-sm font-semibold ${isMiddle ? "font-bold text-ink-08" : "text-ink-08/70"}`}
-                        >
-                          {label}
+        <MotionFade direction="up" delay={0.16}>
+          <div className="overflow-x-auto rounded-2xl border border-black/5 shadow-sm">
+            <table className="w-full border-collapse text-left">
+              <thead>
+                <tr className="border-b border-black/8 bg-ink-07">
+                  <th className="py-5 pl-6 pr-4 text-sm font-semibold text-ink-05 w-1/2">
+                    {t("featureHeader")}
+                  </th>
+                  {monthlyPlans.map((plan, i) => {
+                    const label = getTierLabel(plan, locale);
+                    const isMiddle = plan.plan_tier === 2;
+                    const isLast = i === monthlyPlans.length - 1;
+                    return (
+                      <th
+                        key={plan.plan_key}
+                        className={`py-5 ${isLast ? "pl-4 pr-6" : "px-4"} text-center w-[16.66%]`}
+                      >
+                        <span className="inline-flex flex-col items-center">
+                          <span
+                            className={`text-sm font-semibold ${isMiddle ? "font-bold text-ink-08" : "text-ink-08/70"}`}
+                          >
+                            {label}
+                          </span>
+                          <span className="text-xs font-normal text-ink-05 mt-0.5">
+                            {plan.price.formatted}
+                            <span className="text-[10px]">/{t("perMonth")}</span>
+                          </span>
                         </span>
-                        <span className="text-xs font-normal text-ink-05 mt-0.5">
-                          {plan.price.formatted}
-                          <span className="text-[10px]">/{t("perMonth")}</span>
-                        </span>
-                      </span>
-                    </th>
-                  );
-                })}
-              </tr>
-            </thead>
+                      </th>
+                    );
+                  })}
+                </tr>
+              </thead>
 
-            <tbody>
-              {categories.map((category, catIndex) => (
-                <React.Fragment key={category.title}>
-                  <tr
-                    className={`border-b border-black/5 bg-ink-07/60 ${
-                      catIndex > 0 ? "border-t border-black/8" : ""
-                    }`}
-                  >
-                    <td
-                      colSpan={1 + monthlyPlans.length}
-                      className="py-3 pl-6 pr-4 text-xs font-bold uppercase tracking-widest text-brand/80"
-                    >
-                      {category.title}
-                    </td>
-                  </tr>
-
-                  {category.rows.map((row, rowIndex) => (
+              <tbody>
+                {categories.map((category, catIndex) => (
+                  <React.Fragment key={category.title}>
                     <tr
-                      key={row.label}
-                      className={`border-b border-black/5 transition-colors hover:bg-black/[0.02] ${
-                        rowIndex === category.rows.length - 1
-                          ? "border-black/0"
-                          : ""
+                      className={`border-b border-black/5 bg-ink-07/60 ${
+                        catIndex > 0 ? "border-t border-black/8" : ""
                       }`}
                     >
-                      <td className="py-4 pl-6 pr-4 text-sm text-ink-05 leading-snug">
-                        {row.label}
+                      <td
+                        colSpan={1 + monthlyPlans.length}
+                        className="py-3 pl-6 pr-4 text-xs font-bold uppercase tracking-widest text-brand/80"
+                      >
+                        {category.title}
                       </td>
-                      {row.cells.map((hasFeature, cellIdx) => {
-                        const isMiddle = monthlyPlans[cellIdx]?.plan_tier === 2;
-                        const isLast = cellIdx === row.cells.length - 1;
-                        return (
-                          <td
-                            key={cellIdx}
-                            className={`py-4 ${isLast ? "pl-4 pr-6" : "px-4"} text-center ${
-                              isMiddle ? "bg-brand/[0.03]" : ""
-                            }`}
-                          >
-                            <Cell value={hasFeature} />
-                          </td>
-                        );
-                      })}
                     </tr>
-                  ))}
-                </React.Fragment>
-              ))}
-            </tbody>
-          </table>
-        </div>
 
-        <p
-          data-reveal="up"
-          data-reveal-delay="200"
-          className="mt-5 text-center text-xs text-ink-06"
-        >
-          {t("priceNote")}
-        </p>
+                    {category.rows.map((row, rowIndex) => (
+                      <tr
+                        key={row.label}
+                        className={`border-b border-black/5 transition-colors hover:bg-black/[0.02] ${
+                          rowIndex === category.rows.length - 1
+                            ? "border-black/0"
+                            : ""
+                        }`}
+                      >
+                        <td className="py-4 pl-6 pr-4 text-sm text-ink-05 leading-snug">
+                          {row.label}
+                        </td>
+                        {row.cells.map((hasFeature, cellIdx) => {
+                          const isMiddle = monthlyPlans[cellIdx]?.plan_tier === 2;
+                          const isLast = cellIdx === row.cells.length - 1;
+                          return (
+                            <td
+                              key={cellIdx}
+                              className={`py-4 ${isLast ? "pl-4 pr-6" : "px-4"} text-center ${
+                                isMiddle ? "bg-brand/[0.03]" : ""
+                              }`}
+                            >
+                              <Cell value={hasFeature} />
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </MotionFade>
+
+        <MotionFade direction="up" delay={0.24}>
+          <p className="mt-5 text-center text-xs text-ink-06">
+            {t("priceNote")}
+          </p>
+        </MotionFade>
       </div>
     </section>
   );

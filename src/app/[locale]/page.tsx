@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { setRequestLocale } from "next-intl/server";
 import { buildAlternates, BASE_URL } from "@/lib/seo";
 import Navbar from "@/components/layout/Navbar";
@@ -11,6 +12,7 @@ import WhoIsItFor from "@/components/sections/WhoIsItFor";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import MobileCTABar from "@/components/ui/MobileCTABar";
+import { fetchPricingPlans } from "@/lib/api";
 
 export async function generateMetadata({
   params,
@@ -23,6 +25,17 @@ export async function generateMetadata({
   };
 }
 
+function getCountryCode(headersList: Headers): string | undefined {
+  const vercel = headersList.get("x-vercel-ip-country");
+  if (vercel && vercel.length === 2 && vercel !== "XX") return vercel;
+
+  const cloudflare = headersList.get("cf-ipcountry");
+  if (cloudflare && cloudflare.length === 2 && cloudflare !== "XX")
+    return cloudflare;
+
+  return undefined;
+}
+
 export default async function Home({
   params,
 }: {
@@ -30,6 +43,10 @@ export default async function Home({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const headersList = await headers();
+  const countryCode = getCountryCode(headersList);
+  const plansData = await fetchPricingPlans(countryCode);
 
   // Keep in sync with actual pricing from API
   const softwareAppJsonLd = {
@@ -93,7 +110,7 @@ export default async function Home({
         <ComparisonSection />
         <HowItWorks />
         <SeeItInAction />
-        <WhoIsItFor />
+        <WhoIsItFor plans={plansData} locale={locale} />
         <CTABand />
       </main>
       <Footer />

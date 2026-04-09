@@ -2,6 +2,13 @@ import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { getTranslations } from "next-intl/server";
+import {
+  ParallaxBackground,
+  HeroStagger,
+  HeroStaggerItem,
+  HeroNotificationCard,
+  GradientMesh,
+} from "@/components/motion/HeroAnimations";
 
 export default async function Hero() {
   const t = await getTranslations("Hero");
@@ -11,8 +18,8 @@ export default async function Hero() {
       className="relative min-h-screen flex flex-col overflow-hidden"
       aria-label="Hero"
     >
-      {/* ── Background ─────────────────────────────────────────────── */}
-      <div className="absolute inset-0 z-0">
+      {/* ── Parallax background ────────────────────────────────────── */}
+      <ParallaxBackground>
         <Image
           src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=85&auto=format&fit=crop"
           alt="Atmospheric restaurant interior with warm lighting"
@@ -22,61 +29,51 @@ export default async function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/82" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 0% 0%, rgba(255,96,100,0.08) 0%, transparent 70%)",
-          }}
-        />
-      </div>
+      </ParallaxBackground>
 
-      {/* ── Main content ────────────────────────────────────────────── */}
+      {/* ── Animated gradient mesh ─────────────────────────────────── */}
+      <GradientMesh />
+
+      {/* ── Main content ───────────────────────────────────────────── */}
       <div className="relative z-10 flex-1 flex items-center">
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 xl:px-14 py-4 sm:py-4 lg:py-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-28 items-center min-h-screen">
 
-            {/* ── Left: headline + CTA ─────────────────────────────── */}
-            <div className="flex flex-col gap-8 max-w-[520px]">
-
+            {/* ── Left: headline + CTA (staggered entrance) ────────── */}
+            <HeroStagger>
               {/* eyebrow */}
-              <div
-                data-reveal="up"
-                className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 self-start"
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand">
-                  {t("eyebrow")}
-                </span>
-              </div>
+              <HeroStaggerItem>
+                <div className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 self-start">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand animate-pulse" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-brand">
+                    {t("eyebrow")}
+                  </span>
+                </div>
+              </HeroStaggerItem>
 
               {/* headline */}
-              <h1
-                data-reveal="up"
-                data-reveal-delay="80"
-                className="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white leading-[1.0]"
-              >
-                {t("headline1")}
-                <br />
-                <span
-                  className="text-brand"
-                  style={{ textShadow: "0 0 60px rgba(255,96,100,0.45)" }}
-                >
-                  {t("headline2")}
-                </span>
-              </h1>
+              <HeroStaggerItem>
+                <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white leading-[1.0]">
+                  {t("headline1")}
+                  <br />
+                  <span
+                    className="text-brand"
+                    style={{ textShadow: "0 0 60px rgba(255,96,100,0.45)" }}
+                  >
+                    {t("headline2")}
+                  </span>
+                </h1>
+              </HeroStaggerItem>
 
               {/* subheadline */}
-              <p
-                data-reveal="up"
-                data-reveal-delay="160"
-                className="text-base xl:text-lg text-white/55 leading-relaxed max-w-xl"
-              >
-                {t("subheadline")}
-              </p>
+              <HeroStaggerItem>
+                <p className="text-base xl:text-lg text-white/55 leading-relaxed max-w-xl">
+                  {t("subheadline")}
+                </p>
+              </HeroStaggerItem>
 
               {/* CTAs + trust */}
-              <div data-reveal="up" data-reveal-delay="240">
+              <HeroStaggerItem>
                 <div className="flex flex-col sm:flex-row gap-3 mb-4">
                   <Button href="/app/onboarding" size="lg" className="animate-float-soft">
                     {t("startFreeTrial")}
@@ -86,19 +83,12 @@ export default async function Hero() {
                   </Button>
                 </div>
                 <p className="text-[11px] text-white/28">{t("trustLine")}</p>
-              </div>
+              </HeroStaggerItem>
+            </HeroStagger>
 
-
-            </div>
-
-            {/* ── Right: notification mockup ───────────────────────── */}
-            <div
-              data-reveal="up"
-              data-reveal-delay="400"
-              className="hidden lg:flex items-center justify-center"
-            >
+            {/* ── Right: notification mockup with 3D tilt ──────────── */}
+            <HeroNotificationCard>
               <div className="relative">
-
                 {/* ambient glow behind card */}
                 <div
                   className="absolute inset-0 -m-8 rounded-full pointer-events-none"
@@ -173,15 +163,14 @@ export default async function Hero() {
                     <span className="text-brand text-sm font-bold">{t("mockupOrderLabel")}</span>
                   </p>
                 </div>
-
               </div>
-            </div>
+            </HeroNotificationCard>
 
           </div>
         </div>
       </div>
 
-      {/* ── Scroll cue ─────────────────────────────────────────────────── */}
+      {/* ── Scroll cue ─────────────────────────────────────────────── */}
       <a
         href="#comparison"
         className="relative z-10 flex justify-center pb-6 pt-2 text-white/25 hover:text-white/55 transition-colors"

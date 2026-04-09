@@ -582,11 +582,6 @@
         "tag": "Digital menu",
         "headline": "Going digital for the first time",
         "description": "You want to ditch the paper menu, get guests online fast, and run everything without a tech team.",
-        "benefits": [
-          "AI builds your menu from a photo or PDF",
-          "iOS App Clip + Android — no app download",
-          "One-tap Call Waiter & receipt request"
-        ],
         "plan": "Starter plan",
         "cta": "See pricing"
       },
@@ -594,11 +589,6 @@
         "tag": "Most popular",
         "headline": "Growing revenue on autopilot",
         "description": "Your menu is live. Now you want every scan to bring guests back, fill your events, and surface your best items — automatically.",
-        "benefits": [
-          "Auto push notifications after every scan",
-          "Event promos with one-tap calendar reminders",
-          "Product banners, analytics, unlimited items"
-        ],
         "plan": "Growth plan",
         "cta": "See pricing"
       },
@@ -606,11 +596,6 @@
         "tag": "Multi-location",
         "headline": "Running more than one venue",
         "description": "One place to manage every location, every screen, and every team member — with the data to back every decision.",
-        "benefits": [
-          "Multi-venue dashboard — one login for all",
-          "TV Display App for every in-venue screen",
-          "Staff apps + real-time alerts + priority support"
-        ],
         "plan": "Pro plan",
         "cta": "See pricing"
       }

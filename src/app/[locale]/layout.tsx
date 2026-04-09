@@ -7,6 +7,7 @@ import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import CookieConsent from "@/components/ui/CookieConsent";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const GTM_ID = "GTM-WQX9GZQB";
 
@@ -101,6 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           />
         </noscript>
         <NextIntlClientProvider messages={messages}>
+          <ScrollProgress />
           {children}
           <CookieConsent />
         </NextIntlClientProvider>

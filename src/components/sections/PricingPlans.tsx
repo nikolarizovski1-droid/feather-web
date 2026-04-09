@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Check, ShieldCheck } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
 import { events } from "@/lib/analytics";
@@ -12,6 +13,8 @@ import type {
   PlansApiResponse,
 } from "@/types/pricing";
 import { getLocalized } from "@/lib/i18n-helpers";
+import FeatureCard3D from "@/components/motion/FeatureCard3D";
+import MotionFade from "@/components/motion/MotionFade";
 
 type PlansByTier = Record<PlanKey, Record<PlanDuration, Plan>>;
 
@@ -80,10 +83,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
     <section className="pb-14 lg:pb-16 bg-surface" aria-label="Pricing plans">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Billing toggle */}
-        <div
-          data-reveal="up"
-          className="flex items-center justify-center mb-14"
-        >
+        <MotionFade direction="up" className="flex items-center justify-center mb-14">
           <div className="relative inline-flex items-center rounded-full bg-ink-07 p-1 gap-1 shadow-sm">
             {DURATIONS.map((d) => {
               const label =
@@ -118,7 +118,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
               );
             })}
           </div>
-        </div>
+        </MotionFade>
 
         {/* Plan cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -135,8 +135,6 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
             const tierLabel = name.split(" - ")[0] || name;
             const description = getLocalized(activePlan.description_translations, locale);
 
-            // Only show features that are unique to this tier.
-            // For Standard and Premium, this avoids re-listing features already included from lower tiers.
             const displayFeatures =
               activePlan.direct_features?.length > 0
                 ? activePlan.direct_features
@@ -150,11 +148,10 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                   : null;
 
             return (
-              <div
+              <FeatureCard3D
                 key={tierKey}
-                data-reveal="scale"
-                data-reveal-delay={100 + index * 100}
-                className={`relative rounded-2xl p-7 flex flex-col gap-6 ${
+                index={index}
+                className={`group relative rounded-2xl p-7 flex flex-col gap-6 ${
                   isHighlighted
                     ? "bg-card border-2 border-brand/50 shadow-lg"
                     : "bg-card border border-black/5 shadow-sm"
@@ -175,9 +172,18 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                     {tierLabel}
                   </h3>
                   <div className="flex items-end gap-1.5 mb-1">
-                    <span className="text-4xl font-bold text-ink-08">
-                      {activePlan.price.formatted}
-                    </span>
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={`${tierKey}-${duration}`}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.25 }}
+                        className="text-4xl font-bold text-ink-08"
+                      >
+                        {activePlan.price.formatted}
+                      </motion.span>
+                    </AnimatePresence>
                     <span className="text-sm text-ink-05 mb-1.5">
                       / {duration === "1m" ? t("perMonth") : duration === "6m" ? t("perSixMonths") : t("perYear")}
                     </span>
@@ -222,17 +228,13 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
                 <p className="text-[11px] text-ink-05/60 text-center -mt-3 leading-snug">
                   {t("trialNote")}
                 </p>
-              </div>
+              </FeatureCard3D>
             );
           })}
         </div>
 
         {/* Trial guarantee banner */}
-        <div
-          data-reveal="up"
-          data-reveal-delay="400"
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-black/5 bg-ink-07 px-6 py-4 max-w-2xl mx-auto"
-        >
+        <MotionFade direction="up" delay={0.3} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 rounded-2xl border border-black/5 bg-ink-07 px-6 py-4 max-w-2xl mx-auto">
           <ShieldCheck size={20} className="shrink-0 text-brand" />
           <p className="text-sm text-ink-05 text-center sm:text-left">
             {t.rich("trialGuarantee", {
@@ -241,7 +243,7 @@ export default function PricingPlans({ plans, locale }: PricingPlansProps) {
               ),
             })}
           </p>
-        </div>
+        </MotionFade>
       </div>
     </section>
   );

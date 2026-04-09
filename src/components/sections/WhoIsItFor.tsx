@@ -1,28 +1,57 @@
 import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import MotionFade from "@/components/motion/MotionFade";
+import FeatureCard3D from "@/components/motion/FeatureCard3D";
+import type { Plan, PlansApiResponse } from "@/types/pricing";
+import { getLocalized } from "@/lib/i18n-helpers";
 
 const PLAN_KEYS = ["basic", "standard", "premium"] as const;
 const USE_CASE_PATHS = ["/for/fast-casual", "/for/fine-dining", "/for/multi-location"] as const;
 
-export default async function WhoIsItFor() {
+interface WhoIsItForProps {
+  plans: PlansApiResponse | null;
+  locale: string;
+}
+
+export default async function WhoIsItFor({ plans, locale }: WhoIsItForProps) {
   const t = await getTranslations("WhoIsItFor");
+
+  const monthlyByTier = new Map<string, Plan>();
+  if (plans) {
+    for (const plan of plans.plans) {
+      if (plan.duration === "1m") {
+        monthlyByTier.set(plan.plan_key, plan);
+      }
+    }
+  }
 
   type CardMsg = {
     tag: string;
     headline: string;
     description: string;
-    benefits: string[];
     plan: string;
     cta: string;
   };
-  const cards = (t.raw("cards") as CardMsg[]).map((card, i) => ({
-    ...card,
-    planKey: PLAN_KEYS[i],
-    useCasePath: USE_CASE_PATHS[i],
-    isHighlighted: i === 1,
-    number: String(i + 1).padStart(2, "0"),
-  }));
+  const cards = (t.raw("cards") as CardMsg[]).map((card, i) => {
+    const tierKey = PLAN_KEYS[i];
+    const apiPlan = monthlyByTier.get(tierKey);
+    const displayFeatures = apiPlan?.direct_features?.length
+      ? apiPlan.direct_features
+      : apiPlan?.features;
+    const benefits = displayFeatures
+      ? displayFeatures.slice(0, 3).map((f) => getLocalized(f.title_translations, locale))
+      : [];
+
+    return {
+      ...card,
+      benefits,
+      planKey: tierKey,
+      useCasePath: USE_CASE_PATHS[i],
+      isHighlighted: i === 1,
+      number: String(i + 1).padStart(2, "0"),
+    };
+  });
 
   return (
     <section
@@ -33,37 +62,33 @@ export default async function WhoIsItFor() {
 
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <p
-            data-reveal="up"
-            className="text-sm font-semibold uppercase tracking-widest text-brand mb-3"
-          >
-            {t("eyebrow")}
-          </p>
-          <h2
-            id="who-is-it-for-heading"
-            data-reveal="up"
-            data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
-          >
-            {t("title")}
-          </h2>
-          <p
-            data-reveal="up"
-            data-reveal-delay="160"
-            className="text-lg text-ink-05 leading-relaxed"
-          >
-            {t("description")}
-          </p>
+          <MotionFade direction="up">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-3">
+              {t("eyebrow")}
+            </p>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.08}>
+            <h2
+              id="who-is-it-for-heading"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
+            >
+              {t("title")}
+            </h2>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.16}>
+            <p className="text-lg text-ink-05 leading-relaxed">
+              {t("description")}
+            </p>
+          </MotionFade>
         </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {cards.map((card, index) => (
-            <div
+            <FeatureCard3D
               key={card.planKey}
-              data-reveal="scale"
-              data-reveal-delay={100 + index * 100}
-              className={`relative flex flex-col gap-6 rounded-2xl p-7 ${
+              index={index}
+              className={`group relative flex flex-col gap-6 rounded-2xl p-7 ${
                 card.isHighlighted
                   ? "bg-card border-2 border-brand/50 shadow-lg"
                   : "bg-card border border-black/5 shadow-sm"
@@ -150,16 +175,12 @@ export default async function WhoIsItFor() {
                 {t("learnMore")}
                 <ArrowRight size={12} />
               </Link>
-            </div>
+            </FeatureCard3D>
           ))}
         </div>
 
         {/* Compare all plans link */}
-        <div
-          data-reveal="up"
-          data-reveal-delay="400"
-          className="mt-10 text-center"
-        >
+        <MotionFade direction="up" delay={0.4} className="mt-10 text-center">
           <Link
             href="/pricing"
             className="inline-flex items-center gap-1.5 text-sm text-ink-05 hover:text-ink-08 transition-colors duration-200"
@@ -167,7 +188,7 @@ export default async function WhoIsItFor() {
             {t("seePricing")}
             <ArrowRight size={14} />
           </Link>
-        </div>
+        </MotionFade>
 
       </div>
     </section>

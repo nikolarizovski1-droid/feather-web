@@ -1,5 +1,7 @@
 import { ArrowDown, Bell, CalendarDays } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import MotionFade from "@/components/motion/MotionFade";
+import FeatureCard3D from "@/components/motion/FeatureCard3D";
 
 interface FunnelStep {
   label: string;
@@ -86,53 +88,47 @@ export default async function PromotionsROI() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center mb-16">
-          <p
-            data-reveal="up"
-            className="text-sm font-semibold uppercase tracking-widest text-brand mb-3"
-          >
-            {t("eyebrow")}
-          </p>
-          <h2
-            id="promotions-roi-heading"
-            data-reveal="up"
-            data-reveal-delay="80"
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
-          >
-            {t("title1")}
-            <br />
-            {t("title2")}
-          </h2>
-          <p
-            data-reveal="up"
-            data-reveal-delay="160"
-            className="text-lg text-ink-05 leading-relaxed"
-          >
-            {t("description")}
-          </p>
+          <MotionFade direction="up">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand mb-3">
+              {t("eyebrow")}
+            </p>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.08}>
+            <h2
+              id="promotions-roi-heading"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink-08 tracking-tight mb-5"
+            >
+              {t("title1")}
+              <br />
+              {t("title2")}
+            </h2>
+          </MotionFade>
+          <MotionFade direction="up" delay={0.16}>
+            <p className="text-lg text-ink-05 leading-relaxed">
+              {t("description")}
+            </p>
+          </MotionFade>
         </div>
 
-        {/* Funnel cards */}
+        {/* Funnel cards with 3D tilt */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
           {promotions.map((promo, index) => (
-            <div
+            <FeatureCard3D
               key={promo.type}
-              data-reveal="up"
-              data-reveal-delay={100 + index * 120}
+              index={index}
               className="h-full"
             >
               <FunnelCard promo={promo} />
-            </div>
+            </FeatureCard3D>
           ))}
         </div>
 
         {/* Disclaimer */}
-        <p
-          data-reveal="up"
-          data-reveal-delay="360"
-          className="mt-10 text-center text-xs text-ink-06"
-        >
-          {t("disclaimer")}
-        </p>
+        <MotionFade direction="up" delay={0.3} className="mt-10 text-center">
+          <p className="text-xs text-ink-06">
+            {t("disclaimer")}
+          </p>
+        </MotionFade>
       </div>
     </section>
   );
