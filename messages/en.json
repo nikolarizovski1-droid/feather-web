@@ -232,31 +232,6 @@
       }
     ]
   },
-  "Testimonials": {
-    "eyebrow": "Testimonials",
-    "title": "Built for restaurants like yours.",
-    "description": "From independent cafés to multi-location venues — see how restaurants use Feather to fill more seats.",
-    "testimonials": [
-      {
-        "quote": "We switched from a basic QR menu and within a week our banner was promoting our new cocktail menu. Sales went up 23% that month alone.",
-        "name": "Marco Bianchi",
-        "venue": "La Terrazza",
-        "city": "Milan, Italy"
-      },
-      {
-        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather menu.",
-        "name": "Sarah Chen",
-        "venue": "Harbor View",
-        "city": "Sydney, Australia"
-      },
-      {
-        "quote": "Push notifications changed how we think about slow Tuesdays. We sent a promo and had a fully booked evening. Never happened with a regular QR menu.",
-        "name": "Ahmed Al-Rashid",
-        "venue": "Souk Kitchen",
-        "city": "Dubai, UAE"
-      }
-    ]
-  },
   "PricingTeaser": {
     "eyebrow": "Pricing",
     "title": "Simple, transparent pricing.",
@@ -746,13 +721,7 @@
           "title": "One-tap table service",
           "description": "Guests tap Call Waiter or Call Receipt and the right staff member gets an alert with the exact table. Less running, faster turns, happier guests."
         }
-      ],
-      "testimonial": {
-        "quote": "Push notifications changed how we think about slow Tuesdays. We sent a promo and had a fully booked evening. Never happened with a regular QR menu.",
-        "name": "Ahmed Al-Rashid",
-        "venue": "Souk Kitchen",
-        "city": "Dubai, UAE"
-      }
+      ]
     },
     "fineDining": {
       "meta": {
@@ -779,13 +748,7 @@
           "title": "Product banners & upsells",
           "description": "The first thing guests see after scanning is your hero banner. Spotlight tonight's tasting menu, a rare bottle, or a seasonal special — and add it to cart in one tap."
         }
-      ],
-      "testimonial": {
-        "quote": "The TV display app alone was worth it. Guests read our event promos while waiting, and event bookings have tripled since we started using Feather menu.",
-        "name": "Sarah Chen",
-        "venue": "Harbor View",
-        "city": "Sydney, Australia"
-      }
+      ]
     },
     "multiLocation": {
       "meta": {
@@ -812,13 +775,7 @@
           "title": "Analytics across all locations",
           "description": "See scan rates, engagement funnels, peak hours, and top products — per venue or rolled up across your entire operation. Make decisions with data, not guesswork."
         }
-      ],
-      "testimonial": {
-        "quote": "We switched from a basic QR menu and within a week our banner was promoting our new cocktail menu. Sales went up 23% that month alone.",
-        "name": "Marco Bianchi",
-        "venue": "La Terrazza",
-        "city": "Milan, Italy"
-      }
+      ]
     }
   }
 }

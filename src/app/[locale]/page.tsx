@@ -8,7 +8,6 @@ import ComparisonSection from "@/components/sections/ComparisonSection";
 import HowItWorks from "@/components/sections/HowItWorks";
 import SeeItInAction from "@/components/sections/SeeItInAction";
 import WhoIsItFor from "@/components/sections/WhoIsItFor";
-import Testimonials from "@/components/sections/Testimonials";
 import CTABand from "@/components/sections/CTABand";
 import RevealObserver from "@/components/ui/RevealObserver";
 import MobileCTABar from "@/components/ui/MobileCTABar";
@@ -95,7 +94,6 @@ export default async function Home({
         <HowItWorks />
         <SeeItInAction />
         <WhoIsItFor />
-        <Testimonials />
         <CTABand />
       </main>
       <Footer />

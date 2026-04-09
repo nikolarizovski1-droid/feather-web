@@ -203,49 +203,6 @@ export default async function UseCasePage({
           </div>
         </section>
 
-        {/* ── Testimonial ───────────────────────────────────────────── */}
-        <section className="py-24 lg:py-32 bg-surface" aria-label="Customer testimonial">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <article
-              data-reveal="scale"
-              className="flex flex-col gap-6 rounded-2xl bg-card border border-black/5 p-8 lg:p-10 shadow-sm"
-            >
-              {/* Stars */}
-              <div className="flex gap-0.5" aria-label="5 out of 5 stars">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 fill-accent"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
-              </div>
-
-              <blockquote className="text-lg text-ink-05 leading-relaxed">
-                &ldquo;{t(`${key}.testimonial.quote`)}&rdquo;
-              </blockquote>
-
-              <div className="flex items-center gap-3 pt-2 border-t border-black/5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand/15 text-brand text-sm font-bold">
-                  {config.testimonialInitials}
-                </div>
-                <div>
-                  <div className="text-sm font-semibold text-ink-08">
-                    {t(`${key}.testimonial.name`)}
-                  </div>
-                  <div className="text-xs text-ink-05">
-                    {t(`${key}.testimonial.venue`)} · {t(`${key}.testimonial.city`)}
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
         <CTABand />
       </main>
       <Footer />

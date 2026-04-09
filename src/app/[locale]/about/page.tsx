@@ -8,7 +8,6 @@ import AboutPageHero from "@/components/sections/AboutPageHero";
 import AboutNarrative from "@/components/sections/AboutNarrative";
 import AboutPlatformSnapshot from "@/components/sections/AboutPlatformSnapshot";
 import StatsBar from "@/components/sections/StatsBar";
-import Testimonials from "@/components/sections/Testimonials";
 import CTABand from "@/components/sections/CTABand";
 import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 
@@ -50,7 +49,6 @@ export default async function AboutPage({
         <AboutNarrative />
         {/* <StatsBar /> */}
         <AboutPlatformSnapshot />
-        <Testimonials />
         <CTABand />
       </main>
       <Footer />

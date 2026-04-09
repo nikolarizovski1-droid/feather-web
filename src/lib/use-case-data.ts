@@ -26,7 +26,6 @@ export interface UseCaseConfig {
   type: UseCaseType;
   translationKey: UseCaseTranslationKey;
   featureIcons: LucideIcon[];
-  testimonialInitials: string;
   featuredPlan: "basic" | "standard" | "premium";
   heroImage: string;
 }
@@ -36,7 +35,6 @@ const USE_CASES: Record<UseCaseType, UseCaseConfig> = {
     type: "fast-casual",
     translationKey: "fastCasual",
     featureIcons: [Bell, Zap, Users],
-    testimonialInitials: "AA",
     featuredPlan: "standard",
     heroImage:
       "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1920&q=85&auto=format&fit=crop",
@@ -45,7 +43,6 @@ const USE_CASES: Record<UseCaseType, UseCaseConfig> = {
     type: "fine-dining",
     translationKey: "fineDining",
     featureIcons: [CalendarCheck, Tv, Tag],
-    testimonialInitials: "SC",
     featuredPlan: "standard",
     heroImage:
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=85&auto=format&fit=crop",
@@ -54,7 +51,6 @@ const USE_CASES: Record<UseCaseType, UseCaseConfig> = {
     type: "multi-location",
     translationKey: "multiLocation",
     featureIcons: [Building2, Smartphone, BarChart3],
-    testimonialInitials: "MB",
     featuredPlan: "premium",
     heroImage:
       "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?w=1920&q=85&auto=format&fit=crop",
