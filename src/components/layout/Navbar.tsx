@@ -148,7 +148,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <a
+            {/* <a
               href="https://feather.echo-develop.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -157,7 +157,7 @@ export default function Navbar() {
               }`}
             >
               {t("forMalls")}
-            </a>
+            </a> */}
             <Button href="/app/onboarding" size="sm">
               {t("startFreeTrial")}
             </Button>
@@ -234,7 +234,7 @@ export default function Navbar() {
                       </button>
                     ))}
                   </div>
-                  <a
+                  {/* <a
                     href="https://feather.echo-develop.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -242,7 +242,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     {t("forMalls")}
-                  </a>
+                  </a> */}
                   <Button href="/app/onboarding" className="w-full">
                     {t("startFreeTrial")}
                   </Button>
