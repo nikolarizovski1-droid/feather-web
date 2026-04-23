@@ -762,5 +762,200 @@
         }
       ]
     }
+  },
+  "Onboarding": {
+    "steps": {
+      "venue": "Venue",
+      "account": "Account",
+      "menu": "Menu",
+      "review": "Review"
+    },
+    "subLabels": {
+      "settingUp": "Setting up your site…",
+      "creatingMenu": "Creating your menu",
+      "setLanguages": "Set languages",
+      "editItem": "Edit item"
+    },
+    "common": {
+      "continue": "Continue",
+      "save": "Save",
+      "delete": "Delete",
+      "saveAndExit": "Save & exit",
+      "exit": "Exit",
+      "keepGoing": "Keep going",
+      "retry": "Retry",
+      "loading": "Loading...",
+      "loadingOnboarding": "Loading onboarding...",
+      "takesAbout2Minutes": "Takes about 2 minutes",
+      "selectCountry": "Select country",
+      "searchCountryOrPrefix": "Search country or prefix",
+      "searchCountries": "Search countries",
+      "noCountriesMatch": "No countries match \"{query}\"",
+      "searchCurrencyOrCode": "Search currency or code",
+      "searchCurrencies": "Search currencies",
+      "noCurrenciesMatch": "No currencies match \"{query}\"",
+      "prefix": "Prefix",
+      "country": "Country",
+      "countryDialCode": "Country dial code",
+      "clearSearch": "Clear search",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "undo": "Undo",
+      "shopDataNotFound": "Shop data not found",
+      "failedToConnect": "Failed to connect. Please check your connection and try again.",
+      "exitModalTitle": "Save & exit?",
+      "exitModalMessage": "Your progress is saved on this device. You can pick up right where you left off next time."
+    },
+    "venue": {
+      "title": "Tell us about your venue",
+      "loading": "Creating venue...",
+      "logo": {
+        "upload": "Add logo",
+        "remove": "Remove logo",
+        "hint": "Optional — square images work best"
+      },
+      "location": {
+        "label": "Venue location",
+        "placeholder": "Search by venue name or address",
+        "hint": "Optional — auto-fills city and country. Drag the pin to fine-tune.",
+        "clear": "Clear location"
+      },
+      "venueName": "Venue name",
+      "venueNamePlaceholder": "ex. Aroma Cafe",
+      "city": "City",
+      "cityPlaceholder": "ex. Skopje",
+      "country": "Country",
+      "shopType": "Shop Type",
+      "authKey": "Auth Key",
+      "authKeyPlaceholder": "Enter Hype auth key",
+      "language": "Language",
+      "selectLanguage": "Select language",
+      "currency": "Currency",
+      "selectCurrency": "Select currency",
+      "errors": {
+        "venueName": "Enter your venue name",
+        "city": "Enter your city",
+        "country": "Select a country",
+        "authKey": "Enter your Hype auth key",
+        "language": "Select a language",
+        "currency": "Select a currency",
+        "failed": "Failed to create venue"
+      },
+      "languages": {
+        "english": "English",
+        "macedonian": "Macedonian",
+        "albanian": "Albanian",
+        "bulgarian": "Bulgarian",
+        "croatian": "Croatian",
+        "romanian": "Romanian",
+        "swedish": "Swedish",
+        "turkish": "Turkish",
+        "serbian": "Serbian"
+      }
+    },
+    "user": {
+      "title": "Create your account",
+      "loading": "Creating account...",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "ex. Sara",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "ex. Stojkova",
+      "phoneNumber": "Phone Number",
+      "phonePlaceholder": "ex. 78 123 456",
+      "email": "Email Address",
+      "emailPlaceholder": "ex. email@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "********************",
+      "errors": {
+        "firstName": "Enter your first name",
+        "lastName": "Enter your last name",
+        "country": "Select your country code",
+        "phoneNumber": "Enter your phone number",
+        "phoneShort": "Phone number looks too short",
+        "email": "Enter your email address",
+        "emailInvalid": "Enter a valid email address",
+        "password": "Create a password",
+        "passwordShort": "Password should be at least 6 characters",
+        "emailInUse": "The entered e-mail address is already in use. Enter a different one and try again.",
+        "failed": "Failed to create user"
+      }
+    },
+    "menu": {
+      "title": "Upload your menu",
+      "description": "Upload images of your menu and we'll extract the categories and items.",
+      "usePrevious": "Use previous images",
+      "uploadImage": "Upload image",
+      "uploadHintStart": "For best results, upload ",
+      "uploadHintStrong": "high-resolution",
+      "uploadHintEnd": " images.",
+      "formatsHint": "JPG or PNG · Up to {max} images",
+      "dropHere": "Drop to upload",
+      "imageRemoved": "Image removed",
+      "createMenu": "Create menu",
+      "skip": "Skip",
+      "skipConfirmTitle": "Skip menu creation?",
+      "skipConfirm": "You'll start with an empty menu. You can add products later from your admin dashboard.",
+      "maxImages": "Maximum {n} images allowed.",
+      "uploadingImages": "Uploading images...",
+      "uploadingImage": "Uploading image...",
+      "loadingPrev": "Loading previous menu...",
+      "generating": "Generating your menu...\nThis usually takes 30–60 seconds.",
+      "activating": "Activating shop...",
+      "errors": {
+        "failedLoadPrev": "Failed to load previous menu.",
+        "failedCreate": "Failed to create menu",
+        "failedActivate": "Failed to activate shop.",
+        "noProducts": "No products or categories found"
+      }
+    },
+    "review": {
+      "title": "Review your menu",
+      "loadingCreation": "Menu creation in progress...",
+      "stillSettingUp": "We're still setting up your shop. Review your menu below; the button will be available shortly.",
+      "reviewAndConfirm": "Review your items and confirm when ready.",
+      "loadingButton": "Loading",
+      "confirmAndContinue": "Confirm and continue",
+      "all": "All",
+      "removeItemConfirm": "Remove \"{name}\" from your menu?",
+      "noProductsInCategory": "No products in this category.",
+      "errors": {
+        "addAtLeastOne": "Please add at least one product.",
+        "setupInProgress": "Shop setup is still in progress. Please wait.",
+        "failed": "Failed to create menu"
+      }
+    },
+    "editItem": {
+      "title": "Edit Product",
+      "deleteConfirm": "Remove this item from your menu?",
+      "uploadProductImage": "Upload product image",
+      "uploadFromGallery": "Upload image from gallery",
+      "compressing": "Compressing image...",
+      "sku": "SKU",
+      "price": "Price",
+      "category": "Category",
+      "selectCategory": "Select category",
+      "topProduct": "Top Product",
+      "productName": "Product Name",
+      "productNamePlaceholder": "ex. Smoked Brisket Ftira",
+      "description": "Description",
+      "descriptionPlaceholder": "Short description",
+      "allergens": "Allergens",
+      "allergensPlaceholder": "Allergens in the product"
+    },
+    "languages": {
+      "title": "Choose your languages",
+      "loading": "Saving languages...",
+      "description": "Select at least one language as default for your shop.",
+      "defaultLanguage": "Default Language",
+      "selectDefault": "Select default language",
+      "errors": {
+        "selectRequired": "Please select at least one language and a default.",
+        "failed": "Failed to save languages"
+      }
+    },
+    "waiting": {
+      "title": "Shop creation in progress",
+      "pleaseWait": "Please wait..."
+    }
   }
 }

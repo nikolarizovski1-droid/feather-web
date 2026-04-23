@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, use } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { getCurrencies } from '@/lib/onboarding-api';
 import { compressImage, fileToDataURL } from '@/lib/image-compression';
 import type { MenuProduct, MenuProductCategory } from '@/types/onboarding';
@@ -16,6 +17,9 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
   const { stableId } = use(params);
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const t = useTranslations('Onboarding.editItem');
+  const tc = useTranslations('Onboarding.common');
+  const tMenu = useTranslations('Onboarding.menu');
 
   const [products, setProducts] = useState<MenuProduct[]>([]);
   const [categories, setCategories] = useState<MenuProductCategory[]>([]);
@@ -96,7 +100,7 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
   }
 
   function deleteProduct() {
-    if (!product || !confirm('Remove this item from your menu?')) return;
+    if (!product || !confirm(t('deleteConfirm'))) return;
     const updated = products.filter((p) => p.stableIdentifier !== product.stableIdentifier);
     localStorage.setItem('onboarding_menu_products', JSON.stringify(updated));
     router.push('../');
@@ -107,14 +111,14 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
   return (
     <OnboardingShell title="" footer={
       <div className="flex items-center gap-3">
-        <div className="flex-1"><OnboardingButton disabled={!isValid} onClick={save}>Save</OnboardingButton></div>
+        <div className="flex-1"><OnboardingButton disabled={!isValid} onClick={save}>{tc('save')}</OnboardingButton></div>
         <button onClick={deleteProduct} className="w-12 h-12 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 hover:bg-red-100 transition-colors"><Trash2 size={20} /></button>
       </div>
     }>
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <button onClick={() => router.push('../')} className="text-ink-08 hover:opacity-80"><ChevronLeft size={28} /></button>
-        <h1 className="text-2xl font-bold text-ink-08">Edit Product</h1>
+        <h1 className="text-2xl font-bold text-ink-08">{t('title')}</h1>
       </div>
 
       <div className="flex flex-col gap-5">
@@ -123,7 +127,7 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
           <div className="relative w-full h-48 rounded-2xl overflow-hidden border border-black/5">
             <img src={displaySrc} alt="" className="w-full h-full object-cover" />
             <button onClick={() => { setNewImagePreview(null); if (product) product.images = []; }} className="absolute bottom-3 right-3 bg-card/80 backdrop-blur-sm rounded-full px-4 py-2.5 text-ink-08 text-sm font-medium flex items-center gap-1.5 hover:bg-card transition-colors">
-              <Trash2 size={14} />Delete
+              <Trash2 size={14} />{tc('delete')}
             </button>
           </div>
         ) : (
@@ -131,25 +135,25 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
             {isCompressing && (
               <div className="absolute inset-0 bg-card/80 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center gap-3">
                 <div className="animate-spin rounded-full h-8 w-8 border-2 border-brand border-t-transparent" />
-                <p className="text-sm font-semibold text-ink-08">Compressing image...</p>
+                <p className="text-sm font-semibold text-ink-08">{t('compressing')}</p>
               </div>
             )}
             <input ref={fileInputRef} type="file" accept="image/*" onChange={onFileChange} className="hidden" />
             <ImageIcon size={32} className="text-ink-05 mx-auto mb-2" />
-            <p className="text-base font-bold text-ink-08 mb-1">Upload product image</p>
-            <p className="text-sm text-ink-05 mb-4">For best results, upload <strong>high-resolution</strong> images.</p>
-            <span className="inline-block bg-brand text-white rounded-full px-6 py-3 text-sm font-medium">Upload image from gallery</span>
+            <p className="text-base font-bold text-ink-08 mb-1">{t('uploadProductImage')}</p>
+            <p className="text-sm text-ink-05 mb-4">{tMenu('uploadHintStart')}<strong>{tMenu('uploadHintStrong')}</strong>{tMenu('uploadHintEnd')}</p>
+            <span className="inline-block bg-brand text-white rounded-full px-6 py-3 text-sm font-medium">{t('uploadFromGallery')}</span>
           </div>
         )}
 
         {/* SKU + Price */}
         <div className="flex gap-4">
           <div className="flex-1">
-            <label className="block text-sm font-medium text-ink-08 mb-2">SKU</label>
+            <label className="block text-sm font-medium text-ink-08 mb-2">{t('sku')}</label>
             <input value={sku} onChange={(e) => setSku(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors" />
           </div>
           <div className="flex-1">
-            <label className="block text-sm font-medium text-ink-08 mb-2"><span className="text-brand mr-0.5">*</span>Price</label>
+            <label className="block text-sm font-medium text-ink-08 mb-2"><span className="text-brand mr-0.5">*</span>{t('price')}</label>
             <input value={regularPrice} inputMode="decimal" placeholder={currencySymbol} onChange={(e) => setRegularPrice(e.target.value.replace(',', '.'))} className="w-full px-4 py-3 rounded-xl border border-black/10 bg-card text-ink-08 placeholder:text-ink-06 focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-colors" />
           </div>
         </div>
@@ -157,9 +161,9 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
         {/* Category */}
         {categories.length > 0 && (
           <div>
-            <label className="block text-sm font-medium text-ink-08 mb-2"><span className="text-brand mr-0.5">*</span>Category</label>
+            <label className="block text-sm font-medium text-ink-08 mb-2"><span className="text-brand mr-0.5">*</span>{t('category')}</label>
             <select value={categorySlug} onChange={(e) => setCategorySlug(e.target.value)} className={selectStyles}>
-              <option value="">Select category</option>
+              <option value="">{t('selectCategory')}</option>
               {categories.map((c) => <option key={c.slug} value={c.slug}>{c.name}</option>)}
             </select>
           </div>
@@ -167,7 +171,7 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
 
         {/* Featured toggle */}
         <label className="flex items-center justify-between p-4 rounded-xl bg-card border border-black/10 cursor-pointer">
-          <span className="text-sm font-medium text-ink-08">Top Product</span>
+          <span className="text-sm font-medium text-ink-08">{t('topProduct')}</span>
           <div className="relative">
             <input type="checkbox" checked={featured} onChange={(e) => setFeatured(e.target.checked)} className="sr-only peer" />
             <div className="w-12 h-7 rounded-full bg-black/10 peer-checked:bg-brand transition-colors" />
@@ -175,9 +179,9 @@ export default function EditMenuItemPage({ params }: { params: Promise<{ stableI
           </div>
         </label>
 
-        <OnboardingTextField label="Product Name" placeholder="ex. Smoked Brisket Ftira" required value={name} onChange={setName} />
-        <OnboardingTextField label="Description" placeholder="Short description" value={description} onChange={setDescription} />
-        <OnboardingTextField label="Allergens" placeholder="Allergens in the product" value={allergens} onChange={setAllergens} />
+        <OnboardingTextField label={t('productName')} placeholder={t('productNamePlaceholder')} required value={name} onChange={setName} />
+        <OnboardingTextField label={t('description')} placeholder={t('descriptionPlaceholder')} value={description} onChange={setDescription} />
+        <OnboardingTextField label={t('allergens')} placeholder={t('allergensPlaceholder')} value={allergens} onChange={setAllergens} />
       </div>
     </OnboardingShell>
   );

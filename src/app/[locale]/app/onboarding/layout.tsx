@@ -1,27 +1,42 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-
-const STEPS = [
-  { label: 'Venue', segment: 'venue' },
-  { label: 'Account', segment: 'user' },
-  { label: 'Menu', segment: 'menu' },
-  { label: 'Review', segment: 'menu-overview' },
-] as const;
+import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/navigation';
+import ConfirmationModal from '@/components/app/ConfirmationModal';
 
 function getCurrentStep(pathname: string): number {
   const last = pathname.split('/').filter(Boolean).pop() ?? '';
   if (last === 'venue') return 0;
   if (last === 'user') return 1;
-  if (last === 'menu' || last === 'languages' || last === 'waiting') return 2;
-  if (last === 'menu-overview' || last === 'edit') return 3;
+  if (last === 'menu' || last === 'waiting') return 2;
+  if (last === 'menu-overview' || last === 'edit' || last === 'languages') return 3;
   return -1; // index page or unknown — hide progress
+}
+
+function getStepSubLabelKey(pathname: string): string | null {
+  const last = pathname.split('/').filter(Boolean).pop() ?? '';
+  if (last === 'waiting') return 'settingUp';
+  if (last === 'menu') return 'creatingMenu';
+  if (last === 'languages') return 'setLanguages';
+  if (last === 'edit') return 'editItem';
+  return null;
 }
 
 export default function OnboardingLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const t = useTranslations('Onboarding');
+  const [showExitModal, setShowExitModal] = useState(false);
   const current = getCurrentStep(pathname);
+  const subLabelKey = getStepSubLabelKey(pathname);
+  const STEPS = [
+    { label: t('steps.venue'), segment: 'venue' },
+    { label: t('steps.account'), segment: 'user' },
+    { label: t('steps.menu'), segment: 'menu' },
+    { label: t('steps.review'), segment: 'menu-overview' },
+  ] as const;
 
   if (current < 0) return <>{children}</>;
 
@@ -29,7 +44,16 @@ export default function OnboardingLayout({ children }: { children: ReactNode }) 
     <>
       {/* Progress indicator */}
       <div className="w-full bg-card border-b border-black/5">
-        <div className="max-w-2xl mx-auto px-5 py-4">
+        <div className="max-w-2xl mx-auto px-5 pt-3 pb-4" aria-live="polite">
+          <div className="flex justify-end mb-1">
+            <button
+              type="button"
+              onClick={() => setShowExitModal(true)}
+              className="text-xs font-medium text-ink-05 hover:text-ink-08 transition-colors px-1 py-1"
+            >
+              {t('common.saveAndExit')}
+            </button>
+          </div>
           <div className="flex items-center gap-1">
             {STEPS.map((step, i) => {
               const isCompleted = i < current;
@@ -75,9 +99,28 @@ export default function OnboardingLayout({ children }: { children: ReactNode }) 
               );
             })}
           </div>
+          {subLabelKey ? (
+            <p className="mt-3 text-center text-xs text-ink-06">{t(`subLabels.${subLabelKey}`)}</p>
+          ) : current === 0 ? (
+            <p className="mt-3 text-center text-xs text-ink-05">{t('common.takesAbout2Minutes')}</p>
+          ) : null}
         </div>
       </div>
       {children}
+
+      {showExitModal && (
+        <ConfirmationModal
+          title={t('common.exitModalTitle')}
+          message={t('common.exitModalMessage')}
+          confirmText={t('common.exit')}
+          cancelText={t('common.keepGoing')}
+          onConfirm={() => {
+            setShowExitModal(false);
+            router.push('/');
+          }}
+          onCancel={() => setShowExitModal(false)}
+        />
+      )}
     </>
   );
 }

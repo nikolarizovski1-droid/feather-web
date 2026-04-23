@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { getOnboardingStep, batchCreateCategories, batchCreateProducts, activateShop, loginUser, getCurrencies } from '@/lib/onboarding-api';
 import { OnboardingStep } from '@/types/onboarding';
 import type { MenuProduct, MenuProductCategory, MenuProductImage } from '@/types/onboarding';
@@ -26,6 +27,8 @@ export default function MenuItemsOverviewPage() {
   const { showError } = useNotifications();
   const { setCredentials } = useAuth();
   const pollingRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  const t = useTranslations('Onboarding.review');
+  const tc = useTranslations('Onboarding.common');
 
   const [products, setProducts] = useState<MenuProduct[]>([]);
   const [categories, setCategories] = useState<MenuProductCategory[]>([]);
@@ -79,19 +82,19 @@ export default function MenuItemsOverviewPage() {
   }, [isDomainReady]);
 
   function deleteProduct(product: MenuProduct) {
-    if (!confirm(`Remove "${product.name}" from your menu?`)) return;
+    if (!confirm(t('removeItemConfirm', { name: product.name ?? '' }))) return;
     const updated = products.filter((p) => p.stableIdentifier !== product.stableIdentifier);
     setProducts(updated);
     localStorage.setItem('onboarding_menu_products', JSON.stringify(updated));
   }
 
   async function confirmAndContinue() {
-    if (products.length === 0) { showError('Please add at least one product.'); return; }
-    if (!isDomainReady) { showError('Shop setup is still in progress. Please wait.'); return; }
+    if (products.length === 0) { showError(t('errors.addAtLeastOne')); return; }
+    if (!isDomainReady) { showError(t('errors.setupInProgress')); return; }
     setIsCreating(true);
     try {
       const shopData = localStorage.getItem('onboarding_shop_data');
-      if (!shopData) throw new Error('Shop data not found');
+      if (!shopData) throw new Error(tc('shopDataNotFound'));
       const shop = JSON.parse(shopData);
 
       // Create categories
@@ -145,31 +148,31 @@ export default function MenuItemsOverviewPage() {
       localStorage.setItem('onboarding_current_step', String(OnboardingStep.Finished));
       router.replace('../../app/subscription');
     } catch (err: unknown) {
-      showError(err instanceof Error ? err.message : 'Failed to create menu');
+      showError(err instanceof Error ? err.message : t('errors.failed'));
     } finally {
       setIsCreating(false);
     }
   }
 
   return (
-    <OnboardingShell title="Menu Overview" isSubmitting={isCreating} loadingMessage="Menu creation in progress..." footer={
+    <OnboardingShell title={t('title')} isSubmitting={isCreating} loadingMessage={t('loadingCreation')} footer={
       <div>
         {!isButtonEnabled && !isCreating && (
           <p className="text-[13px] text-ink-05 mb-2">
             {onboardingStatus !== null && onboardingStatus < 18
-              ? "We're still setting up your shop. Review your menu below; the button will be available shortly."
-              : 'Review your items and confirm when ready.'}
+              ? t('stillSettingUp')
+              : t('reviewAndConfirm')}
           </p>
         )}
         <OnboardingButton disabled={!isButtonEnabled} loading={isCreating || !isDomainReady} onClick={confirmAndContinue}>
-          {!isDomainReady ? 'Loading' : 'Confirm and continue'}
+          {!isDomainReady ? t('loadingButton') : t('confirmAndContinue')}
         </OnboardingButton>
       </div>
     }>
       {/* Category tabs */}
       {categories.length > 0 && (
         <div className="flex gap-2 overflow-x-auto pb-2 mb-4 -mx-1 px-1">
-          <button onClick={() => setCurrentCat('all')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${currentCat === 'all' ? 'bg-brand text-white' : 'bg-black/5 text-ink-05 hover:text-ink-08'}`}>All</button>
+          <button onClick={() => setCurrentCat('all')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${currentCat === 'all' ? 'bg-brand text-white' : 'bg-black/5 text-ink-05 hover:text-ink-08'}`}>{t('all')}</button>
           {categories.map((c) => (
             <button key={c.slug} onClick={() => setCurrentCat(c.slug || '')} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${currentCat === c.slug ? 'bg-brand text-white' : 'bg-black/5 text-ink-05 hover:text-ink-08'}`}>{c.name}</button>
           ))}
@@ -199,7 +202,7 @@ export default function MenuItemsOverviewPage() {
             </div>
           );
         })}
-        {filtered.length === 0 && <p className="text-center text-ink-05 py-8">No products in this category.</p>}
+        {filtered.length === 0 && <p className="text-center text-ink-05 py-8">{t('noProductsInCategory')}</p>}
       </div>
     </OnboardingShell>
   );

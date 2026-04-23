@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, usePathname, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { deviceLogin, getOnboardingStep } from '@/lib/onboarding-api';
 import { OnboardingStep } from '@/types/onboarding';
 import LoadingOverlay from '@/components/app/LoadingOverlay';
@@ -27,6 +28,7 @@ export default function OnboardingFlowPage() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const t = useTranslations('Onboarding.common');
   const [loading, setLoading] = useState(true);
   const [loginError, setLoginError] = useState(false);
 
@@ -64,18 +66,18 @@ export default function OnboardingFlowPage() {
     init();
   }, [router, basePath]);
 
-  if (loading) return <LoadingOverlay message="Loading onboarding..." />;
+  if (loading) return <LoadingOverlay message={t('loadingOnboarding')} />;
 
   if (loginError) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center max-w-md px-6">
-          <p className="text-lg text-ink-08 mb-4">Failed to connect. Please check your connection and try again.</p>
+          <p className="text-lg text-ink-08 mb-4">{t('failedToConnect')}</p>
           <button
             onClick={() => { setLoading(true); setLoginError(false); window.location.reload(); }}
             className="px-6 py-3 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] transition-all duration-200 active:scale-[0.98]"
           >
-            Retry
+            {t('retry')}
           </button>
         </div>
       </div>

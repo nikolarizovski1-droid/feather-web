@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { createMenu as apiCreateMenu, getProcessedMenuResponse, getAppConfigOnboarding, loginUser } from '@/lib/onboarding-api';
 import { compressImage, fileToDataURL, fileToBase64 } from '@/lib/image-compression';
 import { OnboardingStep } from '@/types/onboarding';
@@ -10,6 +11,7 @@ import { useNotifications } from '@/hooks/useNotifications';
 import { useAuth } from '@/hooks/useAuth';
 import OnboardingShell from '@/components/app/OnboardingShell';
 import OnboardingButton from '@/components/app/OnboardingButton';
+import ConfirmationModal from '@/components/app/ConfirmationModal';
 import { Trash2, Image as ImageIcon } from 'lucide-react';
 
 interface SelectedImage { file: File; preview: string; compressed?: string }
@@ -33,6 +35,8 @@ export default function CreateMenuPage() {
   const { showError } = useNotifications();
   const { setCredentials } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const t = useTranslations('Onboarding.menu');
+  const tc = useTranslations('Onboarding.common');
 
   const [selectedImages, setSelectedImages] = useState<SelectedImage[]>([]);
   const [maxImages, setMaxImages] = useState(20);
@@ -41,7 +45,15 @@ export default function CreateMenuPage() {
   const [isCompressing, setIsCompressing] = useState(false);
   const [isLoadingPrev, setIsLoadingPrev] = useState(false);
   const [hasPreviousImages, setHasPreviousImages] = useState(false);
-  const [loadingMessage, setLoadingMessage] = useState('Loading...');
+  const [showSkipModal, setShowSkipModal] = useState(false);
+  const [isDragOver, setIsDragOver] = useState(false);
+  const [pendingUndo, setPendingUndo] = useState<{ image: SelectedImage; index: number } | null>(null);
+  const undoTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [loadingMessage, setLoadingMessage] = useState(tc('loading'));
+
+  useEffect(() => () => {
+    if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
+  }, []);
 
   useEffect(() => {
     getAppConfigOnboarding().then((c) => { if (c.max_images) setMaxImages(c.max_images); }).catch(() => {});
@@ -54,12 +66,14 @@ export default function CreateMenuPage() {
     }).catch(() => {});
   }, []);
 
-  async function onFileSelected(e: React.ChangeEvent<HTMLInputElement>) {
-    if (!e.target.files?.length) return;
-    const files = Array.from(e.target.files);
-    if (selectedImages.length + files.length > maxImages) { showError(`Maximum ${maxImages} images allowed.`); return; }
+  async function processFiles(files: File[]) {
+    if (files.length === 0) return;
+    if (selectedImages.length + files.length > maxImages) {
+      showError(t('maxImages', { n: maxImages }));
+      return;
+    }
     setIsCompressing(true);
-    setLoadingMessage(files.length > 1 ? 'Uploading images...' : 'Uploading image...');
+    setLoadingMessage(files.length > 1 ? t('uploadingImages') : t('uploadingImage'));
     try {
       for (const file of files) {
         const preview = await fileToDataURL(file);
@@ -68,7 +82,50 @@ export default function CreateMenuPage() {
         setSelectedImages((prev) => [...prev, { file, preview, compressed: base64 }]);
       }
     } finally { setIsCompressing(false); }
+  }
+
+  async function onFileSelected(e: React.ChangeEvent<HTMLInputElement>) {
+    if (!e.target.files?.length) return;
+    await processFiles(Array.from(e.target.files));
     e.target.value = '';
+  }
+
+  function handleDragOver(e: React.DragEvent) {
+    e.preventDefault();
+    if (!isDragOver) setIsDragOver(true);
+  }
+
+  function handleDragLeave(e: React.DragEvent) {
+    if (e.currentTarget.contains(e.relatedTarget as Node | null)) return;
+    setIsDragOver(false);
+  }
+
+  function handleDrop(e: React.DragEvent) {
+    e.preventDefault();
+    setIsDragOver(false);
+    const files = Array.from(e.dataTransfer.files).filter((f) => f.type.startsWith('image/'));
+    void processFiles(files);
+  }
+
+  function deleteImage(idx: number) {
+    const removed = selectedImages[idx];
+    if (!removed) return;
+    setSelectedImages((prev) => prev.filter((_, i) => i !== idx));
+    if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
+    setPendingUndo({ image: removed, index: idx });
+    undoTimerRef.current = setTimeout(() => setPendingUndo(null), 5000);
+  }
+
+  function undoDelete() {
+    if (!pendingUndo) return;
+    const { image, index } = pendingUndo;
+    setSelectedImages((prev) => {
+      const next = [...prev];
+      next.splice(Math.min(index, next.length), 0, image);
+      return next;
+    });
+    setPendingUndo(null);
+    if (undoTimerRef.current) clearTimeout(undoTimerRef.current);
   }
 
   async function usePreviousImages() {
@@ -76,7 +133,7 @@ export default function CreateMenuPage() {
     if (!shopData) return;
     const shop = JSON.parse(shopData);
     setIsLoadingPrev(true);
-    setLoadingMessage('Loading previous menu...');
+    setLoadingMessage(t('loadingPrev'));
     try {
       const response = await getProcessedMenuResponse(shop.id) as Record<string, unknown>;
       const d = response?.processed_menu_response ?? response?.processedMenuResponse;
@@ -87,17 +144,17 @@ export default function CreateMenuPage() {
         localStorage.setItem('onboarding_current_step', String(OnboardingStep.EditMenu));
         router.push('./menu-overview');
       }
-    } catch { showError('Failed to load previous menu.'); }
+    } catch { showError(t('errors.failedLoadPrev')); }
     finally { setIsLoadingPrev(false); }
   }
 
   async function createMenuHandler() {
     if (selectedImages.length === 0) return;
     const shopData = localStorage.getItem('onboarding_shop_data');
-    if (!shopData) { showError('Shop data not found.'); return; }
+    if (!shopData) { showError(tc('shopDataNotFound')); return; }
     const shop = JSON.parse(shopData);
     setIsCreatingMenu(true);
-    setLoadingMessage('Generating your menu...\nThis usually takes 30–60 seconds.');
+    setLoadingMessage(t('generating'));
     try {
       const imgs = selectedImages.map((i) => i.compressed!).filter(Boolean);
       const response = await apiCreateMenu(shop.id, imgs) as unknown as Record<string, unknown>;
@@ -107,19 +164,16 @@ export default function CreateMenuPage() {
         localStorage.setItem('onboarding_menu_categories', JSON.stringify(categories));
         localStorage.setItem('onboarding_current_step', String(OnboardingStep.EditMenu));
         router.push('./menu-overview');
-      } else throw new Error('No products or categories found');
-    } catch (err: unknown) { showError(err instanceof Error ? err.message : 'Failed to create menu'); setIsCreatingMenu(false); }
+      } else throw new Error(t('errors.noProducts'));
+    } catch (err: unknown) { showError(err instanceof Error ? err.message : t('errors.failedCreate')); setIsCreatingMenu(false); }
   }
 
   async function skipMenu() {
-    const confirmed = window.confirm(
-      "Skip menu creation? You'll start with an empty menu. You can add products later from your admin dashboard."
-    );
-    if (!confirmed) return;
+    setShowSkipModal(false);
     const shopData = localStorage.getItem('onboarding_shop_data');
     if (!shopData) return;
     setIsSkipping(true);
-    setLoadingMessage('Activating shop...');
+    setLoadingMessage(t('activating'));
     try {
       const creds = localStorage.getItem('onboarding_user_credentials');
       if (creds) {
@@ -130,50 +184,86 @@ export default function CreateMenuPage() {
       }
       localStorage.setItem('onboarding_current_step', String(OnboardingStep.Finished));
       router.replace('../../app/subscription');
-    } catch { showError('Failed to activate shop.'); }
+    } catch { showError(t('errors.failedActivate')); }
     finally { setIsSkipping(false); }
   }
 
   const isBusy = isCreatingMenu || isSkipping || isLoadingPrev || isCompressing;
 
   return (
-    <OnboardingShell title="Create menu" isSubmitting={isBusy} loadingMessage={loadingMessage} footer={
+    <OnboardingShell title={t('title')} isSubmitting={isBusy} loadingMessage={loadingMessage} footer={
       <div className="flex flex-col gap-3">
-        <OnboardingButton disabled={selectedImages.length === 0} loading={isCreatingMenu} onClick={createMenuHandler}>Create menu</OnboardingButton>
-        <OnboardingButton variant="secondary" disabled={isCreatingMenu || isSkipping} loading={isSkipping} onClick={skipMenu}>Skip</OnboardingButton>
+        <OnboardingButton disabled={selectedImages.length === 0} loading={isCreatingMenu} onClick={createMenuHandler}>{t('createMenu')}</OnboardingButton>
+        <OnboardingButton variant="secondary" disabled={isCreatingMenu || isSkipping} loading={isSkipping} onClick={() => setShowSkipModal(true)}>{t('skip')}</OnboardingButton>
       </div>
     }>
-      <p className="text-base font-medium text-ink-08 mb-4">Upload images of your menu and we&apos;ll extract the categories and items.</p>
+      <p className="text-base font-medium text-ink-08 mb-4">{t('description')}</p>
 
       {hasPreviousImages && (
-        <button onClick={usePreviousImages} disabled={isBusy} className="w-full mb-4 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] disabled:opacity-50 transition-all duration-200 active:scale-[0.98]">Use previous images</button>
+        <button onClick={usePreviousImages} disabled={isBusy} className="w-full mb-4 py-3.5 rounded-full bg-brand text-white font-semibold hover:bg-[#e5474b] disabled:opacity-50 transition-all duration-200 active:scale-[0.98]">{t('usePrevious')}</button>
       )}
 
-      {/* Upload card */}
-      <div className="bg-card border border-black/5 rounded-2xl p-6 mb-4 flex items-start gap-4 shadow-sm">
-        <div className="flex-1">
-          <ImageIcon size={32} className="text-ink-05 mb-2" />
-          <p className="text-sm font-semibold text-ink-08 mb-1">Upload image</p>
-          <p className="text-xs text-ink-05">For best results, upload <strong>high-resolution</strong> images.</p>
+      {/* Upload card — click anywhere or drop files */}
+      <label
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+        className={`relative block bg-card border border-black/5 rounded-2xl p-6 mb-4 shadow-sm cursor-pointer transition-all ${
+          isDragOver ? 'ring-2 ring-brand ring-inset bg-brand/5' : 'hover:border-black/10'
+        } ${isCompressing ? 'opacity-80 pointer-events-none' : ''}`}
+      >
+        <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={onFileSelected} className="hidden" disabled={isCompressing} />
+        <div className="flex items-start gap-4">
+          <div className="flex-1">
+            <ImageIcon size={32} className="text-ink-05 mb-2" />
+            <p className="text-sm font-semibold text-ink-08 mb-1">
+              {isDragOver ? t('dropHere') : t('uploadImage')}
+            </p>
+            <p className="text-xs text-ink-05">{t('uploadHintStart')}<strong>{t('uploadHintStrong')}</strong>{t('uploadHintEnd')}</p>
+            <p className="text-xs text-ink-05 mt-1">{t('formatsHint', { max: maxImages })}</p>
+          </div>
+          <span className="shrink-0 self-center bg-brand text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-[#e5474b] transition-colors">
+            {t('uploadImage')}
+          </span>
         </div>
-        <label className={`shrink-0 bg-brand text-white rounded-full px-6 py-3 text-sm font-medium cursor-pointer hover:bg-[#e5474b] transition-colors ${isCompressing ? 'opacity-80 pointer-events-none' : ''}`}>
-          Upload image
-          <input ref={fileInputRef} type="file" accept="image/*" multiple onChange={onFileSelected} className="hidden" disabled={isCompressing} />
-        </label>
-      </div>
+      </label>
+
+      {pendingUndo && (
+        <div role="status" aria-live="polite" className="flex items-center justify-between gap-3 bg-ink-08 text-white rounded-full px-4 py-2.5 mb-3 shadow-md">
+          <span className="text-sm">{t('imageRemoved')}</span>
+          <button
+            type="button"
+            onClick={undoDelete}
+            className="text-sm font-semibold text-brand hover:text-white transition-colors px-2"
+          >
+            {tc('undo')}
+          </button>
+        </div>
+      )}
 
       {/* Image grid */}
       {selectedImages.length > 0 && (
         <div className="grid grid-cols-2 gap-3">
           {selectedImages.map((img, i) => (
             <div key={i} className="relative rounded-xl overflow-hidden aspect-[4/3] border border-black/5">
-              <img src={img.preview} alt={`Menu ${i + 1}`} className="w-full h-full object-cover" />
-              <button onClick={() => setSelectedImages((prev) => prev.filter((_, idx) => idx !== i))} className="absolute top-2 right-2 bg-card/80 backdrop-blur-sm rounded-full p-1.5 text-ink-05 hover:text-red-600 transition-colors">
+              <img src={img.preview} alt="" className="w-full h-full object-cover" />
+              <button type="button" onClick={() => deleteImage(i)} className="absolute top-2 right-2 bg-card/80 backdrop-blur-sm rounded-full p-1.5 text-ink-05 hover:text-red-600 transition-colors">
                 <Trash2 size={14} />
               </button>
             </div>
           ))}
         </div>
+      )}
+
+      {showSkipModal && (
+        <ConfirmationModal
+          title={t('skipConfirmTitle')}
+          message={t('skipConfirm')}
+          confirmText={t('skip')}
+          cancelText={tc('keepGoing')}
+          onConfirm={skipMenu}
+          onCancel={() => setShowSkipModal(false)}
+        />
       )}
     </OnboardingShell>
   );

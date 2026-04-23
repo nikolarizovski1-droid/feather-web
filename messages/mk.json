@@ -762,5 +762,200 @@
         }
       ]
     }
+  },
+  "Onboarding": {
+    "steps": {
+      "venue": "Локал",
+      "account": "Сметка",
+      "menu": "Мени",
+      "review": "Преглед"
+    },
+    "subLabels": {
+      "settingUp": "Ја подготвуваме твојата страна…",
+      "creatingMenu": "Го креираме менито",
+      "setLanguages": "Постави јазици",
+      "editItem": "Уреди артикл"
+    },
+    "common": {
+      "continue": "Продолжи",
+      "save": "Зачувај",
+      "delete": "Избриши",
+      "saveAndExit": "Зачувај и излези",
+      "exit": "Излези",
+      "keepGoing": "Продолжи понатаму",
+      "retry": "Обиди се повторно",
+      "loading": "Се вчитува...",
+      "loadingOnboarding": "Се вчитува процесот...",
+      "takesAbout2Minutes": "Трае околу 2 минути",
+      "selectCountry": "Избери држава",
+      "searchCountryOrPrefix": "Пребарај држава или префикс",
+      "searchCountries": "Пребарај држави",
+      "noCountriesMatch": "Нема држави што се совпаѓаат со „{query}“",
+      "searchCurrencyOrCode": "Пребарај валута или код",
+      "searchCurrencies": "Пребарај валути",
+      "noCurrenciesMatch": "Нема валути што се совпаѓаат со „{query}“",
+      "prefix": "Префикс",
+      "country": "Држава",
+      "countryDialCode": "Повикувачки број",
+      "clearSearch": "Исчисти пребарување",
+      "showPassword": "Прикажи лозинка",
+      "hidePassword": "Сокриј лозинка",
+      "undo": "Поништи",
+      "shopDataNotFound": "Податоците за локалот не се пронајдени",
+      "failedToConnect": "Не успеавме да се поврземе. Провери ја врската и обиди се повторно.",
+      "exitModalTitle": "Зачувај и излези?",
+      "exitModalMessage": "Твојот напредок е зачуван на овој уред. Ќе можеш да продолжиш од каде што застана следниот пат."
+    },
+    "venue": {
+      "title": "Кажи ни за твојот локал",
+      "loading": "Се креира локалот...",
+      "logo": {
+        "upload": "Додај лого",
+        "remove": "Отстрани лого",
+        "hint": "Опционално — квадратни слики изгледаат најдобро"
+      },
+      "location": {
+        "label": "Локација на локалот",
+        "placeholder": "Пребарај по име или адреса",
+        "hint": "Опционално — автоматски пополнува град и држава. Повлечи го пинот за прецизна локација.",
+        "clear": "Исчисти локација"
+      },
+      "venueName": "Име на локалот",
+      "venueNamePlaceholder": "на пр. Арома Кафе",
+      "city": "Град",
+      "cityPlaceholder": "на пр. Скопје",
+      "country": "Држава",
+      "shopType": "Тип на продавница",
+      "authKey": "Клуч за автентикација",
+      "authKeyPlaceholder": "Внеси Hype auth key",
+      "language": "Јазик",
+      "selectLanguage": "Избери јазик",
+      "currency": "Валута",
+      "selectCurrency": "Избери валута",
+      "errors": {
+        "venueName": "Внеси име на локалот",
+        "city": "Внеси го твојот град",
+        "country": "Избери држава",
+        "authKey": "Внеси го Hype auth key",
+        "language": "Избери јазик",
+        "currency": "Избери валута",
+        "failed": "Не успеавме да го креираме локалот"
+      },
+      "languages": {
+        "english": "Англиски",
+        "macedonian": "Македонски",
+        "albanian": "Албански",
+        "bulgarian": "Бугарски",
+        "croatian": "Хрватски",
+        "romanian": "Романски",
+        "swedish": "Шведски",
+        "turkish": "Турски",
+        "serbian": "Српски"
+      }
+    },
+    "user": {
+      "title": "Креирај сметка",
+      "loading": "Се креира сметката...",
+      "firstName": "Име",
+      "firstNamePlaceholder": "на пр. Сара",
+      "lastName": "Презиме",
+      "lastNamePlaceholder": "на пр. Стојкова",
+      "phoneNumber": "Телефонски број",
+      "phonePlaceholder": "на пр. 78 123 456",
+      "email": "Е-пошта",
+      "emailPlaceholder": "на пр. email@example.com",
+      "password": "Лозинка",
+      "passwordPlaceholder": "********************",
+      "errors": {
+        "firstName": "Внеси го твоето име",
+        "lastName": "Внеси го твоето презиме",
+        "country": "Избери ја повикувачката шифра",
+        "phoneNumber": "Внеси го твојот телефонски број",
+        "phoneShort": "Телефонскиот број изгледа прекраток",
+        "email": "Внеси ја твојата е-пошта",
+        "emailInvalid": "Внеси валидна е-пошта",
+        "password": "Креирај лозинка",
+        "passwordShort": "Лозинката треба да има најмалку 6 карактери",
+        "emailInUse": "Внесената е-пошта веќе се користи. Внеси друга и обиди се повторно.",
+        "failed": "Не успеавме да ја креираме сметката"
+      }
+    },
+    "menu": {
+      "title": "Прикачи го твоето мени",
+      "description": "Прикачи слики од менито и ќе ги извлечеме категориите и артиклите.",
+      "usePrevious": "Користи претходни слики",
+      "uploadImage": "Прикачи слика",
+      "uploadHintStart": "За најдобри резултати, прикачи ",
+      "uploadHintStrong": "слики со висока резолуција",
+      "uploadHintEnd": ".",
+      "formatsHint": "JPG или PNG · До {max} слики",
+      "dropHere": "Пушти за прикачување",
+      "imageRemoved": "Сликата е отстранета",
+      "createMenu": "Креирај мени",
+      "skip": "Прескокни",
+      "skipConfirmTitle": "Да се прескокне креирањето на менито?",
+      "skipConfirm": "Ќе почнеш со празно мени. Можеш да додаваш производи подоцна од админ панелот.",
+      "maxImages": "Дозволени се максимум {n} слики.",
+      "uploadingImages": "Прикачување на слики...",
+      "uploadingImage": "Прикачување на слика...",
+      "loadingPrev": "Вчитување на претходно мени...",
+      "generating": "Го креираме твоето мени...\nОбично трае 30–60 секунди.",
+      "activating": "Активирање на локалот...",
+      "errors": {
+        "failedLoadPrev": "Не успеавме да го вчитаме претходното мени.",
+        "failedCreate": "Не успеавме да го креираме менито",
+        "failedActivate": "Не успеавме да го активираме локалот.",
+        "noProducts": "Не се пронајдени производи или категории"
+      }
+    },
+    "review": {
+      "title": "Прегледај го твоето мени",
+      "loadingCreation": "Се креира менито...",
+      "stillSettingUp": "Сè уште го подготвуваме твојот локал. Прегледај го менито подолу; копчето ќе биде достапно наскоро.",
+      "reviewAndConfirm": "Прегледај ги артиклите и потврди кога си готов.",
+      "loadingButton": "Се вчитува",
+      "confirmAndContinue": "Потврди и продолжи",
+      "all": "Сите",
+      "removeItemConfirm": "Да се отстрани „{name}“ од твоето мени?",
+      "noProductsInCategory": "Нема производи во оваа категорија.",
+      "errors": {
+        "addAtLeastOne": "Додади барем еден производ.",
+        "setupInProgress": "Подготовката на локалот е во тек. Почекај малку.",
+        "failed": "Не успеавме да го креираме менито"
+      }
+    },
+    "editItem": {
+      "title": "Уреди производ",
+      "deleteConfirm": "Да се отстрани овој артикл од твоето мени?",
+      "uploadProductImage": "Прикачи слика на производот",
+      "uploadFromGallery": "Прикачи слика од галерија",
+      "compressing": "Се компресира сликата...",
+      "sku": "SKU",
+      "price": "Цена",
+      "category": "Категорија",
+      "selectCategory": "Избери категорија",
+      "topProduct": "Топ производ",
+      "productName": "Име на производот",
+      "productNamePlaceholder": "на пр. Пушена плескавица",
+      "description": "Опис",
+      "descriptionPlaceholder": "Краток опис",
+      "allergens": "Алергени",
+      "allergensPlaceholder": "Алергени во производот"
+    },
+    "languages": {
+      "title": "Избери ги твоите јазици",
+      "loading": "Зачувување на јазиците...",
+      "description": "Избери барем еден јазик како стандарден за твојот локал.",
+      "defaultLanguage": "Стандарден јазик",
+      "selectDefault": "Избери стандарден јазик",
+      "errors": {
+        "selectRequired": "Избери барем еден јазик и стандарден.",
+        "failed": "Не успеавме да ги зачуваме јазиците"
+      }
+    },
+    "waiting": {
+      "title": "Се креира локалот",
+      "pleaseWait": "Те молиме почекај..."
+    }
   }
 }

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { getOnboardingStep, startDomainCreation, activateShop, loginUser } from '@/lib/onboarding-api';
 import { OnboardingStep } from '@/types/onboarding';
 import { useAuth } from '@/hooks/useAuth';
@@ -10,6 +11,7 @@ export default function ShopCreationWaitingPage() {
   const router = useRouter();
   const { setCredentials } = useAuth();
   const pollingRef = useRef<ReturnType<typeof setInterval>>(undefined);
+  const t = useTranslations('Onboarding.waiting');
 
   useEffect(() => {
     const shopData = localStorage.getItem('onboarding_shop_data');
@@ -75,8 +77,8 @@ export default function ShopCreationWaitingPage() {
           <div className="w-20 h-20 mx-auto mb-8 rounded-2xl bg-brand/10 flex items-center justify-center">
             <div className="animate-spin rounded-full h-10 w-10 border-3 border-brand border-t-transparent" />
           </div>
-          <p className="text-2xl font-bold text-ink-08 mb-2">Shop creation in progress</p>
-          <p className="text-ink-05">Please wait...</p>
+          <p className="text-2xl font-bold text-ink-08 mb-2">{t('title')}</p>
+          <p className="text-ink-05">{t('pleaseWait')}</p>
         </div>
       </div>
     </div>
