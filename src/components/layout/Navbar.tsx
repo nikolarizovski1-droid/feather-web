@@ -149,7 +149,7 @@ export default function Navbar() {
             </div>
 
             <a
-              href="https://feather.echo-develop.com/"
+              href="https://featherinfo.echo-develop.com"
               target="_blank"
               rel="noopener noreferrer"
               className={`text-sm font-medium transition-colors duration-200 ${
@@ -235,7 +235,7 @@ export default function Navbar() {
                     ))}
                   </div>
                   <a
-                    href="https://feather.echo-develop.com/"
+                    href="https://featherinfo.echo-develop.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-medium text-ink-05 hover:text-ink-08 py-2.5 transition-colors"
