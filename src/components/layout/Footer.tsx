@@ -70,17 +70,13 @@ export default async function Footer() {
       { label: t("links.about"), href: "/about" },
       { label: t("links.contact"), href: "/contact" },
     ],
-    [t("categories.legal")]: [
-      { label: t("links.privacyPolicy"), href: "/privacy" },
-      { label: t("links.termsOfService"), href: "/terms" },
-    ],
   };
 
   return (
     <footer className="bg-ink-08 border-t border-white/5 text-white" aria-label="Footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-14 grid grid-cols-2 md:grid-cols-7 gap-8">
+        <div className="py-14 grid grid-cols-2 md:grid-cols-6 gap-8">
           {/* Brand column */}
           <div className="col-span-2 flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
@@ -102,7 +98,9 @@ export default async function Footer() {
             {/* App store badges */}
             <div className="flex flex-col gap-2 mt-2">
               <a
-                href="#"
+                href="https://apps.apple.com/us/app/feather-menu/id6744873644"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:border-white/20 transition-colors w-fit"
                 aria-label={t("downloadOnAppStore")}
               >
@@ -122,7 +120,9 @@ export default async function Footer() {
                 </div>
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.feather.menu"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 hover:border-white/20 transition-colors w-fit"
                 aria-label={t("getItOnGooglePlay")}
               >

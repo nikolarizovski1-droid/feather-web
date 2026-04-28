@@ -53,9 +53,8 @@ export default async function Hero() {
 
               {/* headline */}
               <HeroStaggerItem>
-                <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white leading-[1.0]">
-                  {t("headline1")}
-                  <br />
+                <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-6xl font-black tracking-tight text-balance text-white leading-[1.05]">
+                  {t("headline1")}{" "}
                   <span
                     className="text-brand"
                     style={{ textShadow: "0 0 60px rgba(255,96,100,0.45)" }}

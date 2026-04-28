@@ -146,7 +146,9 @@ export default async function PlatformDeepDive() {
             {/* App store badges */}
             <MotionFade direction="right" delay={0.4} className="flex flex-wrap gap-3">
               <a
-                href="#"
+                href="https://apps.apple.com/us/app/feather-menu/id6744873644"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl border border-black/10 bg-ink-08 px-4 py-2.5 hover:border-black/25 transition-colors"
                 aria-label={t("apps.downloadOnAppStore")}
               >
@@ -163,7 +165,9 @@ export default async function PlatformDeepDive() {
                 </div>
               </a>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.feather.menu"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-xl border border-black/10 bg-ink-08 px-4 py-2.5 hover:border-black/25 transition-colors"
                 aria-label={t("apps.getItOnGooglePlay")}
               >

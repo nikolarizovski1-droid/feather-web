@@ -22,8 +22,7 @@
       "product": "Product",
       "useCases": "Use cases",
       "resources": "Resources",
-      "company": "Company",
-      "legal": "Legal"
+      "company": "Company"
     },
     "links": {
       "features": "Features",
@@ -36,9 +35,7 @@
       "faq": "FAQ",
       "documentation": "Documentation",
       "about": "About",
-      "contact": "Contact",
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service"
+      "contact": "Contact"
     },
     "useCases": {
       "fastCasual": "Fast-casual restaurants",
@@ -957,5 +954,22 @@
       "title": "Shop creation in progress",
       "pleaseWait": "Please wait..."
     }
+  },
+  "ContactPage": {
+    "metaTitle": "Contact — Feather",
+    "metaDescription": "Get in touch with the Feather team. Phone, email, and partnership inquiries.",
+    "eyebrow": "Get in touch",
+    "title": "We'd love to hear from you",
+    "description": "Questions about pricing, partnerships, or how Feather fits your venue — drop us a line and we'll get back within one business day.",
+    "phoneLabel": "Phone",
+    "phoneDisplay": "+389 78 479 131",
+    "phoneHref": "tel:+38978479131",
+    "emailLabel": "Email",
+    "emailAddress": "contact@feathermenu.net",
+    "emailHref": "mailto:contact@feathermenu.net",
+    "callCta": "Call us",
+    "emailCta": "Send an email",
+    "companyLabel": "",
+    "companyName": ""
   }
 }

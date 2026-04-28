@@ -22,8 +22,7 @@
       "product": "Производ",
       "useCases": "Случаи на употреба",
       "resources": "Ресурси",
-      "company": "Компанија",
-      "legal": "Правно"
+      "company": "Компанија"
     },
     "links": {
       "features": "Функционалности",
@@ -36,9 +35,7 @@
       "faq": "ЧПП",
       "documentation": "Документација",
       "about": "За нас",
-      "contact": "Контакт",
-      "privacyPolicy": "Политика за приватност",
-      "termsOfService": "Услови за користење"
+      "contact": "Контакт"
     },
     "useCases": {
       "fastCasual": "Брза храна",
@@ -957,5 +954,22 @@
       "title": "Се креира локалот",
       "pleaseWait": "Те молиме почекај..."
     }
+  },
+  "ContactPage": {
+    "metaTitle": "Контакт — Feather",
+    "metaDescription": "Стапи во контакт со тимот на Feather — телефон, е-пошта и прашања за партнерство.",
+    "eyebrow": "",
+    "title": "Контакт",
+    "description": "Имаш прашање за цените, идеја за партнерство или сакаш да видиш како Feather би работел во твојот локал? Пиши ни и одговараме во рок од еден работен ден.",
+    "phoneLabel": "Телефон",
+    "phoneDisplay": "+389 78 479 131",
+    "phoneHref": "tel:+38978479131",
+    "emailLabel": "Е-пошта",
+    "emailAddress": "contact@feathermenu.net",
+    "emailHref": "mailto:contact@feathermenu.net",
+    "callCta": "Јави се",
+    "emailCta": "Пиши ни",
+    "companyLabel": "",
+    "companyName": ""
   }
 }
