@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { routing } from "@/i18n/routing";
 
 export interface BlogPostMeta {
   slug: string;
@@ -60,8 +61,7 @@ export function getAllPosts(locale: string): BlogPostMeta[] {
 }
 
 export function getAllPostSlugs(): { locale: string; slug: string }[] {
-  const locales = ["en", "mk"];
-  return locales.flatMap((locale) => {
+  return routing.locales.flatMap((locale) => {
     const dir = path.join(CONTENT_DIR, locale);
     if (!fs.existsSync(dir)) return [];
     return fs

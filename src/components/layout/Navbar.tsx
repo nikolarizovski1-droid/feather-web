@@ -62,7 +62,7 @@ export default function Navbar() {
 
   function switchLocale(newLocale: string) {
     document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000; SameSite=lax`;
-    router.replace(pathname, { locale: newLocale as "en" | "mk" });
+    router.replace(pathname, { locale: newLocale as (typeof routing.locales)[number] });
   }
 
   const strippedPath = pathname;

@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { routing } from "@/i18n/routing";
 
 const BASE_URL = "https://www.feathermenu.com";
 
-const locales = ["en", "mk"] as const;
+const locales = routing.locales;
 
 const staticPages = [
   "",
